@@ -1,16 +1,7 @@
-import './App.css';
-import Products from './components/Products';
-// import Article from './components/Article';
 
 
-function App(props) {
+function App() {
 
-  return (
-      // <Article {...props}/>
-    <>
-      <Products  />
-    </>
-  );
 }
 
 export default App;
