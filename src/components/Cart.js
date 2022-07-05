@@ -24,7 +24,7 @@ const Cart = ({title, price, img, addProduct, substractProduct, numberOfProducts
           <hr></hr>
           <h2>Total: {totalPrice}€</h2>
           <hr></hr>
-          <button className="btn btn-primary btn-block btn-lg">Checkout</button>
+          <button className="btn btn-primary btn-block btn-lg checkout">Checkout</button>
       </div>
 
     </>
