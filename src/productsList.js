@@ -1,6 +1,12 @@
 import img_1 from '../src/img/img_1.jpeg'
 import img_2 from '../src/img/img_2.jpeg'
 import img_3 from '../src/img/img_3.jpeg'
+import img_4 from '../src/img/img_4.jpeg'
+import img_5 from '../src/img/img_5.jpeg'
+import img_6 from '../src/img/img_6.jpeg'
+
+
+
 
 const products = [
   {
@@ -20,6 +26,24 @@ const products = [
     title: "Nike Rev Lite",
     price: 66,
     img: img_3
+  },
+  {
+    id: 103,
+    title: "Nike Sub 3",
+    price: 87,
+    img: img_4
+  },
+  {
+    id: 104,
+    title: "Nike Max v2",
+    price: 100,
+    img: img_5
+  },
+  {
+    id: 105,
+    title: "Nike Run 5",
+    price: 77,
+    img: img_6
   }
 ];
 
