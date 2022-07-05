@@ -18,13 +18,13 @@ const Cart = ({title, price, img, addProduct, substractProduct, numberOfProducts
                       <button className='buttons-quantity' onClick={addProduct}>+</button>
                   </div>
                  
-                  <button className='removeBtn' onClick={reset}>Remove</button>
+                  <button className="btn btn-dark" onClick={reset}>Remove</button>
                 </div>
           </div>
           <hr></hr>
           <h2>Total: {totalPrice}€</h2>
           <hr></hr>
-          <button>Checkout</button>
+          <button className="btn btn-primary btn-block btn-lg">Checkout</button>
       </div>
 
     </>

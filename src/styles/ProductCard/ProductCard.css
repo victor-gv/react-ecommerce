@@ -1,5 +1,6 @@
 .card {
   margin-bottom: 1.5rem;
+  margin-right: 1.5rem;
   width: 300px;
   height: 25rem;
   border-radius: 5px;
@@ -17,8 +18,11 @@
   width: 100%;
 }
 
-.btn {
+.buy-btn {
   display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 0.5rem 1rem;
   background-color: #28a745;
   color: #fff;
@@ -30,6 +34,6 @@
   color: #fff;
   font-size: 1rem;
 }
-.btn:hover {
+.buy-btn:hover {
   cursor: pointer;
 }/*# sourceMappingURL=ProductCard.css.map */

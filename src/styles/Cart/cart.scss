@@ -20,7 +20,13 @@
 }
 
 .cart__product--info {
+    display: flex;
+    flex-direction: column;
     margin-left: .7rem;
+
+    & > h3, div {
+        padding-bottom: 1rem;
+    }
 }
 
 .removeBtn {

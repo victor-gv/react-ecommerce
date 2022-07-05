@@ -1,5 +1,6 @@
 .card {
     margin-bottom: 1.5rem;
+    margin-right: 1.5rem;
     width: 300px;
     height: 25rem;
     border-radius: 5px;
@@ -19,8 +20,9 @@
     width: 100%;
 }
 
-.btn {
+.buy-btn {
     display: flex;
+    width: fit-content;
     padding: .5rem 1rem;
     background-color: #28a745;
     color: #fff;

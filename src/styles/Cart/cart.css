@@ -16,7 +16,12 @@
 }
 
 .cart__product--info {
+  display: flex;
+  flex-direction: column;
   margin-left: 0.7rem;
+}
+.cart__product--info > h3, .cart__product--info div {
+  padding-bottom: 1rem;
 }
 
 .removeBtn {

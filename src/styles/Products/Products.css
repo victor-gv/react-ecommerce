@@ -1,10 +1,9 @@
 .products__container {
-  width: 70%;
+  width: 68%;
   height: 80vh;
   justify-content: center;
   align-items: center;
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
 }
 .products__container h1 {

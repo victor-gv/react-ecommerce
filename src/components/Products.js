@@ -15,7 +15,7 @@ function Products(props) {
                 <img className='card__img' src={product.img} alt={product.title} />
                 <h3>{product.title}</h3>
                 <h4>{product.price}€</h4>
-                <button className='btn' onClick={() => props.manageClick(product)}>Buy now</button>
+                <button className='buy-btn' onClick={() => props.manageClick(product)}>Buy now</button>
             </ProductCard>
           )
         )}

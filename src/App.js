@@ -67,7 +67,7 @@ function App() {
             </div>
             <h2>Total: 0€</h2>
             <hr></hr>
-            <button>Checkout</button>
+            <button className="btn btn-primary btn-block btn-lg">Checkout</button>
         </div>
       </>
       );
