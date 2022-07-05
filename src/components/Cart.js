@@ -12,9 +12,12 @@ const Cart = ({title, price, img, addProduct, substractProduct, numberOfProducts
                 <div className="cart__product--info">
                   <h3>{title}</h3>
                   <h3>{price}€</h3>
-                  <button onClick={substractProduct}>-</button>
-                  <button >{numberOfProducts}</button>
-                  <button onClick={addProduct}>+</button>
+                  <div className="buttons-container">
+                      <button className='buttons-quantity' onClick={substractProduct}>-</button>
+                      <button className='numberOfProducts'>{numberOfProducts}</button>
+                      <button className='buttons-quantity' onClick={addProduct}>+</button>
+                  </div>
+                 
                   <button className='removeBtn' onClick={reset}>Remove</button>
                 </div>
           </div>
