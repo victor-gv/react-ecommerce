@@ -20,7 +20,11 @@ function App() {
       img: product.img
     });
 
+    //Display the price of the product in the cart
     setTotalPrice(product.price);
+
+    //Reset the number of products to 1 when the user click on another product
+    setNumberOfProducts(1);
   }
 
 
