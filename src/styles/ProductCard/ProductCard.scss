@@ -31,4 +31,8 @@
     border: none;
     color: #fff;
     font-size: 1rem;
+
+    &:hover {
+        cursor: pointer;
+    }
 }

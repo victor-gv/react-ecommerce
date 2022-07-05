@@ -1,0 +1,24 @@
+
+.cart {
+    width: 30%;
+    
+}
+
+.cart__product {
+    display: flex;
+    flex-direction: row;
+
+    img {
+        height: auto;
+        width: 60%;
+    }
+
+    h3 {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.removeBtn {
+    display: block;
+}

@@ -29,4 +29,7 @@
   border: none;
   color: #fff;
   font-size: 1rem;
+}
+.btn:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=ProductCard.css.map */

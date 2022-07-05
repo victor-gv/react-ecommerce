@@ -1,0 +1,20 @@
+.cart {
+  width: 30%;
+}
+
+.cart__product {
+  display: flex;
+  flex-direction: row;
+}
+.cart__product img {
+  height: auto;
+  width: 60%;
+}
+.cart__product h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.removeBtn {
+  display: block;
+}/*# sourceMappingURL=chart.css.map */
