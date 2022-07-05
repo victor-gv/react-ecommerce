@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/Chart/chart.css'
 import img1 from '../img/img_1.jpeg'
 
-function Chart() {
+const Chart = ({title, price, img}) => {
   return (
     <>
       <div className="cart">
@@ -11,8 +11,8 @@ function Chart() {
           <div className="cart__product">
             <img src={img1} alt="" />
                 <div className="cart__product--info">
-                  <h3>Puma 4 klk</h3>
-                  <h3>0€</h3>
+                  <h3>{title}</h3>
+                  <h3>{price}</h3>
                   <button >-</button>
                   <button >1</button>
                   <button >+</button>
@@ -28,5 +28,6 @@ function Chart() {
     </>
   )
 }
+
 
 export default Chart
