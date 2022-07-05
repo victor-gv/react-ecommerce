@@ -81,11 +81,21 @@ function App() {
           substractProduct={removeProduct}
           numberOfProducts={numberOfProducts}
           totalPrice={totalPrice}
+          reset={reset}
         />
       );
     }
   }
 
+  //Function to reset the cart when the user clicks on the "Remove" button
+  const reset = () => {
+    setData({
+      title: "Your cart is empty",
+      price: 0
+    });
+    setTotalPrice(0);
+    setNumberOfProducts(0);
+  }
 
   return (
     <>

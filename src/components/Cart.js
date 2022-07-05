@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/Cart/cart.css'
 
-const Cart = ({title, price, img, addProduct, substractProduct, numberOfProducts, totalPrice}) => {
+const Cart = ({title, price, img, addProduct, substractProduct, numberOfProducts, totalPrice, reset}) => {
   return (
     <>
       <div className="cart">
@@ -15,7 +15,7 @@ const Cart = ({title, price, img, addProduct, substractProduct, numberOfProducts
                   <button onClick={substractProduct}>-</button>
                   <button >{numberOfProducts}</button>
                   <button onClick={addProduct}>+</button>
-                  <button className='removeBtn'>Remove</button>
+                  <button className='removeBtn' onClick={reset}>Remove</button>
                 </div>
           </div>
           <hr></hr>
