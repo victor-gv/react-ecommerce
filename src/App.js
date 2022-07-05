@@ -1,11 +1,15 @@
 import Products from "./components/Products";
+import Chart from "./components/Chart";
 import './App.css'
 
 
 function App() {
   return (
     <>
-     <Products />
+    <div className="App">
+        <Products />
+        <Chart />
+    </div>
     </>
   )
 }

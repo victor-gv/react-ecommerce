@@ -1,8 +1,13 @@
 .products__container {
-  width: 100%;
+  width: 80%;
   height: 80vh;
   justify-content: center;
   align-items: center;
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
+}
+.products__container h1 {
+  display: block;
+  width: 100%;
 }/*# sourceMappingURL=Products.css.map */

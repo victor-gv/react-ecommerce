@@ -7,8 +7,8 @@ function Products() {
 
   return (
     <>
-      <h1>Products</h1>
       <div className='products__container'>
+      <h1>Products</h1>
         { products.map(product => 
           (
             <ProductCard>
