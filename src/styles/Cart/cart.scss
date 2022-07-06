@@ -11,6 +11,7 @@
     img {
         height: auto;
         width: 60%;
+        margin-right: .7rem;
     }
 
     h3 {
@@ -22,7 +23,6 @@
 .cart__product--info {
     display: flex;
     flex-direction: column;
-    margin-left: .7rem;
 
     & > h3, div {
         padding-bottom: 1rem;
