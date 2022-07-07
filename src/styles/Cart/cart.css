@@ -5,6 +5,7 @@
 .cart__product {
   display: flex;
   flex-direction: row;
+  margin-bottom: 1.5rem;
 }
 .cart__product img {
   height: auto;
