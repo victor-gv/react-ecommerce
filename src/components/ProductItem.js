@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProductItem({ id, img, title, price, substractProduct, numberOfProducts, addQuantity, totalPrice, reset}) {
+function ProductItem({ id, img, title, price, substractProduct, quantity, addQuantity, totalPrice, reset}) {
   return (
     <>
       <div className="cart__product">
@@ -12,7 +12,7 @@ function ProductItem({ id, img, title, price, substractProduct, numberOfProducts
             <button className="buttons-quantity" onClick={substractProduct}>
               -
             </button>
-            <button className="numberOfProducts">{numberOfProducts}</button>
+            <div className="numberOfProducts">{quantity}</div>
             <button className="buttons-quantity" onClick={() => addQuantity(id)}>
               +
             </button>

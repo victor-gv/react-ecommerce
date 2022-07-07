@@ -6,7 +6,10 @@ import ProductItem from "./components/ProductItem";
 
 
 
-  // We set the initial state of the cart to an empty object
+
+/**
+ * If the cart exists, return the cart, otherwise return an empty array.
+ */
   const loadCart = () => {
     const cart = localStorage.getItem("cart");
     return cart ? JSON.parse(cart) : [];
@@ -16,6 +19,7 @@ import ProductItem from "./components/ProductItem";
 function App() {
   const [ProductData, setData] = useState(() => loadCart());
 
+/* Storing the cart in local storage. */
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(ProductData));
   }, [ProductData]);
@@ -33,6 +37,16 @@ function App() {
   }
 
 
+  const addQuantity = (id) => {
+    const newCart = ProductData.map(item => {
+      if (item.id === id) {
+        item.quantity++;
+      }
+      return item;
+    }
+    );
+    setData(newCart);
+  }
 
 
 /**
@@ -40,15 +54,16 @@ function App() {
  * @param product - the product that is being removed from the cart
  */
   const removeFromCart = (product) => {
-    const allProductsInCart = [...ProductData];
-    const index = allProductsInCart.indexOf(product);
-    allProductsInCart.splice(index, 1);
-    setData(allProductsInCart);
+    const cart = [...ProductData];
+    const index = cart.indexOf(product);
+    cart.splice(index, 1);
+    setData(cart);
   }
 
 
 
   const checkCart = () => {
+    console.log(ProductData);
       return (
        ProductData.map(product =>
            <ProductItem
@@ -57,9 +72,9 @@ function App() {
             title={product.title}
             price={product.price}
             img={product.img}
-            //addQuantity={addQuantity}
+            addQuantity={addQuantity}
+            quantity={product.quantity}
             // substractProduct={removeProduct}
-            // numberOfProducts={numberOfProducts}
             // totalPrice={totalPrice}
             reset = {removeFromCart}
             />
