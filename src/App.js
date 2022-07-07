@@ -37,6 +37,11 @@ function App() {
   }
 
 
+/**
+ * If the id of the item in the array matches the id of the item that was clicked, then increment the
+ * quantity of that item by 1 when the user clicks on add quantity button.
+ * @param id - the id of the product
+ */
   const addQuantity = (id) => {
     const newCart = ProductData.map(item => {
       if (item.id === id) {
@@ -50,20 +55,38 @@ function App() {
 
 
 /**
- * Remove the product from the array of products in the cart.
- * @param product - the product that is being removed from the cart
+ * If the item id matches the id passed in and the quantity is greater than 0, then decrement the
+ * quantity by 1 when the user clicks on substract quantity button..
  */
-  const removeFromCart = (product) => {
-    const cart = [...ProductData];
-    const index = cart.indexOf(product);
-    cart.splice(index, 1);
-    setData(cart);
+const substractQuantity = (id) => {
+  const newCart = ProductData.map(item => {
+    if (item.id === id && item.quantity > 0) {
+      item.quantity--;
+    }
+    return item;
+  });
+  setData(newCart);
+}
+
+
+
+//Remove a product from the cart and reset its quantity to 0
+  const removeProduct = (id) => {
+  const newCart = [...ProductData];
+  newCart.map(item => {
+    if (item.id === id){
+      item.quantity = 0;
+      const index = newCart.indexOf(item);
+      newCart.splice(index, 1);
+    }
+    return item;
+  });
+    setData(newCart);
   }
 
 
 
   const checkCart = () => {
-    console.log(ProductData);
       return (
        ProductData.map(product =>
            <ProductItem
@@ -73,25 +96,15 @@ function App() {
             price={product.price}
             img={product.img}
             addQuantity={addQuantity}
+            substractQuantity ={substractQuantity}
             quantity={product.quantity}
-            // substractProduct={removeProduct}
             // totalPrice={totalPrice}
-            reset = {removeFromCart}
+            removeProduct = {removeProduct}
             />
       )
     );
 }
 
-
-  //Function to reset the cart when the user clicks on the "Remove" button
-  // const reset = () => {
-  //   setData({
-  //     title: "Your cart is empty",
-  //     price: 0
-  //   });
-  //   setTotalPrice(0);
-  //   setNumberOfProducts(0);
-  // }
 
   const ListLength = ProductData.length;
   return (
