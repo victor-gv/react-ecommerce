@@ -70,12 +70,12 @@ const substractQuantity = (id) => {
 
 
 
-//Remove a product from the cart when the user clicks on the remove button and reset its quantity to 0
+//Remove a product from the cart when the user clicks on the remove button and reset its quantity to 1
   const removeProduct = (id) => {
   const newCart = [...totalCart];
   newCart.map(item => {
     if (item.id === id){
-      item.quantity = 0;
+      item.quantity = 1;
       const index = newCart.indexOf(item);
       newCart.splice(index, 1);
     }
@@ -94,7 +94,7 @@ const substractQuantity = (id) => {
     setTotalPrice(total);
   }
   , [totalCart]);
-  
+
 
 
 
@@ -124,7 +124,7 @@ const substractQuantity = (id) => {
     <>
     <div className="App">
         <Products manageClick = {addToCart} />
-        {ListLength === 0 ? <Cart title={'Your cart is empty'} /> : <Cart title={''} totalPrice={totalPrice} productItem={checkCart()} />}
+        {ListLength === 0 ? <Cart title={'Your cart is empty'} totalPrice={0} /> : <Cart title={''} totalPrice={totalPrice} productItem={checkCart()} />}
     </div>
     </>
   )
