@@ -1,15 +1,25 @@
 import Products from "./components/Products";
 import Cart from "./components/Cart";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './App.css'
 import ProductItem from "./components/ProductItem";
 
 
-function App() {
-  
 
   // We set the initial state of the cart to an empty object
-  const [ProductData, setData] = useState([]);
+  const loadCart = () => {
+    const cart = localStorage.getItem("cart");
+    return cart ? JSON.parse(cart) : [];
+  }
+
+
+function App() {
+  const [ProductData, setData] = useState(() => loadCart());
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(ProductData));
+  }, [ProductData]);
+
 
 //Obtain the product data from the Products component and pass it to the Cart component
   const addToCart = (product) => {
@@ -17,9 +27,9 @@ function App() {
     if (ProductData.find(item => item.id === product.id)) {
       return;
     }
-    //Add the product to the cart
-    const allProductsInCart = [...ProductData, product];
-    setData(allProductsInCart);
+    //Add the product to the cart and store it in local storage
+    setData([...ProductData, product]);
+    localStorage.setItem("cart", JSON.stringify([...ProductData, product]));
   }
 
 
