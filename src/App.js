@@ -55,12 +55,12 @@ function App() {
 
 
 /**
- * If the item id matches the id passed in and the quantity is greater than 0, then decrement the
+ * If the item id matches the id passed in and the quantity is greater than 1, then decrement the
  * quantity by 1 when the user clicks on substract quantity button..
  */
 const substractQuantity = (id) => {
   const newCart = totalCart.map(item => {
-    if (item.id === id && item.quantity > 0) {
+    if (item.id === id && item.quantity > 1) {
       item.quantity--;
     }
     return item;
