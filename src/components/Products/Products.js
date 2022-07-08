@@ -1,7 +1,7 @@
 import React from 'react'
-import ProductCard from './ProductCard'
-import products from '../productsList'
-import '../styles/Products/Products.css'
+import ProductCard from '../ProductCard/ProductCard'
+import products from '../../data/productsList'
+import './Products.css'
 
 function Products(props) {
 

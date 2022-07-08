@@ -1,8 +1,9 @@
-import Products from "./components/Products";
-import Cart from "./components/Cart";
+import Products from "./components/Products/Products";
+import Cart from "./components/Cart/Cart";
+import ProductItem from "./components/ProducItem/ProductItem";
+import Navbar from "./components/Navbar/Navbar";
 import { useEffect, useState } from "react";
 import './App.css'
-import ProductItem from "./components/ProductItem";
 
 
 
@@ -123,8 +124,11 @@ const substractQuantity = (id) => {
   return (
     <>
     <div className="App">
-        <Products manageClick = {addToCart} />
-        {ListLength === 0 ? <Cart title={'Your cart is empty'} totalPrice={0} /> : <Cart title={''} totalPrice={totalPrice} productItem={checkCart()} />}
+        <div className="main-container">
+          <Navbar />
+          <Products manageClick = {addToCart} />
+          {ListLength === 0 ? <Cart title={'Your cart is empty'} totalPrice={0} /> : <Cart title={''} totalPrice={totalPrice} productItem={checkCart()} />}
+        </div>
     </div>
     </>
   )
