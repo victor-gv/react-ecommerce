@@ -4,7 +4,9 @@ import img_3 from '../src/img/img_3.jpeg'
 import img_4 from '../src/img/img_4.jpeg'
 import img_5 from '../src/img/img_5.jpeg'
 import img_6 from '../src/img/img_6.jpeg'
-
+import img_7 from '../src/img/img_7.jpeg'
+import img_8 from '../src/img/img_8.jpeg'
+import img_9 from '../src/img/img_9.jpeg'
 
 
 
@@ -50,6 +52,27 @@ const products = [
     price: 77,
     quantity: 1,
     img: img_6
+  },
+  {
+    id: 106,
+    title: "Puma JSX",
+    price: 65,
+    quantity: 1,
+    img: img_7
+  },
+  {
+    id: 107,
+    title: "Air Force 1",
+    price: 105,
+    quantity: 1,
+    img: img_8
+  },
+  {
+    id: 108,
+    title: "Air Max Fly",
+    price: 105,
+    quantity: 1,
+    img: img_9
   }
 ];
 
