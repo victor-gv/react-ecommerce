@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-bottom: 3rem;
+  background-color: #d8e7f2 !important;
+}
+.navbar img {
+  height: auto;
+  background-color: red;
+  margin-right: 3rem;
+}
+.navbar div {
+  font-size: 1.3rem;
+}
+
+.btn-outline-success {
+  color: #3887fe;
+  border-color: #3887fe;
+}
+.btn-outline-success:hover {
+  background-color: #3887fe;
+  border-color: #3887fe;
+}/*# sourceMappingURL=Navbar.css.map */

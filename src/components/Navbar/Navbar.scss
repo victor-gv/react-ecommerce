@@ -1,0 +1,29 @@
+@import '../../variables/variables';
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-bottom: 3rem;
+    background-color: $primary-color !important;
+
+    img {
+        height: auto;
+        background-color: red;
+        margin-right: 3rem;
+    }
+
+    div {
+        font-size: 1.3rem;
+    }
+}
+
+.btn-outline-success{
+    color: $blue;
+    border-color: $blue;
+
+    &:hover{
+        background-color: $blue;
+        border-color: $blue;
+    }
+}

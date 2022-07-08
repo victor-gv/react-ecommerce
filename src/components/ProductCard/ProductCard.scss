@@ -1,3 +1,6 @@
+@import '../../variables/variables';
+
+
 .card {
     margin-bottom: 1.5rem;
     margin-right: 1.5rem;
@@ -13,6 +16,10 @@
     *:not(img) {
         padding: .5rem 1rem;
     }
+
+    &:hover{
+    box-shadow: 0px 0px 8px 4px rgba(56,135,254, 0.5);
+    }
 }
 
 .card__img {
@@ -24,17 +31,19 @@
     display: flex;
     width: fit-content;
     padding: .5rem 1rem;
-    background-color: #28a745;
-    color: #fff;
+    background-color: $primary-color;
+    border: 1px solid $blue;
+    color: $blue !important;
     border-radius: 3px;
     margin-left: -2px;
     margin: 0 10px;
     text-decoration: none;
-    border: none;
     color: #fff;
     font-size: 1rem;
 
     &:hover {
         cursor: pointer;
+        color: white !important;
+        background-color: $blue;
     }
 }

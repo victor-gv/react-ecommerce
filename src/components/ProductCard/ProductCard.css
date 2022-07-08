@@ -12,6 +12,9 @@
 .card *:not(img) {
   padding: 0.5rem 1rem;
 }
+.card:hover {
+  box-shadow: 0px 0px 8px 4px rgba(56, 135, 254, 0.5);
+}
 
 .card__img {
   height: auto;
@@ -24,16 +27,18 @@
   width: -moz-fit-content;
   width: fit-content;
   padding: 0.5rem 1rem;
-  background-color: #28a745;
-  color: #fff;
+  background-color: #d8e7f2;
+  border: 1px solid #3887fe;
+  color: #3887fe !important;
   border-radius: 3px;
   margin-left: -2px;
   margin: 0 10px;
   text-decoration: none;
-  border: none;
   color: #fff;
   font-size: 1rem;
 }
 .buy-btn:hover {
   cursor: pointer;
+  color: white !important;
+  background-color: #3887fe;
 }/*# sourceMappingURL=ProductCard.css.map */
