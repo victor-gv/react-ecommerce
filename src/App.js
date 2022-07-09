@@ -20,7 +20,7 @@ import './App.css'
 function App() {
   const [totalCart, setData] = useState(() => loadCart());
 
-/* Storing the cart in local storage. */
+/* Storing the cart in local storage. Every time that totalCart changes, we set that information into localStorage */
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(totalCart));
   }, [totalCart]);
@@ -32,9 +32,8 @@ function App() {
     if (totalCart.find(item => item.id === product.id)) {
       return;
     }
-    //Add the product to the cart and store it in local storage
+    //Add the product to the cart
     setData([...totalCart, product]);
-    localStorage.setItem("cart", JSON.stringify([...totalCart, product]));
   }
 
 
