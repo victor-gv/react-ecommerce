@@ -1,4 +1,5 @@
 import React from "react";
+import './ProductItem.css'
 
 function ProductItem({ id, img, title, price, substractQuantity, quantity, addQuantity, removeProduct}) {
   return (
@@ -18,7 +19,7 @@ function ProductItem({ id, img, title, price, substractQuantity, quantity, addQu
             </button>
           </div>
 
-          <button className="btn btn-dark" onClick={() => removeProduct(id)}>
+          <button className="btn btn-dark remove-btn" onClick={() => removeProduct(id)}>
             Remove
           </button>
         </div>
