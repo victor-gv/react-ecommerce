@@ -8,7 +8,9 @@ function Products(props) {
 
   return (
     <>
+      <hr></hr>
       <h1 className='products__title'>Products</h1>
+      <hr></hr>
       <div className='products__container'>
         { products.map(product =>
           (

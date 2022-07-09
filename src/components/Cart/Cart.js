@@ -5,6 +5,7 @@ const Cart = ({ title, totalPrice, productItem }) => {
   return (
     <>
       <div className="cart">
+        <hr></hr>
         <h1>Shopping Cart</h1>
         <hr></hr>
         <h3>{title}</h3>
