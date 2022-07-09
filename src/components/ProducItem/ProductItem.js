@@ -1,5 +1,4 @@
 import React from "react";
-import "./ProductItem.css";
 
 function ProductItem({ id, img, title, price, substractQuantity, quantity, addQuantity, removeProduct }) {
   return (
