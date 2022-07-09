@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row;
   justify-content: start;
-  width: 100vw;
   margin-bottom: 3rem;
   background-color: #d8e7f2 !important;
 }

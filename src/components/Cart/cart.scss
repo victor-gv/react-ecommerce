@@ -3,11 +3,12 @@
 .cart__product {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-bottom: 1.5rem;
 
     img {
+        width: 16.2rem;
         height: auto;
-        width: 16.5rem;
         margin-right: 2rem;
     }
 
@@ -20,15 +21,22 @@
 .cart__product--info {
     display: flex;
     flex-direction: column;
+    //width: 100%;
 
     & > h3, div {
         padding-bottom: 1rem;
     }
 }
 
-.removeBtn {
-    display: block;
+
+.remove-btn {
+    width: 11rem;
 }
+
+// .img-container {
+//    width: 100%;
+
+// }
 
 .buttons-container {
     display: flex;

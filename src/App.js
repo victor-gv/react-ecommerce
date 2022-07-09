@@ -113,8 +113,13 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
   const ListLength = totalCart.length;
   return (
     <>
+      <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
       <div className="App">
-        <Header />
+        <Container fluid>
+          <Row>
+            <Header />
+          </Row>
+        </Container>
         <Container fluid>
           <Row>
             <Col sm={8}>
@@ -134,6 +139,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
           </Row>
         </Container>
       </div>
+      </Container>
     </>
   );
 }
