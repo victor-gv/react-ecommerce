@@ -122,7 +122,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
         </Container>
         <Container fluid>
           <Row>
-            <Col xs={12} sm={8} xl={8} xxl={8}>
+            <Col xs={8} sm={8} md={8} xl={8} xxl={8}>
               <Products manageClick={addToCart} />
             </Col>
             <Col sm>

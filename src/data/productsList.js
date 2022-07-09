@@ -13,7 +13,7 @@ import img_9 from '../../src/img/img_9.jpeg'
 const products = [
   {
     id: 100,
-    title: "Nike Runner 2000",
+    title: "Nike Runner 2",
     price: 88,
     quantity: 1,
     img: img_1

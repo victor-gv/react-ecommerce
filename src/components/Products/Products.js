@@ -8,8 +8,8 @@ function Products(props) {
 
   return (
     <>
+      <h1 className='products__title'>Products</h1>
       <div className='products__container'>
-      <h1>Products</h1>
         { products.map(product =>
           (
             <ProductCard key = {product.id}>

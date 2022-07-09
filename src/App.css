@@ -6,8 +6,17 @@ body {
 
 
 
-/* .main-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-} */
+/* Media queries */
+@media (max-width: 1480px){
+  .col-xxl-8 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+
+@media (max-width: 1004px){
+  .col-xxl-8 {
+    flex: 1 1 auto;
+    width: 40%;
+  }
+}

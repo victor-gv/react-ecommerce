@@ -1,11 +1,7 @@
 
 .products__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding-right: 1rem;
-    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 
     h1 {
         display: block;
@@ -13,4 +9,11 @@
         padding-bottom: 1rem;
         width: 100%;
     }
+}
+
+.products__title{
+    display: block;
+    text-align: center;
+    padding-bottom: 1rem;
+    width: 100%;
 }
