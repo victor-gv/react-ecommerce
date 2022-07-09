@@ -99,6 +99,11 @@ const substractQuantity = (id) => {
 
 
 
+/**
+ * CheckCart() is a function that returns a map of the totalCart array, which is an array of objects,
+ * and maps each object to a ProductItem component, which is a component that renders a product item.
+ * @returns The return statement is returning the result of the map function.
+ */
   const checkCart = () => {
       return (
        totalCart.map(product =>
@@ -119,6 +124,10 @@ const substractQuantity = (id) => {
 }
 
 
+/* A ternary operator that checks if the length of the totalCart array is 0. If it is, it renders the
+Cart component with the title 'Your cart is empty' and the totalPrice is 0. If the length of the
+totalCart array is not 0, it renders the Cart component with the title '', the totalPrice is the
+totalPrice of the cart, and the productItem is the result of the checkCart() function. */
   const ListLength = totalCart.length;
   return (
     <>
