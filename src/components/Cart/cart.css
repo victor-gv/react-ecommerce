@@ -1,13 +1,12 @@
+.cart h1 {
+  text-align: center;
+}
+
 .cart__product {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 1.5rem;
-}
-.cart__product img {
-  width: 16.2rem;
-  height: auto;
-  margin-right: 2rem;
 }
 .cart__product h3 {
   padding: 0;
@@ -24,6 +23,16 @@
 
 .remove-btn {
   width: 11rem;
+}
+
+.img-container {
+  margin-right: 2rem;
+}
+.img-container img {
+  width: 16.2rem;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .buttons-container {

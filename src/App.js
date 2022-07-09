@@ -122,10 +122,10 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
         </Container>
         <Container fluid>
           <Row>
-            <Col sm={8}>
+            <Col xs={12} sm={8} xl={8} xxl={8}>
               <Products manageClick={addToCart} />
             </Col>
-            <Col sm={4}>
+            <Col sm>
               {ListLength === 0 ? (
                 <Cart title={"Your cart is empty"} totalPrice={0} />
               ) : (

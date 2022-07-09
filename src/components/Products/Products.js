@@ -3,6 +3,7 @@ import ProductCard from '../ProductCard/ProductCard'
 import products from '../../data/productsList'
 import './Products.css'
 
+
 function Products(props) {
 
   return (
