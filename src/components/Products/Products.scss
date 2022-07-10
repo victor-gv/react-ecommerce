@@ -2,6 +2,7 @@
 .products__container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    justify-items: center;
 
     h1 {
         display: block;

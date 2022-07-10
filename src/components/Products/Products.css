@@ -1,6 +1,7 @@
 .products__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  justify-items: center;
 }
 .products__container h1 {
   display: block;
