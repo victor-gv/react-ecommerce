@@ -43,6 +43,7 @@ function App() {
       const title = product.querySelector(".card__title").innerText;
       const price = product.querySelector(".card__price").innerText;
       const emptySearch = document.getElementById("emptySearch");
+      console.log(emptySearch);
 
       if (title.toLowerCase().includes(search.toLowerCase()) || price.includes(search)) {
         product.style.display = "block";
@@ -52,9 +53,13 @@ function App() {
         product.setAttribute("matched", "false");
       }
 
+      const unMatchedProducts = document.querySelectorAll("[matched='false']");
+
       //If all the products have the attribute matched set to false, we toggle the display of the emptySearch div to display the message "No results found".
-        if (document.querySelectorAll("[matched='false']").length === products.length) {
-          emptySearch.style.display = "block";
+        if (unMatchedProducts.length === products.length) {
+          emptySearch.style.display = "flex";
+          console.log(products.length);
+          console.log(unMatchedProducts.length);
         } else {
           emptySearch.style.display = "none";
         }
