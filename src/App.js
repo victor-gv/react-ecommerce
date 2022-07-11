@@ -22,6 +22,31 @@ function App() {
     localStorage.setItem("cart", JSON.stringify(totalCart));
   }, [totalCart]);
 
+
+  
+  //Search function to filter the products and render only the ones that match the search
+  const searchItem = () => {
+    const search = document.getElementById("search").value;
+    const products = document.querySelectorAll(".card");
+   
+    //Prevent refreshing the page when the user press enter key in the search bar
+    const form = document.getElementById("searchForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+    }
+    );
+
+    products.forEach(product => {
+      if (product.innerText.toLowerCase().includes(search.toLowerCase())) {
+        product.style.display = "block";
+      } else {
+        product.style.display = "none";
+      }
+    });
+  }
+
+
+
   //Obtain the product data from the Products component and pass it to the Cart component
   const addToCart = (product) => {
     //Check if the product is already in the cart. If so, don't add it again.
@@ -125,7 +150,9 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
       <div className="App">
         <Container fluid>
           <Row>
-            <Header />
+            <Header
+            manageChange = {searchItem}
+            />
           </Row>
         </Container>
         <Container fluid>

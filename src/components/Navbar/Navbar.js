@@ -1,9 +1,9 @@
 import React from 'react'
 import logo from '../../img/logo.png';
-import {Navbar, Nav, NavDropdown, Container, Form, FormControl, Button} from 'react-bootstrap'
+import {Navbar, Nav, Container, Form, FormControl, Button} from 'react-bootstrap'
 import './Navbar.css'
 
-function Header() {
+function Header(props) {
   return (
 <Navbar bg="light" expand="lg">
   <Container fluid>
@@ -21,12 +21,14 @@ function Header() {
           Contact
         </Nav.Link>
       </Nav>
-      <Form className="d-flex">
+      <Form id="searchForm" className="d-flex">
         <FormControl
+          id='search'
           type="search"
           placeholder="Search"
           className="me-2"
           aria-label="Search"
+          onChange={() => props.manageChange()}
         />
         <Button variant="outline-success">Search</Button>
       </Form>
