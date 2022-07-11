@@ -4,7 +4,7 @@ import ProductItem from "./components/ProducItem/ProductItem";
 import Header from "./components/Navbar/Navbar";
 import { useEffect, useState } from "react";
 import "./App.css";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Spinner } from "react-bootstrap";
 
 /**
  * If the cart exists, return the cart, otherwise return an empty array.
@@ -42,14 +42,25 @@ function App() {
       //We take into account only the title of the product and the price of the product, but not the text of the buy button to match the search.
       const title = product.querySelector(".card__title").innerText;
       const price = product.querySelector(".card__price").innerText;
+      const emptySearch = document.getElementById("emptySearch");
 
       if (title.toLowerCase().includes(search.toLowerCase()) || price.includes(search)) {
         product.style.display = "block";
+        product.setAttribute("matched", "true");
       } else {
         product.style.display = "none";
+        product.setAttribute("matched", "false");
       }
-    });
-  }
+
+      //If all the products have the attribute matched set to false, we toggle the display of the emptySearch div to display the message "No results found".
+        if (document.querySelectorAll("[matched='false']").length === products.length) {
+          emptySearch.style.display = "block";
+        } else {
+          emptySearch.style.display = "none";
+        }
+      }
+    );
+   }
 
 
 
@@ -164,7 +175,11 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
         <Container fluid>
           <Row>
             <Col xs={8} sm={8} md={8} xl={8} xxl={8}>
-              <Products manageClick={addToCart} />
+                <Products manageClick={addToCart} />
+                <div id="emptySearch" className="empty-alert">
+                <Spinner animation="border" variant="primary" />
+                <h3>No results found</h3>
+              </div>
             </Col>
             <Col sm>
               {ListLength === 0 ? (

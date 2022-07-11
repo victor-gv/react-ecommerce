@@ -5,6 +5,15 @@ body {
   }
 
 
+  .empty-alert {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10rem 0;
+  }
+
+ 
 
 /* Media queries */
 @media (max-width: 1480px){
