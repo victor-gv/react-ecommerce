@@ -23,8 +23,8 @@ function App() {
   }, [totalCart]);
 
 
-  
-  //Search function to filter the products and render only the ones that match the search
+
+  //Search function
   const searchItem = () => {
     const search = document.getElementById("search").value;
     const products = document.querySelectorAll(".card");
@@ -36,6 +36,8 @@ function App() {
     }
     );
 
+    
+   /* A function that filters the products and renders only the ones that match the search. */
     products.forEach(product => {
       if (product.innerText.toLowerCase().includes(search.toLowerCase())) {
         product.style.display = "block";
