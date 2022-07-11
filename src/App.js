@@ -52,9 +52,17 @@ function App() {
    * quantity by 1 when the user clicks on substract quantity button..
    */
   const substractQuantity = (id) => {
-    const newCart = totalCart.map((item) => {
-      if (item.id === id && item.quantity > 1) {
+    const newCart = [...totalCart];
+    newCart.map((item) => {
+      if (item.id === id) {
         item.quantity--;
+
+        //If the quantity is less than 1, remove the item from the cart
+        if (item.quantity < 1) {
+          item.quantity = 1;
+          const index = newCart.indexOf(item);
+          newCart.splice(index, 1);
+        }
       }
       return item;
     });
