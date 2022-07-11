@@ -16,23 +16,24 @@
 .cart__product--info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .cart__product--info > h3, .cart__product--info div {
   padding-bottom: 1rem;
 }
 
-.remove-btn {
-  width: 11rem;
-}
-
 .img-container {
   margin-right: 2rem;
+  width: 60%;
 }
 .img-container img {
-  width: 16.2rem;
-  height: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.remove-btn {
+  width: 11rem;
 }
 
 .buttons-container {
