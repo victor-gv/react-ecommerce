@@ -39,7 +39,11 @@ function App() {
     
    /* A function that filters the products and renders only the ones that match the search. */
     products.forEach(product => {
-      if (product.innerText.toLowerCase().includes(search.toLowerCase())) {
+      //We take into account only the title of the product and the price of the product, but not the text of the buy button to match the search.
+      const title = product.querySelector(".card__title").innerText;
+      const price = product.querySelector(".card__price").innerText;
+
+      if (title.toLowerCase().includes(search.toLowerCase()) || price.includes(search)) {
         product.style.display = "block";
       } else {
         product.style.display = "none";
