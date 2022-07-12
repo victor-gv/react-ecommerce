@@ -13,6 +13,10 @@ body {
     margin: 10rem 0;
   }
 
+  .hidden {
+    display: none;
+  }
+
 /* Media queries */
 @media (max-width: 1480px){
   .col-xxl-8 {

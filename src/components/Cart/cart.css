@@ -81,4 +81,8 @@
 
 .checkout {
   width: 100%;
+}
+.checkout a {
+  color: #fff;
+  text-decoration: none;
 }/*# sourceMappingURL=cart.css.map */
