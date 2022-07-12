@@ -4,7 +4,7 @@ import ProductItem from "../ProducItem/ProductItem";
 import Header from "../Navbar/Navbar";
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import noResult from '../../img/no-results.png'
+import noResult from '../../images/no-results.png'
 import "./MainPage.css";
 
 /**
@@ -44,7 +44,6 @@ function MainPage() {
       const title = product.querySelector(".card__title").innerText;
       const price = product.querySelector(".card__price").innerText;
       const emptySearch = document.getElementById("emptySearch");
-      console.log(emptySearch);
 
       if (title.toLowerCase().includes(search.toLowerCase()) || price.includes(search)) {
         product.style.display = "block";

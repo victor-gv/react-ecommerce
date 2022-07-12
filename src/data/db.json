@@ -1,0 +1,66 @@
+{
+ "products":  [{
+      "id": 100,
+      "title": "Nike Runner 2",
+      "price": 90,
+      "quantity": 1,
+      "img": "../img/img_1.jpeg"
+    },
+    {
+      "id": 101,
+      "title": "Puma 80's",
+      "price": 109,
+      "quantity": 1,
+      "img": "../img/img_2.jpeg"
+    },
+    {
+      "id": 102,
+      "title": "Nike Rev Lite",
+      "price": 66,
+      "quantity": 1,
+      "img": "../img/img_3.jpeg"
+    },
+    {
+      "id": 103,
+      "title": "Nike Sub 3",
+      "price": 87,
+      "quantity": 1,
+      "img": "../img/img_4.jpeg"
+    },
+    {
+      "id": 104,
+      "title": "Nike Max v2",
+      "price": 100,
+      "quantity": 1,
+      "img": "../img/img_5.jpeg"
+    },
+    {
+      "id": 105,
+      "title": "Nike Run 5",
+      "price": 77,
+      "quantity": 1,
+      "img": "../img/img_6.jpeg"
+    },
+    {
+      "id": 106,
+      "title": "Puma JSX",
+      "price": 65,
+      "quantity": 1,
+      "img": "../img/img_7.jpeg"
+    },
+    {
+      "id": 107,
+      "title": "Air Force 1",
+      "price": 105,
+      "quantity": 1,
+      "img": "../img/img_8.jpeg"
+    },
+    {
+      "id": 108,
+      "title": "Air Max Fly",
+      "price": 105,
+      "quantity": 1,
+      "img": "../img/img_9.jpeg"
+    }
+ ]
+}
