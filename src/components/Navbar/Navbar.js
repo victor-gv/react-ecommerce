@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../../img/logo.png';
 import {Navbar, Nav, Container, Form, FormControl, Button} from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 import './Navbar.css'
 
 function Header(props) {
@@ -14,12 +15,11 @@ function Header(props) {
         className="me-auto my-2 my-lg-0"
         style={{ maxHeight: '100px' }}
         navbarScroll
-      >
-        <Nav.Link href="#action1">Home</Nav.Link>
-        <Nav.Link href="#action2">Categories</Nav.Link>
-        <Nav.Link href="#">
-          Contact
-        </Nav.Link>
+      > 
+        <Link className='nav-link' to="/">Home</Link>
+        <Link className='nav-link' to="/">Categories</Link>
+        <Link className='nav-link' to="/">Contact</Link>
+
       </Nav>
       <Form id="searchForm" className="d-flex">
         <FormControl

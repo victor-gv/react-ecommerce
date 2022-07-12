@@ -10,7 +10,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10rem 0;
+    margin: 5rem 0;
+
+    img {
+      width: 6rem;
+      margin-bottom: 1rem;
+    }
   }
 
   .hidden {

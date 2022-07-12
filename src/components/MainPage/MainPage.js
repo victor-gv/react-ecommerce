@@ -3,8 +3,9 @@ import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import Header from "../Navbar/Navbar";
 import { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import noResult from '../../img/no-results.png'
 import "./MainPage.css";
-import { Container, Row, Col, Spinner } from "react-bootstrap";
 
 /**
  * If the cart exists, return the cart, otherwise return an empty array.
@@ -181,8 +182,8 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
             <Col xs={8} sm={8} md={8} xl={8} xxl={8}>
                 <Products manageClick={addToCart} />
                 <div id="emptySearch" className="hidden">
-                <Spinner animation="border" variant="primary" />
-                <h3>No results found</h3>
+                <img src={noResult}  alt='No found sticker'/>
+                <h4>No results found</h4>
               </div>
             </Col>
             <Col sm>
