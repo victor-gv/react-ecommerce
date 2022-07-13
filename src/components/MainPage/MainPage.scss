@@ -1,7 +1,18 @@
+@import '../../variables/variables';
+
+
 body {
     padding: 0 !important;
     margin: 0;
     box-sizing: border-box;
+    background-color: #f3f7fa5d;
+  }
+
+  .products__wrapper {
+    hr {
+      color: $blue;
+      height: 3px;
+    }
   }
 
 

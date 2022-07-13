@@ -2,48 +2,69 @@
 
 
 .card {
-    margin-bottom: 1.5rem;
     width: 20rem;
     height: 25rem;
-    border-radius: 5px;
-    box-shadow: 0px 0px 4px 2px rgba(56,135,254, 0.5);
-
-
-    p {
-        font-weight: 400;
-    }
-
-    *:not(img) {
-        padding: .5rem 1rem;
-    }
-
-    &:hover{
-    box-shadow: 0px 0px 11px 8px rgba(56,135,254, 0.5);
-    }
-}
-
-.card__img {
-    height: auto;
-    width: 100%;
-}
-
-.buy-btn {
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 1.5rem;
+    font-family: sans-serif;
     display: flex;
-    width: fit-content;
-    padding: .5rem 1rem;
-    background-color: $primary-color;
-    border: 1px solid $blue;
-    color: $blue !important;
-    border-radius: 3px;
-    margin-left: -2px;
-    margin: 0 10px;
-    text-decoration: none;
-    color: #fff;
-    font-size: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s, background 0.3s;
 
     &:hover {
-        cursor: pointer;
-        color: white !important;
-        background-color: $blue;
+      transform: scale(1.09);
+      box-shadow: 0px 0px 10px 4px rgba(56,135,254, 0.5);
     }
+    & img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      object-fit: cover;
+    }
+    &__title {
+      font-weight: 600;
+      margin-top: 16px;
+      transition: color 0.3s;
+    }
+    &__description {
+      margin-top: 5px;
+      display: block;
+      font-size: 18px;
+      opacity: 0.6;
+      transition: color 0.3s;
+    }
+    &__shop {
+      width: 100%;
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &__price {
+        color: $blue;
+        font-size: 1.45rem;
+        font-weight: bold;
+      }
+      &__action {
+        height: 3.5rem;
+        width: 3.5rem;
+        outline: none;
+        border: none;
+        background: var(--secondary);
+        border-radius: 12px;
+        cursor: pointer;
+        margin-top: auto;
+        & span {
+          color: #fff;
+          font-size: 26px;
+        }
+      }
+    }
+  }
+
+.card__button {
+  font-size: 1.8rem;
+  color: #fff;
 }
+

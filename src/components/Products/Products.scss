@@ -3,6 +3,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     justify-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
 
     h1 {
         display: block;
@@ -16,6 +18,14 @@
     text-align: center;
     width: 100%;
 }
+
+:root {
+    --secondary: linear-gradient(221deg, #8743ff, #4136f1 60%);
+    --body: #eaf2ff;
+    --card: #fff;
+    --text: #000;
+    --price: #4136f1;
+  }
 
 .spinner {
     margin: 5rem 0;

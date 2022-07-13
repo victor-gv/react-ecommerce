@@ -1,6 +1,10 @@
 .cart h1 {
   text-align: center;
 }
+.cart hr {
+  color: #3887fe;
+  height: 3px;
+}
 
 .cart__product {
   display: flex;

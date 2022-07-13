@@ -178,7 +178,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
         </Container>
         <Container fluid>
           <Row>
-            <Col xs={8} sm={8} md={8} xl={8} xxl={8}>
+            <Col className='products__wrapper' xs={8} sm={8} md={8} xl={8} xxl={8}>
                 <Products manageClick={addToCart} />
                 <div id="emptySearch" className="hidden">
                 <img src={noResult}  alt='No found sticker'/>
