@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { Spinner } from "react-bootstrap";
+import { TbError404 } from 'react-icons/tb'
+import errorImg from '../../images/error-404.png'
 import ProductCard from '../ProductCard/ProductCard'
 import './Products.css'
 
@@ -38,8 +40,8 @@ useEffect(() => {
       <h1 className='products__title'>Products</h1>
       <hr></hr>
       <div className='products__container'>
-      { loading ? <Spinner animation="border" variant="primary" /> : null }
-      { error ? <p>Error</p> : null}
+      { loading ? <Spinner className='spinner' animation="border" variant="primary" /> : null }
+      { error ? <> <img className='error-img' src={errorImg} alt="error message" />  </> : null}
         { products.map( product =>
           (
             <ProductCard key = {product.id}>
