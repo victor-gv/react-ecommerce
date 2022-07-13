@@ -5,7 +5,6 @@ body {
     padding: 0 !important;
     margin: 0;
     box-sizing: border-box;
-    background-color: #f3f7fa5d;
   }
 
   .products__wrapper {
@@ -32,6 +31,8 @@ body {
   .hidden {
     display: none;
   }
+
+
 
 /* Media queries */
 @media (max-width: 1480px){

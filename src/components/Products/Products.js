@@ -31,9 +31,7 @@ function Products(props) {
 
   return (
     <>
-      <hr></hr>
-      <h1 className="products__title">Products</h1>
-      <hr></hr>
+      <h1 className="products__title">All Products</h1>
       <div className="products__container">
         {loading ? (
           <Spinner className="spinner" animation="border" variant="primary" />
@@ -52,10 +50,10 @@ function Products(props) {
           <ProductCard key={product.id}>
             <img src={product.img} alt={product.title} />
             <h4 className="card__title">{product.title}</h4>
-            <span class="card__description">Summer outfits</span>
-            <div class="card__shop">
-              <span class="card__shop__price">{product.price}€</span>
-              <button class="card__shop__action" onClick={() => props.manageClick(product)}>
+            <span className="card__description">Summer outfits</span>
+            <div className="card__shop">
+              <span className="card__shop__price">{product.price}€</span>
+              <button className="card__shop__action" onClick={() => props.manageClick(product)}>
                <BsHandbagFill  className="card__button"/>
               </button>
             </div>

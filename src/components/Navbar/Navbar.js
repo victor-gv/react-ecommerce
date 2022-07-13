@@ -1,12 +1,90 @@
-import React from 'react'
-import logo from '../../images/logo.png';
-import {Navbar, Nav, Container, Form, FormControl, Button} from 'react-bootstrap'
+import React from "react";
+import logo from "../../images/logo.png";
+import {Form, FormControl, Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import './Navbar.css'
+import "./Navbar.css";
 
 function Header(props) {
+
+  //Function for responsive navbar
+  
+  const menuToggle = () => {
+    const MenuItems = document.getElementById('MenuItems');
+
+    if (MenuItems.style.maxHeight === '0px') {
+      MenuItems.style.maxHeight = '200px';
+    } else {
+      MenuItems.style.maxHeight = '0px';
+    }
+
+  }
+
   return (
-<Navbar bg="light" expand="lg">
+    <>
+      <div className="navbar-container">
+      <div className="nav">
+        <div className="logo">
+          <a>
+            <img
+              src={logo}
+              alt="Logo of the page"
+            />
+          </a>
+        </div>
+
+        <div className="search-form">
+          <Form id="searchForm" className="d-flex">
+            <FormControl
+              id='search'
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+              onChange={() => props.manageChange()}
+            />
+            <Button variant="outline-success">Search</Button>
+          </Form>
+        </div>
+        <nav>
+          <ul id="MenuItems" className="menu-items">
+            <li>
+            <Link className='nav-link' to="/">Home</Link>
+            </li>
+            <li>
+            <Link className='nav-link' to="/">Categories</Link>
+            </li>
+            <li>
+            <Link className='nav-link' to="/">About</Link>
+            </li>
+            <li>
+            <Link className='nav-link' to="/">Contact</Link>
+            </li>
+          </ul>
+        </nav>
+        <a href="#">
+          <img
+            src="https://i.ibb.co/PNjjx3y/cart.png"
+            alt=""
+            width="30px"
+            height="30px"
+          />
+        </a>
+        <img
+          src="https://i.ibb.co/6XbqwjD/menu.png"
+          alt=""
+          className="menu-icon"
+          onClick={menuToggle}
+        />
+      </div>
+      </div>
+      <hr></hr>
+    </>
+
+  );
+}
+
+{
+  /* <Navbar bg="light" expand="lg">
   <Container fluid>
     <img src={logo} alt="Header logo" />
     <Navbar.Toggle aria-controls="navbarScroll" />
@@ -34,9 +112,7 @@ function Header(props) {
       </Form>
     </Navbar.Collapse>
   </Container>
-</Navbar>
-
-  )
+</Navbar> */
 }
 
-export default Header
+export default Header;

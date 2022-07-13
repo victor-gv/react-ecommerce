@@ -42,7 +42,7 @@ function MainPage() {
     products.forEach(product => {
       //We take into account only the title of the product and the price of the product, but not the text of the buy button to match the search.
       const title = product.querySelector(".card__title").innerText;
-      const price = product.querySelector(".card__price").innerText;
+      const price = product.querySelector(".card__shop__price").innerText;
       const emptySearch = document.getElementById("emptySearch");
 
       if (title.toLowerCase().includes(search.toLowerCase()) || price.includes(search)) {
@@ -174,18 +174,21 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
             <Header
             manageChange = {searchItem}
             />
+            
           </Row>
         </Container>
         <Container fluid>
           <Row>
-            <Col className='products__wrapper' xs={8} sm={8} md={8} xl={8} xxl={8}>
+            <Col className='products__wrapper'>
                 <Products manageClick={addToCart} />
                 <div id="emptySearch" className="hidden">
                 <img src={noResult}  alt='No found sticker'/>
                 <h4>No results found</h4>
               </div>
             </Col>
-            <Col sm>
+            </Row>
+            <Row>
+               <Col>
               {ListLength === 0 ? (
                 <Cart title={"Your cart is empty"} totalPrice={0} />
               ) : (
@@ -196,7 +199,8 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
                 />
               )}
             </Col>
-          </Row>
+            </Row>
+           
         </Container>
       </div>
       </Container>
