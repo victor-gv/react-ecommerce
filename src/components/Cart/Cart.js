@@ -21,6 +21,10 @@ const Cart = ({ totalPrice, productItem }) => {
           <h3>Shopping Cart</h3>
           <RiCloseFill onClick={closeCart} />
         </div>
+        <div className="cart__message">
+          <h5>CAN'T GET YOUR DISCOUNT?</h5>
+          <p>Log in to enjoy your discount on all products in the next step.</p>
+        </div>
             <span className="products__banner">Sneakers</span>
             <div className="table-content">
               {productItem}

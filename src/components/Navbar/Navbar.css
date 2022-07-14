@@ -7,13 +7,32 @@
 .navbar-container {
   margin: auto;
 }
+.navbar-container nav {
+  flex: 1;
+  text-align: right;
+}
+.navbar-container nav ul {
+  display: inline-block;
+  list-style-type: none;
+}
+.navbar-container nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.navbar-container a {
+  text-decoration: none;
+  color: #555;
+}
+.navbar-container p {
+  color: #555;
+}
 
 .nav {
   display: flex;
   align-items: center;
   min-width: 342px;
   padding: 20px 20px 20px 20px;
-  background-color: rgb(252, 252, 252);
+  background-color: #f9f9f9;
 }
 
 .menu-icon {
@@ -24,30 +43,6 @@
 
 .menu-items {
   max-height: 0px;
-}
-
-nav {
-  flex: 1;
-  text-align: right;
-}
-
-nav ul {
-  display: inline-block;
-  list-style-type: none;
-}
-
-nav ul li {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-a {
-  text-decoration: none;
-  color: #555;
-}
-
-p {
-  color: #555;
 }
 
 .search-form {

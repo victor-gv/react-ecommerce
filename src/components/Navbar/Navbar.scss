@@ -9,6 +9,31 @@
 
 .navbar-container {
     margin: auto;
+
+    nav {
+        flex: 1;
+        text-align: right;
+    }
+    
+    nav ul {
+        display: inline-block;
+        list-style-type: none;
+    }
+    
+    nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #555;
+    }
+    
+    p {
+        color: #555;
+    }
+    
 }
 
 .nav {
@@ -16,7 +41,7 @@
     align-items: center;
     min-width: 342px;
     padding: 20px 20px 20px 20px;
-    background-color: rgb(252, 252, 252);
+    background-color: $secondary-color;
 }
 
 .menu-icon {
@@ -29,29 +54,6 @@
     max-height: 0px;
 }
 
-nav {
-    flex: 1;
-    text-align: right;
-}
-
-nav ul {
-    display: inline-block;
-    list-style-type: none;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-a {
-    text-decoration: none;
-    color: #555;
-}
-
-p {
-    color: #555;
-}
 
 .search-form {
 
