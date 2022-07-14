@@ -31,12 +31,12 @@ function Header(props) {
       <div className="navbar-container">
       <div className="nav">
         <div className="logo">
-          <a>
+          <Link to="/">
             <img
               src={logo}
               alt="Logo of the page"
             />
-          </a>
+          </Link>
         </div>
 
         <div className="search-form">
