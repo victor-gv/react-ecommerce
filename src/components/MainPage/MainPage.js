@@ -140,6 +140,17 @@ function MainPage() {
     setTotalPrice(total);
   }, [totalCart]);
 
+
+  //Set the total quantity of products of the cart to display it in navbar icon
+  const [totalQuantity, setTotalQuantity] = useState();
+  useEffect(() => {
+    const total = totalCart.reduce((acc, item) => {
+      return acc + item.quantity;
+    }, 0);
+    setTotalQuantity(total);
+  }, [totalCart]);
+
+
   /**
    * CheckCart() is a function that returns a map of the totalCart array, which is an array of objects,
    * and maps each object to a ProductItem component, which is a component that renders a product item.
@@ -174,6 +185,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
           <Container fluid>
             <Row>
               <Header
+              totalQuantity = {totalQuantity}
               manageChange = {searchItem}
               />
             </Row>
