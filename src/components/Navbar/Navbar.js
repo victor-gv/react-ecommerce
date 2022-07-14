@@ -19,8 +19,11 @@ function Header(props) {
 
   //Function to open the cart when click on cart icon
   const openCart = () => {
+    const mainPage = document.getElementById("mainPage");
     const cart = document.getElementById("cart");
+
     cart.classList.add("cart-open");
+    mainPage.classList.add("blur");
   }
 
   return (

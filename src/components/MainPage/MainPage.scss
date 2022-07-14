@@ -33,6 +33,12 @@ body {
     display: none;
   }
 
+  .blur {
+    position: fixed;
+    opacity: .8;
+    filter: blur(5px);
+  }
+
 
 
 /* Media queries */

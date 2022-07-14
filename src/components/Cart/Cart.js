@@ -8,7 +8,9 @@ const Cart = ({ totalPrice, productItem }) => {
   //Function to close the cart when click on close icon
   const closeCart = () => {
     const cart = document.getElementById("cart");
+    const mainPage = document.getElementById("mainPage");
     cart.classList.remove("cart-open");
+    mainPage.classList.remove("blur");
   }
 
 

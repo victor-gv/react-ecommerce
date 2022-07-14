@@ -169,24 +169,24 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
   return (
            <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
       <div className="App">
-        <Container fluid>
-          <Row>
-            <Header
-            manageChange = {searchItem}
-            />
-            
-          </Row>
-        </Container>
-        <Container fluid>
-          <Row>
-            <Col className='products__wrapper'>
-                <Products manageClick={addToCart} />
-                <div id="emptySearch" className="hidden">
-                <img src={noResult}  alt='No found sticker'/>
-                <h4>No results found</h4>
-              </div>
-            </Col>
+        <div id="mainPage">
+          <Container fluid>
+            <Row>
+              <Header
+              manageChange = {searchItem}
+              />
             </Row>
+          </Container>
+            <Row>
+              <Col className='products__wrapper'>
+                  <Products manageClick={addToCart} />
+                  <div id="emptySearch" className="hidden">
+                  <img src={noResult}  alt='No found sticker'/>
+                  <h4>No results found</h4>
+                </div>
+              </Col>
+              </Row>
+        </div>
             <Row>
                <Col>
               {ListLength === 0 ? (
@@ -200,8 +200,6 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
               )}
             </Col>
             </Row>
-           
-        </Container>
       </div>
       </Container>
   );
