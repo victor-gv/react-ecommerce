@@ -7,7 +7,6 @@ import "./Navbar.css";
 function Header(props) {
 
   //Function for responsive navbar
-  
   const menuToggle = () => {
     const MenuItems = document.getElementById('MenuItems');
 
@@ -16,7 +15,12 @@ function Header(props) {
     } else {
       MenuItems.style.maxHeight = '0px';
     }
+  }
 
+  //Function to open the cart when click on cart icon
+  const openCart = () => {
+    const cart = document.getElementById("cart");
+    cart.classList.add("cart-open");
   }
 
   return (
@@ -61,7 +65,7 @@ function Header(props) {
             </li>
           </ul>
         </nav>
-        <a href="#">
+        <a onClick={openCart} href="#">
           <img
             src="https://i.ibb.co/PNjjx3y/cart.png"
             alt=""

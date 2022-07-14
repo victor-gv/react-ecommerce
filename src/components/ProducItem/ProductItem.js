@@ -1,25 +1,26 @@
 import React from "react";
+import { AiFillDelete } from "react-icons/ai"
 
-function ProductItem({ id, img, title, price, substractQuantity, quantity, addQuantity, removeProduct }) {
+function ProductItem({ id, img, title, price, subsdivactQuantity, quantity, addQuantity, removeProduct }) {
   return (
     <>
     <div className="cart__product">
-            <div className="img-container">
-            <img src={img} alt="" />
-            </div>
-    <div className="cart__product--info">
-              <h3>{title}</h3>
-              <h3>{price}€</h3>
+      <div className="cart__product--row">
+              <div className="cart__img"><img src={img} alt="" /></div>
+                <div className="cart__name--row">
+                  <span className="productItem__title">{title}</span>
+                  <span className="productItem__price">{price}€</span>
+                </div>
               <div className="buttons-container">
                 <button
                   className="buttons-quantity"
                   onClick={() => {
-                    substractQuantity(id);
+                    subsdivactQuantity(id);
                   }}
                 >
                   -
                 </button>
-                <div className="numberOfProducts">{quantity}</div>
+                <span className="numberOfProducts">{quantity}</span>
                 <button
                   className="buttons-quantity"
                   onClick={() => addQuantity(id)}
@@ -28,12 +29,10 @@ function ProductItem({ id, img, title, price, substractQuantity, quantity, addQu
                 </button>
               </div>
 
-              <button
-                className="btn btn-dark remove-btn"
+              <AiFillDelete  
+                className="remove-btn"
                 onClick={() => removeProduct(id)}
-              >
-                Remove
-              </button>
+                />
     </div>
     </div>
     </>

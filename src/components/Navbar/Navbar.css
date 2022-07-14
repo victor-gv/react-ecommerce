@@ -54,12 +54,12 @@ p {
   margin-left: 5rem;
 }
 .search-form button {
-  color: #3887fe;
-  border-color: #3887fe;
+  color: #5a8dee;
+  border-color: #5a8dee;
 }
 .search-form button:hover {
-  background-color: #3887fe;
-  border-color: #3887fe;
+  background-color: #5a8dee;
+  border-color: #5a8dee;
 }
 
 .nav-link {
