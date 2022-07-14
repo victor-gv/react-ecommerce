@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { RiCloseFill } from "react-icons/ri"
 import "./cart.css";
 
-const Cart = ({ totalPrice, productItem }) => {
+const Cart = ({ title, startPurchase, totalPrice, productItem }) => {
 
   //Function to close the cart when click on close icon
   const closeCart = () => {
@@ -27,6 +27,8 @@ const Cart = ({ totalPrice, productItem }) => {
         </div>
             <span className="products__banner">Sneakers</span>
             <div className="table-content">
+              <p>{title}</p>
+              {startPurchase}
               {productItem}
             </div>
         <div className="totalPrice__container">

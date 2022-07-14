@@ -1,7 +1,7 @@
 import React from "react";
 import { AiFillDelete } from "react-icons/ai"
 
-function ProductItem({ id, img, title, price, subsdivactQuantity, quantity, addQuantity, removeProduct }) {
+function ProductItem({ id, img, title, price, substractQuantity, quantity, addQuantity, removeProduct }) {
   return (
     <>
     <div className="cart__product">
@@ -15,7 +15,7 @@ function ProductItem({ id, img, title, price, subsdivactQuantity, quantity, addQ
                 <button
                   className="buttons-quantity"
                   onClick={() => {
-                    subsdivactQuantity(id);
+                    substractQuantity(id);
                   }}
                 >
                   -

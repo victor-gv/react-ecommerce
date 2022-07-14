@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import noResult from '../../images/no-results.png'
 import "./MainPage.css";
+import { Link } from 'react-router-dom';
 
 /**
  * If the cart exists, return the cart, otherwise return an empty array.
@@ -190,7 +191,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
             <Row>
                <Col>
               {ListLength === 0 ? (
-                <Cart title={"Your cart is empty"} totalPrice={0} />
+                <Cart title={"Your cart is empty."} totalPrice={0}/>
               ) : (
                 <Cart
                   title={""}

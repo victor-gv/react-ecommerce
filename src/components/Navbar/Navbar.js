@@ -68,14 +68,14 @@ function Header(props) {
             </li>
           </ul>
         </nav>
-        <a onClick={openCart} href="#">
+        <div onClick={openCart}>
           <img
             src="https://i.ibb.co/PNjjx3y/cart.png"
             alt=""
             width="30px"
             height="30px"
           />
-        </a>
+        </div>
         <img
           src="https://i.ibb.co/6XbqwjD/menu.png"
           alt=""

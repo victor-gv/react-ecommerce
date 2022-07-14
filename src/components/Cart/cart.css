@@ -70,6 +70,12 @@
   width: 100%;
   margin: 0;
 }
+.table-content p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-left: 0.3rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
 
 .table-content__title {
   font-size: 1.2rem;
