@@ -68,7 +68,7 @@ function Header(props) {
             </li>
           </ul>
         </nav>
-        <div className="cart__icon" onClick={openCart}>
+        <div id="cartIcon" className="cart__icon" onClick={openCart}>
           <img
             src="https://i.ibb.co/PNjjx3y/cart.png"
             alt=""

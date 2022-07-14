@@ -72,13 +72,19 @@ function MainPage() {
 
   //Obtain the product data from the Products component and pass it to the Cart component
   const addToCart = (product) => {
+    
     //Check if the product is already in the cart. If so, don't add it again.
     if (totalCart.find((item) => item.id === product.id)) {
       return;
     }
     //Add the product to the cart
+    const cartIcon = document.getElementById("cartIcon");
+    cartIcon.classList.add("product__added");
+    setTimeout(() => {
+      cartIcon.classList.remove("product__added");
+    }, 500);
     setData([...totalCart, product]);
-  };
+  }
 
   /**
    * If the id of the item in the array matches the id of the item that was clicked, then increment the
