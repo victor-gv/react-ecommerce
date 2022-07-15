@@ -5,8 +5,7 @@
 }
 
 .navbar-container {
-  position: fixed;
-  z-index: 100;
+  width: 100%;
   padding: 0;
   margin: auto;
 }
@@ -46,18 +45,6 @@
 
 .menu-items {
   max-height: 0px;
-}
-
-.search-form {
-  margin-left: 5rem;
-}
-.search-form button {
-  color: #5a8dee;
-  border-color: #5a8dee;
-}
-.search-form button:hover {
-  background-color: #5a8dee;
-  border-color: #5a8dee;
 }
 
 .nav-link {
@@ -159,4 +146,4 @@
     display: block;
     cursor: pointer;
   }
-}/*# sourceMappingURL=Navbar.css.map */
+}/*# sourceMappingURL=NavbarLogin.css.map */

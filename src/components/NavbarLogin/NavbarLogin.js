@@ -1,30 +1,30 @@
 import React from "react";
 import logo from "../../images/logo.png";
-import {Form, FormControl, Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import "./Navbar.css";
+import "./NavbarLogin.css";
 
-function Header(props) {
 
-  //Function for responsive navbar
-  const menuToggle = () => {
-    const MenuItems = document.getElementById('MenuItems');
 
-    if (MenuItems.style.maxHeight === '0px') {
-      MenuItems.style.maxHeight = '200px';
-    } else {
-      MenuItems.style.maxHeight = '0px';
+
+function NavbarLogin(props) {
+
+    //Function for responsive navbar
+    const menuToggle = () => {
+      const MenuItems = document.getElementById('MenuItems');
+  
+      if (MenuItems.style.maxHeight === '0px') {
+        MenuItems.style.maxHeight = '200px';
+      } else {
+        MenuItems.style.maxHeight = '0px';
+      }
     }
-  }
-
-  //Function to open the cart when click on cart icon
-  const openCart = () => {
-    const mainPage = document.getElementById("mainPage");
-    const cart = document.getElementById("cart");
-
-    cart.classList.add("cart-open");
-    mainPage.classList.add("blur");
-  }
+  
+    //Function to open the cart when click on cart icon
+    const openCart = () => {
+      const cart = document.getElementById("cart");
+  
+      cart.classList.add("cart-open");
+    }
 
   return (
     <>
@@ -39,19 +39,6 @@ function Header(props) {
           </Link>
         </div>
 
-        <div className="search-form">
-          <Form id="searchForm" className="d-flex">
-            <FormControl
-              id='search'
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-              onChange={() => props.manageChange()}
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-        </div>
         <nav>
           <ul id="MenuItems" className="menu-items">
             <li>
@@ -85,10 +72,9 @@ function Header(props) {
         />
       </div>
       </div>
-      <hr></hr>
     </>
 
   );
 }
 
-export default Header;
+export default NavbarLogin;

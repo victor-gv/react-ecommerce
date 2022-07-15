@@ -1,7 +1,7 @@
 import Products from '../Products/Products';
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
-import Header from "../Navbar/Navbar";
+import NavbarMain from "../NavbarMain/NavbarMain";
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import emptyCartImg from '../../images/empty_cart.png'
@@ -236,7 +236,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
         <div id="mainPage">
           <Container fluid>
             <Row>
-              <Header
+              <NavbarMain
               totalQuantity = {totalQuantity}
               manageChange = {searchItem}
               />
