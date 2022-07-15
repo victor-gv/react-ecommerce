@@ -10,7 +10,7 @@ const Cart = ({ title, totalPrice, productItem, emptyCartImg }) => {
     const cart = document.getElementById("cart");
     const mainPage = document.getElementById("mainPage");
     cart.classList.remove("cart-open");
-    mainPage.classList.remove("blur");
+    if (mainPage) mainPage.classList.remove("blur");
   }
 
 

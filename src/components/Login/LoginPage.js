@@ -15,7 +15,6 @@ const loadCart = () => {
 function LoginPage() {
 
   const [totalCart, setData] = useState(() => loadCart());
-  console.log(totalCart);
 
   /* Storing the cart in local storage. Every time that totalCart changes, we set that information into localStorage */
   useEffect(() => {
@@ -47,7 +46,6 @@ function LoginPage() {
   const substractQuantity = (id) => {
     const newCart = [...totalCart];
     newCart.map((item) => {
-      const cardShopAction = document.querySelector(`[data-id="${item.id}"]`);
       if (item.id === id) {
         item.quantity--;
         
@@ -56,8 +54,6 @@ function LoginPage() {
           item.quantity = 1;
           const index = newCart.indexOf(item);
           newCart.splice(index, 1);
-          cardShopAction.classList.remove("item__added");
-          cardShopAction.classList.remove("item__added__background");
         }
       }
       return item;
@@ -71,13 +67,10 @@ function LoginPage() {
   const removeProduct = (id) => {
     const newCart = [...totalCart];
     newCart.map((item) => {
-      const cardShopAction = document.querySelector(`[data-id="${item.id}"]`);
       if (item.id === id) {
         item.quantity = 1;
         const index = newCart.indexOf(item);
         newCart.splice(index, 1);
-        cardShopAction.classList.remove("item__added");
-        cardShopAction.classList.remove("item__added__background");
       }
       return item;
     });
@@ -137,7 +130,8 @@ function LoginPage() {
   const ListLength = totalCart.length;
   return (
     <>
-    <NavbarLogin />
+              
+    <NavbarLogin totalQuantity = {totalQuantity} />
     {ListLength === 0 ? (
                 <Cart title={"Your cart is empty."} totalPrice={0} emptyCartImg = {<img className='empty__cart' src={emptyCartImg} alt="Sad empty cart"/>} />
               ) : (
