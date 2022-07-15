@@ -8,6 +8,9 @@
 }
 
 .navbar-container {
+    position: fixed;
+    z-index: 100;
+    padding: 0;
     margin: auto;
 
     nav {
@@ -145,7 +148,7 @@
 
     nav ul {
         position: absolute;
-        top: 100px;
+        top: 110px;
         left: 0;
         z-index: 1;
         background: #333;
