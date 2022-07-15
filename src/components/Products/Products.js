@@ -47,12 +47,11 @@ function Products(props) {
         ) : null}
         {error ? (
           <>
-            {" "}
             <img
               className="error-img"
               src={errorImg}
               alt="error message"
-            />{" "}
+            />
           </>
         ) : null}
         {products.map((product) => (
