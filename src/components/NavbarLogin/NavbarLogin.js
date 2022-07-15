@@ -28,9 +28,9 @@ function NavbarLogin(props) {
 
   return (
     <>
-      <div className="navbar-container">
-      <div className="nav">
-        <div className="logo">
+      <div className="navbarLogin-container">
+      <div className="navLogin">
+        <div className="login__logo">
           <Link to="/">
             <img
               src={logo}
@@ -40,22 +40,22 @@ function NavbarLogin(props) {
         </div>
 
         <nav>
-          <ul id="MenuItems" className="menu-items">
+          <ul id="MenuItems" className="login__menu-items">
             <li>
-            <Link className='nav-link' to="/">Home</Link>
+            <Link className='login__nav-link' to="/">Home</Link>
             </li>
             <li>
-            <Link className='nav-link' to="/">Categories</Link>
+            <Link className='login__nav-link' to="/">Categories</Link>
             </li>
             <li>
-            <Link className='nav-link' to="/">About</Link>
+            <Link className='login__nav-link' to="/">About</Link>
             </li>
             <li>
-            <Link className='nav-link' to="/">Contact</Link>
+            <Link className='login__nav-link' to="/">Contact</Link>
             </li>
           </ul>
         </nav>
-        <div id="cartIcon" className="cart__icon" onClick={openCart}>
+        <div id="cartIcon" className="login__cart--icon" onClick={openCart}>
           <img
             src="https://i.ibb.co/PNjjx3y/cart.png"
             alt=""
@@ -67,7 +67,7 @@ function NavbarLogin(props) {
         <img
           src="https://i.ibb.co/6XbqwjD/menu.png"
           alt=""
-          className="menu-icon"
+          className="login__menu-icon"
           onClick={menuToggle}
         />
       </div>

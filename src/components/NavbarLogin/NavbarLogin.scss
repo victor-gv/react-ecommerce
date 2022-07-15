@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 
-.navbar-container {
+.navbarLogin-container {
     width: 100%;
     padding: 0;
     margin: auto;
@@ -38,7 +38,7 @@
     
 }
 
-.nav {
+.navLogin {
     display: flex;
     align-items: center;
     min-width: 342px;
@@ -46,19 +46,19 @@
     background-color: $secondary-color;
 }
 
-.menu-icon {
+.login__menu-icon {
     width: 28px;
     margin-left: 20px;
     display: none;
 }
 
-.menu-items {
+.login__menu-items {
     max-height: 0px;
 }
 
 
 
-.nav-link {
+.login__nav-link {
     display: block;
     color: rgba(85, 85, 85, 0.928);
     padding: 0.2rem !important;
@@ -71,7 +71,7 @@
     }
 }
 
-.cart__icon {
+.login__cart--icon {
     display: flex;
     flex-direction: row;
 

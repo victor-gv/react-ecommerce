@@ -4,32 +4,32 @@
   box-sizing: border-box;
 }
 
-.navbar-container {
+.navbarLogin-container {
   width: 100%;
   padding: 0;
   margin: auto;
 }
-.navbar-container nav {
+.navbarLogin-container nav {
   flex: 1;
   text-align: right;
 }
-.navbar-container nav ul {
+.navbarLogin-container nav ul {
   display: inline-block;
   list-style-type: none;
 }
-.navbar-container nav ul li {
+.navbarLogin-container nav ul li {
   display: inline-block;
   margin-right: 20px;
 }
-.navbar-container a {
+.navbarLogin-container a {
   text-decoration: none;
   color: #555;
 }
-.navbar-container p {
+.navbarLogin-container p {
   color: #555;
 }
 
-.nav {
+.navLogin {
   display: flex;
   align-items: center;
   min-width: 342px;
@@ -37,17 +37,17 @@
   background-color: #f9f9f9;
 }
 
-.menu-icon {
+.login__menu-icon {
   width: 28px;
   margin-left: 20px;
   display: none;
 }
 
-.menu-items {
+.login__menu-items {
   max-height: 0px;
 }
 
-.nav-link {
+.login__nav-link {
   display: block;
   color: rgba(85, 85, 85, 0.928);
   padding: 0.2rem !important;
@@ -55,22 +55,22 @@
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   font-size: 1.2rem;
 }
-.nav-link:hover {
+.login__nav-link:hover {
   color: #212529;
 }
 
-.cart__icon {
+.login__cart--icon {
   display: flex;
   flex-direction: row;
 }
-.cart__icon:hover {
+.login__cart--icon:hover {
   cursor: pointer;
 }
-.cart__icon img {
+.login__cart--icon img {
   width: 2.2rem;
   height: auto;
 }
-.cart__icon span {
+.login__cart--icon span {
   padding-top: 0.3rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.3rem;
