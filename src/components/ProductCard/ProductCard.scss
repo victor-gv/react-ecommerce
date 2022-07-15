@@ -70,3 +70,13 @@
   color: #fff;
 }
 
+.item__added{
+  animation-name: product-added;
+  animation-duration: 1s;
+  background: $green;
+
+  &__background{
+    background: $green;
+  }
+
+}

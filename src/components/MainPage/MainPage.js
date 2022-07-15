@@ -4,6 +4,7 @@ import ProductItem from "../ProducItem/ProductItem";
 import Header from "../Navbar/Navbar";
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import emptyCartImg from '../../images/empty_cart.png'
 import noResult from '../../images/no-results.png'
 import "./MainPage.css";
 
@@ -73,10 +74,20 @@ function MainPage() {
   const addToCart = (product) => {
     //Check if the product is already in the cart. If so, don't add it again.
     if (totalCart.find((item) => item.id === product.id)) {
+      //If the product is already in the cart and the user clicks on the buy button again, we open the cart to let the user add more quantity of the product.
+      const mainPage = document.getElementById("mainPage");
+      const cart = document.getElementById("cart");
+      cart.classList.add("cart-open");
+      mainPage.classList.add("blur");
       return;
     }
     //Add the product to the cart
     const cartIcon = document.getElementById("cartIcon");
+
+    const cardShopAction = document.querySelector(`[data-id="${product.id}"]`);
+    cardShopAction.classList.add("item__added");
+    
+
     cartIcon.classList.add("product__added");
     setTimeout(() => {
       cartIcon.classList.remove("product__added");
@@ -114,14 +125,17 @@ function MainPage() {
   const substractQuantity = (id) => {
     const newCart = [...totalCart];
     newCart.map((item) => {
+      const cardShopAction = document.querySelector(`[data-id="${item.id}"]`);
       if (item.id === id) {
         item.quantity--;
-
+        
         //If the quantity is less than 1, remove the item from the cart
         if (item.quantity < 1) {
           item.quantity = 1;
           const index = newCart.indexOf(item);
           newCart.splice(index, 1);
+          cardShopAction.classList.remove("item__added");
+          cardShopAction.classList.remove("item__added__background");
         }
       }
       return item;
@@ -136,10 +150,13 @@ function MainPage() {
   const removeProduct = (id) => {
     const newCart = [...totalCart];
     newCart.map((item) => {
+      const cardShopAction = document.querySelector(`[data-id="${item.id}"]`);
       if (item.id === id) {
         item.quantity = 1;
         const index = newCart.indexOf(item);
         newCart.splice(index, 1);
+        cardShopAction.classList.remove("item__added");
+        cardShopAction.classList.remove("item__added__background");
       }
       return item;
     });
@@ -180,6 +197,15 @@ function MainPage() {
    * @returns The return statement is returning the result of the map function.
    */
   const checkCart = () => {
+    //Function to add green background on buy button when the user refreshes the page.
+    totalCart.map((product => {
+      setTimeout(() => {
+        const cardShopAction = document.querySelector(`[data-id="${product.id}"]`);
+        cardShopAction.classList.add("item__added__background");
+      }, 100);
+
+      return product;
+    }))
     return totalCart.map((product) => (
       <ProductItem
         key={product.id}
@@ -229,7 +255,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
             <Row>
                <Col>
               {ListLength === 0 ? (
-                <Cart title={"Your cart is empty."} totalPrice={0}/>
+                <Cart title={"Your cart is empty."} totalPrice={0} emptyCartImg = {<img className='empty__cart' src={emptyCartImg} alt="Sad empty cart"/>} />
               ) : (
                 <Cart
                   title={""}

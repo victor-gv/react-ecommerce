@@ -192,4 +192,10 @@
 .checkout a {
   color: #fff;
   text-decoration: none;
+}
+
+.empty__cart {
+  display: flex;
+  margin: 0 auto;
+  width: 40%;
 }/*# sourceMappingURL=cart.css.map */

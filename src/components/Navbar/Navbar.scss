@@ -121,6 +121,12 @@
     }
 }
 
+.form-control {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 @keyframes product-added {
     
     0% {transform: scale(1.3);}

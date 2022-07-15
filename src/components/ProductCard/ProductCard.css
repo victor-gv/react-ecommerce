@@ -64,4 +64,15 @@
 .card__button {
   font-size: 1.8rem;
   color: #fff;
+}
+
+.item__added {
+  -webkit-animation-name: product-added;
+          animation-name: product-added;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  background: rgba(9, 192, 12, 0.5450980392);
+}
+.item__added__background {
+  background: rgba(9, 192, 12, 0.5450980392);
 }/*# sourceMappingURL=ProductCard.css.map */

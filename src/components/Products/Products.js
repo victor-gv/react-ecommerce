@@ -62,6 +62,7 @@ function Products(props) {
             <div className="card__shop">
               <span className="card__shop__price">{product.price}€</span>
               <button
+                data-id={product.id}
                 className="card__shop__action"
                 onClick={() => props.manageClick(product)}
               >
