@@ -201,7 +201,7 @@ function MainPage() {
     totalCart.map((product => {
       setTimeout(() => {
         const cardShopAction = document.querySelector(`[data-id="${product.id}"]`);
-        cardShopAction.classList.add("item__added__background");
+        if(cardShopAction) cardShopAction.classList.add("item__added__background");
       }, 100);
 
       return product;
