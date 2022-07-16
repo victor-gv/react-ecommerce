@@ -2,7 +2,51 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Avenir LT Pro 65 Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Avenir LT Pro 65 Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Media queries */
+@media (max-width: 1480px) {
+  .col-xxl-8 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+@media (max-width: 1004px) {
+  .col-xxl-8 {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
+@media (min-width: 1481px) and (max-width: 1503px) {
+  .col-xxl-8 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+@media (max-width: 1084px) {
+  .cart__name--row {
+    width: 40%;
+    height: 100%;
+    padding: 20px;
+  }
+  .cart {
+    width: 60%;
+  }
+}
+@media (max-width: 760px) {
+  .cart {
+    width: 100%;
+  }
+}
+@media (max-width: 1043px) {
+  .cart__name--row {
+    font-size: 0.9rem;
+  }
+  .remove-btn {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
 }/*# sourceMappingURL=LoginPage.css.map */

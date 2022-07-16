@@ -10,7 +10,7 @@ function NavbarLogin(props) {
 
     //Function for responsive navbar
     const menuToggle = () => {
-      const MenuItems = document.getElementById('MenuItems');
+      const MenuItems = document.getElementById('MenuItemsLogin');
   
       if (MenuItems.style.maxHeight === '0px') {
         MenuItems.style.maxHeight = '200px';
@@ -40,7 +40,7 @@ function NavbarLogin(props) {
         </div>
 
         <nav>
-          <ul id="MenuItems" className="login__menu-items">
+          <ul id="MenuItemsLogin" className="login__menu-items">
             <li>
             <Link className='login__nav-link' to="/">Home</Link>
             </li>
