@@ -36,10 +36,13 @@
 .close-icon__container svg {
   margin-top: 1rem;
   background-color: rgba(90, 141, 238, 0.1803921569);
+  color: #5a8dee;
   border-radius: 50%;
 }
 .close-icon__container svg:hover {
   cursor: pointer;
+  background-color: #5a8dee;
+  color: white;
 }
 .close-icon__container h3 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
