@@ -1,3 +1,4 @@
+import React from 'react'
 import Products from '../Products/Products';
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
