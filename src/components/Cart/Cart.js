@@ -5,6 +5,14 @@ import "./cart.css";
 
 const Cart = ({ title, totalPrice, productItem, emptyCartImg }) => {
 
+  const mainPage = document.getElementById("mainPage");
+  if (mainPage){
+    mainPage.addEventListener("click", (e)=>{
+      closeCart();
+      e.preventDefault();
+    })
+  }
+
   //Function to close the cart when click on close icon
   const closeCart = () => {
     const cart = document.getElementById("cart");
