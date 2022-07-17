@@ -7,6 +7,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.login__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #faf9f8;
+}
+.login__wrapper .login__signin {
+  background-color: white;
+  margin: 3rem;
+  padding: 1rem;
+}
+.login__wrapper .login__signup {
+  background-color: white;
+  margin: 3rem;
+  padding: 1rem;
+}
+
 /* Media queries */
 @media (max-width: 1480px) {
   .col-xxl-8 {
