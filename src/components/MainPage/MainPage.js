@@ -203,7 +203,7 @@ function MainPage() {
       setTimeout(() => {
         const cardShopAction = document.querySelector(`[data-id="${product.id}"]`);
         if(cardShopAction) cardShopAction.classList.add("item__added__background");
-      }, 100);
+      }, 400);
 
       return product;
     }))
