@@ -11,17 +11,20 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #faf9f8;
+  flex-wrap: wrap;
+  background-color: rgba(249, 249, 249, 0.7843137255);
 }
 .login__wrapper .login__signin {
   background-color: white;
   margin: 3rem;
   padding: 1rem;
+  box-shadow: 10px 20px 25px rgba(60, 59, 81, 0.368627451);
 }
 .login__wrapper .login__signup {
   background-color: white;
   margin: 3rem;
   padding: 1rem;
+  box-shadow: 10px 20px 25px rgba(60, 59, 81, 0.368627451);
 }
 
 /* Media queries */

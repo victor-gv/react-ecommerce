@@ -8,6 +8,7 @@
   width: 100%;
   padding: 0;
   margin: auto;
+  border-bottom: 1px solid #eee;
 }
 .navbarLogin-container nav {
   flex: 1;
