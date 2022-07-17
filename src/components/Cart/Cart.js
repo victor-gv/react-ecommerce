@@ -5,11 +5,19 @@ import "./cart.css";
 
 const Cart = ({ title, totalPrice, productItem, emptyCartImg }) => {
 
+/* Adding an event listener to the mainPage and loginPage. When the user clicks on the mainPage or
+loginPage, the cart will close. */
   const mainPage = document.getElementById("mainPage");
   if (mainPage){
-    mainPage.addEventListener("click", (e)=>{
+    mainPage.addEventListener("click", ()=>{
       closeCart();
-      e.preventDefault();
+    })
+  }
+
+  const loginPage = document.getElementById("loginPage");
+  if (loginPage){
+    loginPage.addEventListener("click", ()=>{
+      closeCart();
     })
   }
 
@@ -17,8 +25,10 @@ const Cart = ({ title, totalPrice, productItem, emptyCartImg }) => {
   const closeCart = () => {
     const cart = document.getElementById("cart");
     const mainPage = document.getElementById("mainPage");
+    const loginPage = document.getElementById("loginPage");
     cart.classList.remove("cart-open");
     if (mainPage) mainPage.classList.remove("blur");
+    if(loginPage) loginPage.classList.remove("blur");
   }
 
 

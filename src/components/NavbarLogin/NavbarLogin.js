@@ -22,7 +22,9 @@ function NavbarLogin(props) {
     //Function to open the cart when click on cart icon
     const openCart = () => {
       const cart = document.getElementById("cart");
-  
+      const loginPage = document.getElementById("loginPage");
+      
+      loginPage.classList.add("blur");
       cart.classList.add("cart-open");
     }
 

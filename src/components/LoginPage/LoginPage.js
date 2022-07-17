@@ -32,6 +32,8 @@ function LoginPage() {
     localStorage.setItem("cart", JSON.stringify(totalCart));
   }, [totalCart]);
 
+  
+
   /**
    * If the id of the item in the array matches the id of the item that was clicked, then increment the
    * quantity of that item by 1 when the user clicks on add quantity button.
@@ -126,208 +128,214 @@ function LoginPage() {
   const ListLength = totalCart.length;
   return (
     <>
-      <NavbarLogin totalQuantity={totalQuantity} />
-      {ListLength === 0 ? (
-        <Cart
-          title={"Your cart is empty."}
-          totalPrice={0}
-          emptyCartImg={
-            <img
-              className="empty__cart"
-              src={emptyCartImg}
-              alt="Sad empty cart"
-            />
-          }
-        />
-      ) : (
-        <Cart title={""} totalPrice={totalPrice} productItem={checkCart()} />
-      )}
-
-      <div className="login__wrapper">
-        <div className="login__signin">
-          <ThemeProvider theme={theme}>
-            <Container component="main" maxWidth="xs">
-              <CssBaseline />
-              <Box
-                sx={{
-                  marginTop: 8,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-                  <LockOutlinedIcon />
-                </Avatar>
-                <Typography component="h1" variant="h5">
-                  Sign up
-                </Typography>
-                <Box component="form" noValidate sx={{ mt: 3 }}>
-                  <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6}>
-                      <TextField
-                        autoComplete="given-name"
-                        name="firstName"
-                        required
-                        fullWidth
-                        id="firstName"
-                        label="First Name"
-                        autoFocus
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <TextField
-                        required
-                        fullWidth
-                        id="lastName"
-                        label="Last Name"
-                        name="lastName"
-                        autoComplete="family-name"
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField
-                        required
-                        fullWidth
-                        id="email"
-                        label="Email Address"
-                        name="email"
-                        autoComplete="email"
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField
-                        required
-                        fullWidth
-                        name="password"
-                        label="Password"
-                        type="password"
-                        id="password"
-                        autoComplete="new-password"
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox value="allowExtraEmails" color="primary" />
-                        }
-                        label="I want to receive inspiration, marketing promotions and updates via email."
-                      />
-                    </Grid>
-                  </Grid>
-                  <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    sx={{ mt: 3, mb: 2 }}
+        <div id="loginPage">
+          <NavbarLogin totalQuantity={totalQuantity} />
+          <section className="login__title">
+            <span><h2>LOG IN INTO YOUR ACCOUNT</h2></span>
+            <p>Enter your email associated with your account and your password and you will comfortably and easily access your personal account.
+            </p>
+          </section>
+          <div className="login__container">
+            <div className="login__signin">
+              <ThemeProvider theme={theme}>
+                <Container component="main" maxWidth="xs">
+                  <CssBaseline />
+                  <Box
+                    sx={{
+                      marginTop: 8,
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
                   >
-                    Sign Up
-                  </Button>
-                  <Grid container justifyContent="flex-end">
-                    <Grid item>
-                      <Link href="#" variant="body2">
-                        Already have an account? Sign in
-                      </Link>
-                    </Grid>
-                  </Grid>
-                </Box>
-              </Box>
-            </Container>
-          </ThemeProvider>
+                    <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+                      <LockOutlinedIcon />
+                    </Avatar>
+                    <Typography component="h1" variant="h5">
+                      Sign up
+                    </Typography>
+                    <Box component="form" noValidate sx={{ mt: 3 }}>
+                      <Grid container spacing={2}>
+                        <Grid item xs={12} sm={6}>
+                          <TextField
+                            autoComplete="given-name"
+                            name="firstName"
+                            required
+                            fullWidth
+                            id="firstName"
+                            label="First Name"
+                            autoFocus
+                          />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                          <TextField
+                            required
+                            fullWidth
+                            id="lastName"
+                            label="Last Name"
+                            name="lastName"
+                            autoComplete="family-name"
+                          />
+                        </Grid>
+                        <Grid item xs={12}>
+                          <TextField
+                            required
+                            fullWidth
+                            id="email"
+                            label="Email Address"
+                            name="email"
+                            autoComplete="email"
+                          />
+                        </Grid>
+                        <Grid item xs={12}>
+                          <TextField
+                            required
+                            fullWidth
+                            name="password"
+                            label="Password"
+                            type="password"
+                            id="password"
+                            autoComplete="new-password"
+                          />
+                        </Grid>
+                        <Grid item xs={12}>
+                          <FormControlLabel
+                            control={
+                              <Checkbox value="allowExtraEmails" color="primary" />
+                            }
+                            label="I want to receive inspiration, marketing promotions and updates via email."
+                          />
+                        </Grid>
+                      </Grid>
+                      <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2 }}
+                      >
+                        Sign Up
+                      </Button>
+                      <Grid container justifyContent="flex-end">
+                        <Grid item>
+                          <Link href="#" variant="body2">
+                            Already have an account? Sign in
+                          </Link>
+                        </Grid>
+                      </Grid>
+                    </Box>
+                  </Box>
+                </Container>
+              </ThemeProvider>
+            </div>
+            <div className="login__signup">
+              <ThemeProvider theme={theme}>
+                <Container component="main" maxWidth="xs">
+                  <CssBaseline />
+                  <Box
+                    sx={{
+                      marginTop: 8,
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+                      <LockOutlinedIcon />
+                    </Avatar>
+                    <Typography component="h1" variant="h5">
+                      Sign up
+                    </Typography>
+                    <Box component="form" noValidate sx={{ mt: 3 }}>
+                      <Grid container spacing={2}>
+                        <Grid item xs={12} sm={6}>
+                          <TextField
+                            autoComplete="given-name"
+                            name="firstName"
+                            required
+                            fullWidth
+                            id="firstName"
+                            label="First Name"
+                            autoFocus
+                          />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                          <TextField
+                            required
+                            fullWidth
+                            id="lastName"
+                            label="Last Name"
+                            name="lastName"
+                            autoComplete="family-name"
+                          />
+                        </Grid>
+                        <Grid item xs={12}>
+                          <TextField
+                            required
+                            fullWidth
+                            id="email"
+                            label="Email Address"
+                            name="email"
+                            autoComplete="email"
+                          />
+                        </Grid>
+                        <Grid item xs={12}>
+                          <TextField
+                            required
+                            fullWidth
+                            name="password"
+                            label="Password"
+                            type="password"
+                            id="password"
+                            autoComplete="new-password"
+                          />
+                        </Grid>
+                        <Grid item xs={12}>
+                          <FormControlLabel
+                            control={
+                              <Checkbox value="allowExtraEmails" color="primary" />
+                            }
+                            label="I want to receive inspiration, marketing promotions and updates via email."
+                          />
+                        </Grid>
+                      </Grid>
+                      <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2 }}
+                      >
+                        Sign Up
+                      </Button>
+                      <Grid container justifyContent="flex-end">
+                        <Grid item>
+                          <Link href="#" variant="body2">
+                            Already have an account? Sign in
+                          </Link>
+                        </Grid>
+                      </Grid>
+                    </Box>
+                  </Box>
+                </Container>
+              </ThemeProvider>
+            </div>
+          </div>
         </div>
 
-        <div className="login__signup">
-          <ThemeProvider theme={theme}>
-            <Container component="main" maxWidth="xs">
-              <CssBaseline />
-              <Box
-                sx={{
-                  marginTop: 8,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-                  <LockOutlinedIcon />
-                </Avatar>
-                <Typography component="h1" variant="h5">
-                  Sign up
-                </Typography>
-                <Box component="form" noValidate sx={{ mt: 3 }}>
-                  <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6}>
-                      <TextField
-                        autoComplete="given-name"
-                        name="firstName"
-                        required
-                        fullWidth
-                        id="firstName"
-                        label="First Name"
-                        autoFocus
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <TextField
-                        required
-                        fullWidth
-                        id="lastName"
-                        label="Last Name"
-                        name="lastName"
-                        autoComplete="family-name"
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField
-                        required
-                        fullWidth
-                        id="email"
-                        label="Email Address"
-                        name="email"
-                        autoComplete="email"
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField
-                        required
-                        fullWidth
-                        name="password"
-                        label="Password"
-                        type="password"
-                        id="password"
-                        autoComplete="new-password"
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox value="allowExtraEmails" color="primary" />
-                        }
-                        label="I want to receive inspiration, marketing promotions and updates via email."
-                      />
-                    </Grid>
-                  </Grid>
-                  <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    sx={{ mt: 3, mb: 2 }}
-                  >
-                    Sign Up
-                  </Button>
-                  <Grid container justifyContent="flex-end">
-                    <Grid item>
-                      <Link href="#" variant="body2">
-                        Already have an account? Sign in
-                      </Link>
-                    </Grid>
-                  </Grid>
-                </Box>
-              </Box>
-            </Container>
-          </ThemeProvider>
-        </div>
-      </div>
+        {ListLength === 0 ? (
+          <Cart
+            title={"Your cart is empty."}
+            totalPrice={0}
+            emptyCartImg={
+              <img
+                className="empty__cart"
+                src={emptyCartImg}
+                alt="Sad empty cart"
+              />
+            }
+          />
+        ) : (
+          <Cart title={""} totalPrice={totalPrice} productItem={checkCart()} />
+        )}
     </>
   );
 }

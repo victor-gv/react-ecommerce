@@ -7,24 +7,44 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.login__wrapper {
+.login__container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+}
+.login__container .login__signin {
   background-color: rgba(249, 249, 249, 0.7843137255);
-}
-.login__wrapper .login__signin {
-  background-color: white;
   margin: 3rem;
   padding: 1rem;
   box-shadow: 10px 20px 25px rgba(60, 59, 81, 0.368627451);
 }
-.login__wrapper .login__signup {
+.login__container .login__signin input {
   background-color: white;
+}
+.login__container .login__signup {
+  background-color: rgba(249, 249, 249, 0.7843137255);
   margin: 3rem;
   padding: 1rem;
   box-shadow: 10px 20px 25px rgba(60, 59, 81, 0.368627451);
+}
+.login__container .login__signup input {
+  background-color: white;
+}
+
+.login__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(249, 249, 249, 0.7843137255);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+.login__title p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
 }
 
 /* Media queries */
