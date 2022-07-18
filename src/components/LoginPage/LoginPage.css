@@ -5,6 +5,11 @@ body {
   font-family: "Avenir LT Pro 65 Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-width: 328px;
+}
+body p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
 }
 
 .login__container {
@@ -17,7 +22,7 @@ body {
   background-color: rgba(249, 249, 249, 0.7843137255);
   margin: 3rem;
   padding: 1rem;
-  box-shadow: 10px 20px 25px rgba(60, 59, 81, 0.368627451);
+  box-shadow: 10px 20px 35px rgba(60, 59, 81, 0.368627451);
 }
 .login__container .login__signin input {
   background-color: white;
@@ -26,10 +31,14 @@ body {
   background-color: rgba(249, 249, 249, 0.7843137255);
   margin: 3rem;
   padding: 1rem;
-  box-shadow: 10px 20px 25px rgba(60, 59, 81, 0.368627451);
+  box-shadow: 10px 20px 35px rgba(60, 59, 81, 0.368627451);
 }
 .login__container .login__signup input {
   background-color: white;
+}
+.login__container .login__signup p {
+  font-size: 1.1rem;
+  text-align: justify;
 }
 
 .login__title {
@@ -41,10 +50,11 @@ body {
   margin-top: 3rem;
   margin-bottom: 1rem;
   padding: 1rem;
+  box-shadow: 10px 3px 70px 3px rgba(60, 59, 81, 0.1294117647);
 }
-.login__title p {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.2rem;
+
+.signin__icon {
+  background-color: #528af2 !important;
 }
 
 /* Media queries */
