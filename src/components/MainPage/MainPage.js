@@ -253,6 +253,11 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
                 </div>
               </Col>
               </Row>
+              <Row>
+              <Col>
+                <Footer />
+              </Col>
+            </Row>
         </div>
             <Row>
                <Col>
@@ -267,12 +272,6 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
               )}
             </Col>
             </Row>
-            <Row>
-              <Col>
-                <Footer />
-              </Col>
-            </Row>
-            
       </div>
       </Container>
   );

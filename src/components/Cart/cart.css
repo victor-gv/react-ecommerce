@@ -58,6 +58,7 @@
   padding: 20px;
   text-align: center;
   background-color: #f9f9f9;
+  box-shadow: 10px 3px 70px 3px rgba(60, 59, 81, 0.1294117647);
   color: #1b1b1b;
 }
 .cart__message p {
