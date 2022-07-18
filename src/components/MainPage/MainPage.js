@@ -3,6 +3,7 @@ import Products from '../Products/Products';
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import NavbarMain from "../NavbarMain/NavbarMain";
+import Footer from "../Footer/Footer"
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import emptyCartImg from '../../images/empty_cart.png'
@@ -266,6 +267,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
               )}
             </Col>
             </Row>
+            <Footer />
       </div>
       </Container>
   );
