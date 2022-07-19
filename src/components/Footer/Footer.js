@@ -4,7 +4,7 @@ import black_logo from '../../images/black_logo.png'
 
 function Footer() {
   return (
-    <div className="footer">
+    <div id="footer" className="footer">
       <div className="container">
         <div className="row">
           <div className="footer-col-1">

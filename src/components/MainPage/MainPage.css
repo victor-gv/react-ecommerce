@@ -30,11 +30,18 @@ body {
   opacity: 0.8;
   filter: blur(5px);
 }
+.blur .footer {
+  display: none;
+}
 .blur .navbar-container {
   position: static;
 }
 .blur .title__row {
   margin: 5rem 3rem 1rem 2rem;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Media queries */

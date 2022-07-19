@@ -23,9 +23,11 @@ function NavbarLogin(props) {
     const openCart = () => {
       const cart = document.getElementById("cart");
       const loginPage = document.getElementById("loginPage");
+      const footer = document.getElementById("footer");
       
       loginPage.classList.add("blur");
       cart.classList.add("cart-open");
+      footer.classList.add("hidden");
     }
 
   return (

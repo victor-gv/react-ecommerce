@@ -5,8 +5,8 @@ body {
     padding: 0 !important;
     margin: 0;
     box-sizing: border-box;
-
   }
+
 
   .products__wrapper {
     hr {
@@ -38,6 +38,10 @@ body {
     opacity: .8;
     filter: blur(5px);
 
+    .footer {
+      display: none;
+    }
+
     .navbar-container {
       position: static;
     }
@@ -46,6 +50,12 @@ body {
       margin: 5rem 3rem 1rem 2rem;
     }
   }
+
+  .hidden {
+    display: none;
+  }
+
+
 
 
 

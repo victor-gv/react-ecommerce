@@ -20,10 +20,12 @@ function NavbarMain(props) {
   //Function to open the cart when click on cart icon
   const openCart = () => {
     const mainPage = document.getElementById("mainPage");
+    const footer = document.getElementById("footer");
     const cart = document.getElementById("cart");
-
+    
     cart.classList.add("cart-open");
     mainPage.classList.add("blur");
+    footer.classList.add("hidden");
   }
 
   return (

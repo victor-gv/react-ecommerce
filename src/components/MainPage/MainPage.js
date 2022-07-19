@@ -3,7 +3,6 @@ import Products from '../Products/Products';
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import NavbarMain from "../NavbarMain/NavbarMain";
-import Footer from "../Footer/Footer"
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import emptyCartImg from '../../images/empty_cart.png'
@@ -78,9 +77,11 @@ function MainPage() {
     if (totalCart.find((item) => item.id === product.id)) {
       //If the product is already in the cart and the user clicks on the buy button again, we open the cart to let the user add more quantity of the product.
       const mainPage = document.getElementById("mainPage");
+      const footer = document.getElementById("footer");
       const cart = document.getElementById("cart");
       cart.classList.add("cart-open");
       mainPage.classList.add("blur");
+      footer.classList.add("hidden");
       return;
     }
     //Add the product to the cart
@@ -235,7 +236,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
   return (
            <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
       <div className="App">
-        <div id="mainPage">
+        <div className='mainPage' id="mainPage">
           <Container fluid>
             <Row>
               <NavbarMain
@@ -253,11 +254,6 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
                 </div>
               </Col>
               </Row>
-              <Row>
-              <Col>
-                <Footer />
-              </Col>
-            </Row>
         </div>
             <Row>
                <Col>

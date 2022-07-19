@@ -16,7 +16,6 @@ import { useEffect, useState } from "react";
 import NavbarLogin from "../NavbarLogin/NavbarLogin";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
-import Footer from "../Footer/Footer"
 import emptyCartImg from "../../images/empty_cart.png";
 import "./LoginPage.css";
 
@@ -285,7 +284,6 @@ function LoginPage() {
               </ThemeProvider>
             </div>
           </div>
-          <Footer />
         </div>
 
         {ListLength === 0 ? (
