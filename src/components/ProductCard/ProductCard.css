@@ -45,7 +45,6 @@
 .card__shop__price {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.5rem;
-  color: #528af2;
   font-weight: bold;
 }
 .card__shop__action, .card__shop__share, .card__shop__fav {
