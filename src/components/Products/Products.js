@@ -30,6 +30,8 @@ function Products(props) {
     fetchData();
   }, [url]);
 
+
+
   return (
     <>
       <div className="title__row">
@@ -63,7 +65,11 @@ function Products(props) {
                 <span className="card__shop__price">{product.price}€</span>
             <div className="card__shop">
                 <button className="card__shop__share"><BsShareFill /></button>
-                <button className="card__shop__fav"><MdFavoriteBorder /></button>
+                <button
+                  onClick={() => props.addToFav(product)} 
+                  className="card__shop__fav">
+                  <MdFavoriteBorder />
+                </button>
                 <button
                   data-id={product.id}
                   className="card__shop__action"

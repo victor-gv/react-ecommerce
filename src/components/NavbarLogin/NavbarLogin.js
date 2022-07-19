@@ -26,9 +26,9 @@ function NavbarLogin(props) {
       const loginPage = document.getElementById("loginPage");
       const footer = document.getElementById("footer");
       
-      loginPage.classList.add("blur");
-      cart.classList.add("cart-open");
-      footer.classList.add("hidden");
+      if (loginPage) loginPage.classList.add("blur");
+      if (cart) cart.classList.add("cart-open");
+      if (footer) footer.classList.add("hidden");
     }
 
   return (
@@ -53,7 +53,7 @@ function NavbarLogin(props) {
             <Link className='login__nav-link' to="/">Categories</Link>
             </li>
             <li>
-            <Link className='login__nav-link' to="/">Contact</Link>
+            <Link className='login__nav-link' to="/favs">Favorites</Link>
             </li>
             <li>
             <Link className='login__nav-link login__icon' to="/login">Login  <FaUserCircle /></Link>

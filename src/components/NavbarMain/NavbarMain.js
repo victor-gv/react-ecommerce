@@ -25,7 +25,7 @@ function NavbarMain(props) {
     const cart = document.getElementById("cart");
     
     cart.classList.add("cart-open");
-    mainPage.classList.add("blur");
+    if (mainPage) mainPage.classList.add("blur");
     footer.classList.add("hidden");
   }
 
@@ -64,7 +64,7 @@ function NavbarMain(props) {
             <Link className='nav-link' to="/">Categories</Link>
             </li>
             <li>
-            <Link className='nav-link' to="/">Contact</Link>
+            <Link className='nav-link' to="/favs">Favorites</Link>
             </li>
             <li>
             <Link className='login__nav-link login__icon' to="/login">Login  <FaUserCircle /></Link>

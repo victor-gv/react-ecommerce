@@ -1,14 +1,13 @@
-import React from 'react'
-import Products from '../Products/Products';
+import React from "react";
+import Products from "../Products/Products";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import NavbarMain from "../NavbarMain/NavbarMain";
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import emptyCartImg from '../../images/empty_cart.png'
-import noResult from '../../images/no-results.png'
+import emptyCartImg from "../../images/empty_cart.png";
+import noResult from "../../images/no-results.png";
 import "./MainPage.css";
-
 
 function MainPage() {
   /**
@@ -19,13 +18,13 @@ function MainPage() {
     return cart ? JSON.parse(cart) : [];
   };
 
-  
   const [totalCart, setData] = useState(() => loadCart());
 
   /* Storing the cart in local storage. Every time that totalCart changes, we set that information into localStorage */
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(totalCart));
   }, [totalCart]);
+
 
 
 
@@ -38,19 +37,19 @@ function MainPage() {
     const form = document.getElementById("searchForm");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-    }
-    );
+    });
 
-
-
-   /* A function that filters the products and renders only the ones that match the search. */
-    products.forEach(product => {
+    /* A function that filters the products and renders only the ones that match the search. */
+    products.forEach((product) => {
       //We take into account only the title of the product and the price of the product, but not the text of the buy button to match the search.
       const title = product.querySelector(".card__title").innerText;
       const price = product.querySelector(".card__shop__price").innerText;
       const emptySearch = document.getElementById("emptySearch");
 
-      if (title.toLowerCase().includes(search.toLowerCase()) || price.includes(search)) {
+      if (
+        title.toLowerCase().includes(search.toLowerCase()) ||
+        price.includes(search)
+      ) {
         product.style.display = "block";
         product.setAttribute("matched", "true");
       } else {
@@ -60,16 +59,16 @@ function MainPage() {
 
       const unMatchedProducts = document.querySelectorAll("[matched='false']");
       //If all the products have the attribute matched set to false, we toggle the display of the emptySearch div to display the message "No results found".
-        if (unMatchedProducts.length === products.length) {
-          emptySearch.classList.add("empty-alert");
-          emptySearch.classList.remove("hidden");
-        } else {
-          emptySearch.classList.add("hidden");
-          emptySearch.classList.remove("empty-alert");
-        }
+      if (unMatchedProducts.length === products.length) {
+        emptySearch.classList.add("empty-alert");
+        emptySearch.classList.remove("hidden");
+      } else {
+        emptySearch.classList.add("hidden");
+        emptySearch.classList.remove("empty-alert");
       }
-    );
-   }
+    });
+  };
+
 
 
 
@@ -91,15 +90,13 @@ function MainPage() {
 
     const cardShopAction = document.querySelector(`[data-id="${product.id}"]`);
     cardShopAction.classList.add("item__added");
-    
 
     cartIcon.classList.add("product__added");
     setTimeout(() => {
       cartIcon.classList.remove("product__added");
     }, 500);
     setData([...totalCart, product]);
-  }
-
+  };
 
 
 
@@ -122,7 +119,6 @@ function MainPage() {
 
 
 
-
   /**
    * If the item id matches the id passed in and the quantity is greater than 1, then decrement the
    * quantity by 1 when the user clicks on substract quantity button..
@@ -133,7 +129,7 @@ function MainPage() {
       const cardShopAction = document.querySelector(`[data-id="${item.id}"]`);
       if (item.id === id) {
         item.quantity--;
-        
+
         //If the quantity is less than 1, remove the item from the cart
         if (item.quantity < 1) {
           item.quantity = 1;
@@ -183,7 +179,6 @@ function MainPage() {
 
 
 
-
   //Set the total quantity of products of the cart to display it in navbar icon
   const [totalQuantity, setTotalQuantity] = useState();
   useEffect(() => {
@@ -195,7 +190,6 @@ function MainPage() {
 
 
 
-
   /**
    * CheckCart() is a function that returns a map of the totalCart array, which is an array of objects,
    * and maps each object to a ProductItem component, which is a component that renders a product item.
@@ -203,14 +197,17 @@ function MainPage() {
    */
   const checkCart = () => {
     //Function to add green background on buy button when the user refreshes the page.
-    totalCart.map((product => {
+    totalCart.map((product) => {
       setTimeout(() => {
-        const cardShopAction = document.querySelector(`[data-id="${product.id}"]`);
-        if(cardShopAction) cardShopAction.classList.add("item__added__background");
+        const cardShopAction = document.querySelector(
+          `[data-id="${product.id}"]`
+        );
+        if (cardShopAction)
+          cardShopAction.classList.add("item__added__background");
       }, 400);
 
       return product;
-    }))
+    });
     return totalCart.map((product) => (
       <ProductItem
         key={product.id}
@@ -228,7 +225,10 @@ function MainPage() {
   };
 
 
-
+//Ad to fav function
+const addToFav = (product) =>{
+  console.log("funciona");
+}
 
   /* A ternary operator that checks if the length of the totalCart array is 0. If it is, it renders the
 Cart component with the title 'Your cart is empty' and the totalPrice is 0. If the length of the
@@ -236,42 +236,55 @@ totalCart array is not 0, it renders the Cart component with the title '', the t
 totalPrice of the cart, and the productItem is the result of the checkCart() function. */
   const ListLength = totalCart.length;
   return (
-           <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+    <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
       <div className="App">
-        <div className='mainPage' id="mainPage">
+        <div className="mainPage" id="mainPage">
           <Container fluid>
             <Row>
               <NavbarMain
-              totalQuantity = {totalQuantity}
-              manageChange = {searchItem}
+                totalQuantity={totalQuantity}
+                manageChange={searchItem}
               />
             </Row>
           </Container>
-            <Row>
-              <Col className='products__wrapper'>
-                  <Products manageClick={addToCart} />
-                  <div id="emptySearch" className="hidden">
-                  <img src={noResult}  alt='No found sticker'/>
-                  <h4>No results found</h4>
-                </div>
-              </Col>
-              </Row>
-        </div>
-            <Row>
-               <Col>
-              {ListLength === 0 ? (
-                <Cart title={"Your cart is empty."} totalPrice={0} emptyCartImg = {<img className='empty__cart' src={emptyCartImg} alt="Sad empty cart"/>} />
-              ) : (
-                <Cart
-                  title={""}
-                  totalPrice={totalPrice}
-                  productItem={checkCart()}
-                />
-              )}
+          <Row>
+            <Col className="products__wrapper">
+              <Products
+                manageClick={addToCart}
+                addToFav={addToFav}
+              />
+              <div id="emptySearch" className="hidden">
+                <img src={noResult} alt="No found sticker" />
+                <h4>No results found</h4>
+              </div>
             </Col>
-            </Row>
+          </Row>
+        </div>
+        <Row>
+          <Col>
+            {ListLength === 0 ? (
+              <Cart
+                title={"Your cart is empty."}
+                totalPrice={0}
+                emptyCartImg={
+                  <img
+                    className="empty__cart"
+                    src={emptyCartImg}
+                    alt="Sad empty cart"
+                  />
+                }
+              />
+            ) : (
+              <Cart
+                title={""}
+                totalPrice={totalPrice}
+                productItem={checkCart()}
+              />
+            )}
+          </Col>
+        </Row>
       </div>
-      </Container>
+    </Container>
   );
 }
 

@@ -19,12 +19,14 @@ import ProductItem from "../ProducItem/ProductItem";
 import emptyCartImg from "../../images/empty_cart.png";
 import "./LoginPage.css";
 
-const loadCart = () => {
-  const cart = localStorage.getItem("cart");
-  return cart ? JSON.parse(cart) : [];
-};
 
 function LoginPage() {
+  const loadCart = () => {
+    const cart = localStorage.getItem("cart");
+    return cart ? JSON.parse(cart) : [];
+  };
+
+  
   const [totalCart, setData] = useState(() => loadCart());
 
   /* Storing the cart in local storage. Every time that totalCart changes, we set that information into localStorage */
@@ -212,9 +214,6 @@ function LoginPage() {
                       alignItems: "center",
                     }}
                   >
-                    {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-                      <LockOutlinedIcon />
-                    </Avatar> */}
                     <h3>New to Shophub?</h3>
                     <p>Create your Shophub account to take advantage of amazing discounts across all of our categories.</p>
 

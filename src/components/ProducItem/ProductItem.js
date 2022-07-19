@@ -29,7 +29,7 @@ function ProductItem({ id, img, title, price, substractQuantity, quantity, addQu
                 </button>
               </div>
 
-              <AiFillDelete  
+              <AiFillDelete
                 className="remove-btn"
                 onClick={() => removeProduct(id)}
                 />
