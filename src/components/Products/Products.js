@@ -1,7 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Spinner } from "react-bootstrap";
-import { BsHandbagFill } from "react-icons/bs";
+import { BsHandbagFill, BsShareFill } from "react-icons/bs";
+import { MdFavoriteBorder } from "react-icons/md";
 import errorImg from "../../images/error-404.png";
 import ProductCard from "../ProductCard/ProductCard";
 import "./Products.css";
@@ -57,17 +58,19 @@ function Products(props) {
         {products.map((product) => (
           <ProductCard key={product.id}>
             <img src={product.img} alt={product.title} />
-            <h4 className="card__title">{product.title}</h4>
+                <h4 className="card__title">{product.title}</h4>
             <span className="card__description">Summer outfits</span>
+                <span className="card__shop__price">{product.price}€</span>
             <div className="card__shop">
-              <span className="card__shop__price">{product.price}€</span>
-              <button
-                data-id={product.id}
-                className="card__shop__action"
-                onClick={() => props.manageClick(product)}
-              >
-                <BsHandbagFill className="card__button" />
-              </button>
+                <button className="card__shop__share"><BsShareFill /></button>
+                <button className="card__shop__fav"><MdFavoriteBorder /></button>
+                <button
+                  data-id={product.id}
+                  className="card__shop__action"
+                  onClick={() => props.manageClick(product)}
+                >
+                  <BsHandbagFill />
+                </button>
             </div>
           </ProductCard>
         ))}

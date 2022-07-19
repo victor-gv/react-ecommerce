@@ -40,31 +40,63 @@
   margin-top: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
 }
 .card__shop__price {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
   color: #528af2;
-  font-size: 1.45rem;
   font-weight: bold;
 }
-.card__shop__action {
-  height: 3.5rem;
-  width: 3.5rem;
+.card__shop__action, .card__shop__share, .card__shop__fav {
+  height: 2.8rem;
+  width: 2.8rem;
   outline: none;
   border: none;
   background: var(--secondary);
-  border-radius: 12px;
+  border-radius: 50%;
   cursor: pointer;
   margin-top: auto;
-}
-.card__shop__action span {
-  color: #fff;
-  font-size: 26px;
+  margin-right: 0.3rem;
+  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
-.card__button {
-  font-size: 1.8rem;
+.card__title--wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__shop__action {
+  font-size: 1.5rem;
   color: #fff;
+  padding-bottom: 0.2rem;
+}
+.card__shop__action:hover {
+  background: rgba(9, 192, 12, 0.5450980392);
+}
+
+.card__shop__share {
+  font-size: 1.3rem;
+  background: white;
+  border: 1px solid #b5b5b5;
+  padding-right: 0.1rem;
+}
+.card__shop__share:hover {
+  background-color: #212529;
+  color: white;
+}
+
+.card__shop__fav {
+  font-size: 1.7rem;
+  background: #FF5252;
+  color: white;
+}
+.card__shop__fav:hover {
+  background-color: white;
+  color: #FF5252;
 }
 
 .item__added {
@@ -76,4 +108,11 @@
 }
 .item__added__background {
   background: rgba(9, 192, 12, 0.5450980392);
+}
+
+.fav__icon {
+  font-size: 1.5rem;
+}
+.fav__icon:hover {
+  color: #ff9a17;
 }/*# sourceMappingURL=ProductCard.css.map */
