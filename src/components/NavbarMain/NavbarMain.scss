@@ -55,6 +55,8 @@
 
 .menu-items {
     max-height: 0px;
+    margin-bottom: 0 !important;
+
 }
 
 
@@ -85,6 +87,14 @@
       color: $black;
     }
 }
+
+.login__icon {
+    svg {
+        font-size: 1.8rem;
+        color: $blue;
+    }
+}
+
 
 .cart__icon {
     display: flex;
@@ -146,7 +156,7 @@
 
 /* media query for menu */
 
-@media only screen and (max-width: 1093px) {
+@media only screen and (max-width: 1112px) {
 
     .search-form {
         margin-left: 2.5rem;

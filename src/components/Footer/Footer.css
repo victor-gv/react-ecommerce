@@ -77,12 +77,6 @@ ul {
   text-align: center;
 }
 
-.menu-icon {
-  width: 28px;
-  margin-left: 20px;
-  display: none;
-}
-
 @media only screen and (max-width: 400px) {
   .footer-col-3 {
     flex-basis: auto;

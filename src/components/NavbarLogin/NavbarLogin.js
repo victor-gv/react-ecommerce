@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../images/logo.png";
 import { Link } from 'react-router-dom';
+import { FaUserCircle } from "react-icons/fa"
 import "./NavbarLogin.css";
 
 
@@ -52,10 +53,10 @@ function NavbarLogin(props) {
             <Link className='login__nav-link' to="/">Categories</Link>
             </li>
             <li>
-            <Link className='login__nav-link' to="/">About</Link>
+            <Link className='login__nav-link' to="/">Contact</Link>
             </li>
             <li>
-            <Link className='login__nav-link' to="/">Contact</Link>
+            <Link className='login__nav-link login__icon' to="/login">Login  <FaUserCircle /></Link>
             </li>
           </ul>
         </nav>

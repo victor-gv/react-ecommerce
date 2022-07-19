@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../images/logo.png";
+import { FaUserCircle } from "react-icons/fa"
 import {Form, FormControl, Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import "./NavbarMain.css";
@@ -63,10 +64,10 @@ function NavbarMain(props) {
             <Link className='nav-link' to="/">Categories</Link>
             </li>
             <li>
-            <Link className='nav-link' to="/">About</Link>
+            <Link className='nav-link' to="/">Contact</Link>
             </li>
             <li>
-            <Link className='nav-link' to="/">Contact</Link>
+            <Link className='login__nav-link login__icon' to="/login">Login  <FaUserCircle /></Link>
             </li>
           </ul>
         </nav>
