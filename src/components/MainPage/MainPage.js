@@ -9,15 +9,17 @@ import emptyCartImg from '../../images/empty_cart.png'
 import noResult from '../../images/no-results.png'
 import "./MainPage.css";
 
-/**
- * If the cart exists, return the cart, otherwise return an empty array.
- */
-const loadCart = () => {
-  const cart = localStorage.getItem("cart");
-  return cart ? JSON.parse(cart) : [];
-};
 
 function MainPage() {
+  /**
+   * If the cart exists, return the cart, otherwise return an empty array.
+   */
+  const loadCart = () => {
+    const cart = localStorage.getItem("cart");
+    return cart ? JSON.parse(cart) : [];
+  };
+
+  
   const [totalCart, setData] = useState(() => loadCart());
 
   /* Storing the cart in local storage. Every time that totalCart changes, we set that information into localStorage */
