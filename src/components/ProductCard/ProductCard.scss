@@ -67,7 +67,7 @@
       cursor: pointer;
       margin-top: auto;
       margin-right: .3rem;
-      box-shadow: 2px 4px 8px 0 rgb(0 0 0 / 10%);
+      box-shadow: 2px 4px 8px 2px rgb(0 0 0 / 10%);
     }
   }
 }
@@ -95,7 +95,6 @@
 .card__shop__share {
   font-size: 1.3rem;
   background: white;
-  border: 1px solid $grey;
   padding-right: .1rem;
 
   
@@ -112,7 +111,7 @@
 
   &:hover {
     svg {
-      transform: scale(1.3);
+      transform: scale(1.22);
     }
   }
 }

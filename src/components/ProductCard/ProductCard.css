@@ -57,7 +57,7 @@
   cursor: pointer;
   margin-top: auto;
   margin-right: 0.3rem;
-  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.1);
 }
 
 .card__title--wrapper {
@@ -80,7 +80,6 @@
 .card__shop__share {
   font-size: 1.3rem;
   background: white;
-  border: 1px solid #b5b5b5;
   padding-right: 0.1rem;
 }
 .card__shop__share:hover {
@@ -94,7 +93,7 @@
   color: red;
 }
 .card__shop__fav:hover svg {
-  transform: scale(1.3);
+  transform: scale(1.22);
 }
 
 .item__added {
