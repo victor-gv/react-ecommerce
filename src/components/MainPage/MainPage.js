@@ -195,7 +195,6 @@ function MainPage() {
       if (favs) {
         favs.map((fav) => {
           const cardShopFav = document.querySelector(`[fav-id="${fav.id}"]`);
-          console.log(cardShopFav);
           products.forEach((product) => {
             if (product.dataset.card == fav.id) {
               cardShopFav.classList.add("fav__added__background");
@@ -230,7 +229,7 @@ function MainPage() {
     return JSON.parse(localStorage.getItem("favs")) || initialState;
   };
 
-  const [favs, dispatch] = useReducer(favsReducer, initialState, init);
+  const [favs, dispatch] = useReducer(favsReducer, initialState, init);// add init function to the useReducer hook to initialize the state
 
   useEffect(() => {
     localStorage.setItem("favs", JSON.stringify(favs));
@@ -264,7 +263,6 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
           </Container>
           <Row>
             <Col className="products__wrapper">
-              <FavsProducts initialState={favs} />
               <Products manageClick={addToCart} addToFav={addToFav} />
               <div id="emptySearch" className="hidden">
                 <img src={noResult} alt="No found sticker" />

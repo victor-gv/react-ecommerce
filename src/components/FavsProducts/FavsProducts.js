@@ -1,6 +1,8 @@
 import React from "react";
 
-const FavsProducts = ({ initialState }) => {
+const FavsProducts = () => {
+  const favs = JSON.parse(localStorage.getItem("favs"));
+  console.log(favs);
     return (
         <div>klk</div>
       )
