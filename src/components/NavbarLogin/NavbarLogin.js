@@ -2,6 +2,8 @@ import React from "react";
 import logo from "../../images/logo.png";
 import { Link } from 'react-router-dom';
 import { FaUserCircle } from "react-icons/fa"
+import { MdFavoriteBorder } from "react-icons/md"
+import { BsCart } from "react-icons/bs"
 import "./NavbarLogin.css";
 
 
@@ -53,20 +55,13 @@ function NavbarLogin(props) {
             <Link className='login__nav-link' to="/">Categories</Link>
             </li>
             <li>
-            <Link className='login__nav-link' to="/favs">Favorites</Link>
-            </li>
-            <li>
-            <Link className='login__nav-link login__icon' to="/login">Login  <FaUserCircle /></Link>
+            <Link className='login__nav-link login__icon' to="/login">Login <FaUserCircle /></Link>
             </li>
           </ul>
         </nav>
+          <Link className='login__nav-link' to="/favs"><MdFavoriteBorder className="login__favIcon"/></Link>
         <div id="cartIcon" className="login__cart--icon" onClick={openCart}>
-          <img
-            src="https://i.ibb.co/PNjjx3y/cart.png"
-            alt=""
-            width="30px"
-            height="30px"
-          />
+        <BsCart />
           <span>({props.totalQuantity})</span>
         </div>
         <img

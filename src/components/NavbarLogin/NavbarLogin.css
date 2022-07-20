@@ -53,6 +53,15 @@
   color: #528af2;
 }
 
+.login__favIcon {
+  font-size: 2.2rem;
+  margin-top: 0.2rem;
+  margin-right: 1.3rem;
+}
+.login__favIcon:hover {
+  color: #FF5252;
+}
+
 .login__nav-link {
   display: block;
   color: rgba(85, 85, 85, 0.928);
@@ -68,13 +77,12 @@
 .login__cart--icon {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  font-size: 2.2rem;
 }
 .login__cart--icon:hover {
   cursor: pointer;
-}
-.login__cart--icon img {
-  width: 2.2rem;
-  height: auto;
+  transform: scale(1.09);
 }
 .login__cart--icon span {
   padding-top: 0.3rem;
@@ -97,10 +105,6 @@
   background-color: #f9f9f9;
 }
 
-.form-control:hover {
-  cursor: pointer;
-}
-
 @-webkit-keyframes product-added {
   0% {
     transform: scale(1.3);
@@ -116,12 +120,6 @@
   }
   100% {
     transform: scale(1);
-  }
-}
-/*Media query for search bar*/
-@media only screen and (max-width: 735px) {
-  .search-form {
-    display: none;
   }
 }
 /* media query for menu */
@@ -151,5 +149,12 @@
   .login__menu-icon {
     display: block;
     cursor: pointer;
+  }
+}
+@media only screen and (max-width: 443px) {
+  .login__favIcon {
+    font-size: 2.2rem;
+    margin-top: 0.2rem;
+    margin-right: 0.2rem;
   }
 }/*# sourceMappingURL=NavbarLogin.css.map */

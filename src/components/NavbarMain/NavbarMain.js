@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "../../images/logo.png";
 import { FaUserCircle } from "react-icons/fa"
+import { MdFavoriteBorder } from "react-icons/md"
+import { BsCart } from "react-icons/bs"
 import {Form, FormControl, Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import "./NavbarMain.css";
@@ -42,6 +44,19 @@ function NavbarMain(props) {
           </Link>
         </div>
 
+        <nav>
+          <ul id="MenuItems" className="menu-items">
+            <li>
+            <Link className='nav-link' to="/">Home</Link>
+            </li>
+            <li>
+            <Link className='nav-link' to="/">Categories</Link>
+            </li>
+            <li>
+            <Link className='login__nav-link login__icon' to="/login">Login <FaUserCircle /></Link>
+            </li>
+          </ul>
+        </nav>
         <div className="search-form">
           <Form id="searchForm" className="d-flex">
             <FormControl
@@ -55,29 +70,9 @@ function NavbarMain(props) {
             <Button variant="outline-success">Search</Button>
           </Form>
         </div>
-        <nav>
-          <ul id="MenuItems" className="menu-items">
-            <li>
-            <Link className='nav-link' to="/">Home</Link>
-            </li>
-            <li>
-            <Link className='nav-link' to="/">Categories</Link>
-            </li>
-            <li>
-            <Link className='nav-link' to="/favs">Favorites</Link>
-            </li>
-            <li>
-            <Link className='login__nav-link login__icon' to="/login">Login  <FaUserCircle /></Link>
-            </li>
-          </ul>
-        </nav>
+        <Link className='nav-link' to="/favs"><MdFavoriteBorder className="mainPage__favIcon"/></Link>
         <div id="cartIcon" className="cart__icon" onClick={openCart}>
-          <img
-            src="https://i.ibb.co/PNjjx3y/cart.png"
-            alt=""
-            width="30px"
-            height="30px"
-          />
+          <BsCart />
           <span>({props.totalQuantity})</span>
         </div>
         <img

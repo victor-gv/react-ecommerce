@@ -64,6 +64,16 @@
     }
 }
 
+.login__favIcon{
+    font-size: 2.2rem;
+    margin-top: .2rem;
+    margin-right: 1.3rem;
+
+    &:hover {
+        color: $red;
+    }
+}
+
 
 
 .login__nav-link {
@@ -82,14 +92,12 @@
 .login__cart--icon {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    font-size: 2.2rem;
 
     &:hover {
         cursor: pointer;
-    }
-
-    img {
-        width: 2.2rem;
-        height: auto;
+        transform: scale(1.09);
     }
 
     span {
@@ -114,11 +122,6 @@
     }
 }
 
-.form-control {
-    &:hover {
-        cursor: pointer;
-    }
-}
 
 @keyframes product-added {
     
@@ -128,13 +131,6 @@
 
 
 
-
-/*Media query for search bar*/
-@media only screen and (max-width: 735px) {
-    .search-form {
-        display: none;
-    }
-}
 
 
 /* media query for menu */
@@ -172,4 +168,13 @@
         cursor: pointer;
     }
 
+}
+
+
+@media only screen and (max-width: 443px) {
+    .login__favIcon{
+        font-size: 2.2rem;
+        margin-top: .2rem;
+        margin-right: .2rem;
+    }
 }
