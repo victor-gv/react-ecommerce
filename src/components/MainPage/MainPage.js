@@ -1,12 +1,14 @@
 import React from "react";
+import { useEffect, useState, useReducer } from "react";
 import Products from "../Products/Products";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import NavbarMain from "../NavbarMain/NavbarMain";
-import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import emptyCartImg from "../../images/empty_cart.png";
 import noResult from "../../images/no-results.png";
+import favsReducer from "../FavsReducer/FavsReducer";
+import FavsProducts from "../FavsProducts/FavsProducts";
 import "./MainPage.css";
 
 function MainPage() {
@@ -24,9 +26,6 @@ function MainPage() {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(totalCart));
   }, [totalCart]);
-
-
-
 
   //Search function
   const searchItem = () => {
@@ -69,9 +68,6 @@ function MainPage() {
     });
   };
 
-
-
-
   //Obtain the product data from the Products component and pass it to the Cart component
   const addToCart = (product) => {
     //Check if the product is already in the cart. If so, don't add it again.
@@ -98,9 +94,6 @@ function MainPage() {
     setData([...totalCart, product]);
   };
 
-
-
-
   /**
    * If the id of the item in the array matches the id of the item that was clicked, then increment the
    * quantity of that item by 1 when the user clicks on add quantity button.
@@ -115,9 +108,6 @@ function MainPage() {
     });
     setData(newCart);
   };
-
-
-
 
   /**
    * If the item id matches the id passed in and the quantity is greater than 1, then decrement the
@@ -144,9 +134,6 @@ function MainPage() {
     setData(newCart);
   };
 
-
-
-
   //Remove a product from the cart when the user clicks on the remove button and reset its quantity to 1
   const removeProduct = (id) => {
     const newCart = [...totalCart];
@@ -164,9 +151,6 @@ function MainPage() {
     setData(newCart);
   };
 
-
-
-
   //Set the sum aff all products in the cart taking into account the quantity selected, and display it in the total price element of the cart
   const [totalPrice, setTotalPrice] = useState();
   useEffect(() => {
@@ -176,9 +160,6 @@ function MainPage() {
     setTotalPrice(total);
   }, [totalCart]);
 
-
-
-
   //Set the total quantity of products of the cart to display it in navbar icon
   const [totalQuantity, setTotalQuantity] = useState();
   useEffect(() => {
@@ -187,8 +168,6 @@ function MainPage() {
     }, 0);
     setTotalQuantity(total);
   }, [totalCart]);
-
-
 
   /**
    * CheckCart() is a function that returns a map of the totalCart array, which is an array of objects,
@@ -208,6 +187,26 @@ function MainPage() {
 
       return product;
     });
+    setTimeout(() => {
+      const favs = JSON.parse(localStorage.getItem("favs"));
+      const products = document.querySelectorAll(".card");
+
+      //Check if the products id stored in the local storage matches the id of any of the products (const products). If it matches, then add the class "fav" to the product.
+      if (favs) {
+        favs.map((fav) => {
+          const cardShopFav = document.querySelector(`[fav-id="${fav.id}"]`);
+          console.log(cardShopFav);
+          products.forEach((product) => {
+            if (product.dataset.card == fav.id) {
+              cardShopFav.classList.add("fav__added__background");
+            }
+          });
+          return fav;
+        }
+        );
+      }
+    }, 400);
+
     return totalCart.map((product) => (
       <ProductItem
         key={product.id}
@@ -224,11 +223,27 @@ function MainPage() {
     ));
   };
 
+  //Ad to fav function
+  const initialState = [];
 
-//Ad to fav function
-const addToFav = (product) =>{
-  console.log("funciona");
-}
+  const init = () => {
+    return JSON.parse(localStorage.getItem("favs")) || initialState;
+  };
+
+  const [favs, dispatch] = useReducer(favsReducer, initialState, init);
+
+  useEffect(() => {
+    localStorage.setItem("favs", JSON.stringify(favs));
+  }, [favs]);
+
+  const addToFav = (favs) => {
+    const action = {
+      type: "add to fav",
+      payload: favs,
+    };
+    dispatch(action);
+  };
+
 
   /* A ternary operator that checks if the length of the totalCart array is 0. If it is, it renders the
 Cart component with the title 'Your cart is empty' and the totalPrice is 0. If the length of the
@@ -249,10 +264,8 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
           </Container>
           <Row>
             <Col className="products__wrapper">
-              <Products
-                manageClick={addToCart}
-                addToFav={addToFav}
-              />
+              <FavsProducts initialState={favs} />
+              <Products manageClick={addToCart} addToFav={addToFav} />
               <div id="emptySearch" className="hidden">
                 <img src={noResult} alt="No found sticker" />
                 <h4>No results found</h4>

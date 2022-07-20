@@ -1,13 +1,13 @@
 import React from "react";
 import NavbarLogin from "../NavbarLogin/NavbarLogin";
-import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import emptyCartImg from "../../images/empty_cart.png";
+import FavsProducts from "../FavsProducts/FavsProducts"
 import "../NavbarLogin/NavbarLogin.css"
 
-function Favs() {
+function FavsPage() {
   /**
    * If the cart exists, return the cart, otherwise return an empty array.
    */
@@ -131,8 +131,7 @@ function Favs() {
   return (
     <>
       <NavbarLogin totalQuantity={totalQuantity} />
-      <div>Favs</div>
-
+      <FavsProducts />
       {ListLength === 0 ? (
         <Cart
           title={"Your cart is empty."}
@@ -152,4 +151,4 @@ function Favs() {
   );
 }
 
-export default Favs;
+export default FavsPage;

@@ -1,7 +1,7 @@
 import React from 'react'
 import MainPage from './components/MainPage/MainPage'
 import LoginPage from './components/LoginPage/LoginPage'
-import Favs from './components/Favs/Favs'
+import Favs from './components/FavsPage/FavsPage'
 import Footer from './components/Footer/Footer'
 import { Routes, Route } from 'react-router-dom'
 

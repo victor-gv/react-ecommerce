@@ -59,24 +59,27 @@ function Products(props) {
         ) : null}
         {products.map((product) => (
           <ProductCard key={product.id}>
-            <img src={product.img} alt={product.title} />
-                <h4 className="card__title">{product.title}</h4>
-            <span className="card__description">Summer outfits</span>
-                <span className="card__shop__price">{product.price}€</span>
-            <div className="card__shop">
-                <button className="card__shop__share"><BsShareFill /></button>
-                <button
-                  onClick={() => props.addToFav(product)} 
-                  className="card__shop__fav">
-                  <MdFavoriteBorder />
-                </button>
-                <button
-                  data-id={product.id}
-                  className="card__shop__action"
-                  onClick={() => props.manageClick(product)}
-                >
-                  <BsHandbagFill />
-                </button>
+            <div data-card={product.id} className="card">
+              <img src={product.img} alt={product.title} />
+                  <h4 className="card__title">{product.title}</h4>
+              <span className="card__description">Summer outfits</span>
+                  <span className="card__shop__price">{product.price}€</span>
+              <div className="card__shop">
+                  <button className="card__shop__share"><BsShareFill /></button>
+                  <button
+                    fav-id = {product.id}
+                    onClick={() => props.addToFav(product)}
+                    className="card__shop__fav">
+                    <MdFavoriteBorder />
+                  </button>
+                  <button
+                    data-id={product.id}
+                    className="card__shop__action"
+                    onClick={() => props.manageClick(product)}
+                  >
+                    <BsHandbagFill />
+                  </button>
+              </div>
             </div>
           </ProductCard>
         ))}

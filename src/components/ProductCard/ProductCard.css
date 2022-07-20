@@ -40,7 +40,7 @@
   margin-top: auto;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .card__shop__price {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -90,12 +90,11 @@
 
 .card__shop__fav {
   font-size: 1.7rem;
-  background: #FF5252;
-  color: white;
+  background: white;
+  color: red;
 }
-.card__shop__fav:hover {
-  background-color: white;
-  color: #FF5252;
+.card__shop__fav:hover svg {
+  transform: scale(1.3);
 }
 
 .item__added {
@@ -109,9 +108,15 @@
   background: rgba(9, 192, 12, 0.5450980392);
 }
 
-.fav__icon {
-  font-size: 1.5rem;
+.fav__added {
+  -webkit-animation-name: product-added;
+          animation-name: product-added;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  background: #FF5252;
+  color: white;
 }
-.fav__icon:hover {
-  color: #ff9a17;
+.fav__added__background {
+  background: #FF5252;
+  color: white;
 }/*# sourceMappingURL=ProductCard.css.map */
