@@ -21,15 +21,24 @@ loginPage, the cart will close. */
     })
   }
 
+  const favPage = document.getElementById("favPage");
+  if (favPage){
+    favPage.addEventListener("click", ()=>{
+      closeCart();
+    })
+  }
+
   //Function to close the cart when click on close icon
   const closeCart = () => {
     const cart = document.getElementById("cart");
     const mainPage = document.getElementById("mainPage");
     const loginPage = document.getElementById("loginPage");
+    const favPage = document.getElementById("favPage");
     const footer = document.getElementById("footer");
     cart.classList.remove("cart-open");
     if (mainPage) mainPage.classList.remove("blur");
     if (loginPage) loginPage.classList.remove("blur");
+    if (favPage) favPage.classList.remove("blur");
     if (footer) footer.classList.remove("hidden");
   }
 

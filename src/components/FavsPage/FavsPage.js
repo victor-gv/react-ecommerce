@@ -1,11 +1,13 @@
 import React from "react";
 import NavbarLogin from "../NavbarLogin/NavbarLogin";
 import { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import emptyCartImg from "../../images/empty_cart.png";
-import FavsProducts from "../FavsProducts/FavsProducts"
-import "../NavbarLogin/NavbarLogin.css"
+import FavsProducts from "../FavsProducts/FavsProducts";
+import "../NavbarLogin/NavbarLogin.css";
+import "./FavsPage.css"
 
 function FavsPage() {
   /**
@@ -22,9 +24,6 @@ function FavsPage() {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(totalCart));
   }, [totalCart]);
-
-
-
 
   /**
    * If the id of the item in the array matches the id of the item that was clicked, then increment the
@@ -86,8 +85,6 @@ function FavsPage() {
     setTotalPrice(total);
   }, [totalCart]);
 
-
-
   //Set the total quantity of products of the cart to display it in navbar icon
   const [totalQuantity, setTotalQuantity] = useState();
   useEffect(() => {
@@ -96,8 +93,6 @@ function FavsPage() {
     }, 0);
     setTotalQuantity(total);
   }, [totalCart]);
-
-
 
   /**
    * CheckCart() is a function that returns a map of the totalCart array, which is an array of objects,
@@ -121,7 +116,6 @@ function FavsPage() {
     ));
   };
 
-
   /* A ternary operator that checks if the length of the totalCart array is 0. If it is, it renders the
   Cart component with the title 'Your cart is empty' and the totalPrice is 0. If the length of the
   totalCart array is not 0, it renders the Cart component with the title '', the totalPrice is the
@@ -130,8 +124,10 @@ function FavsPage() {
 
   return (
     <>
-      <NavbarLogin totalQuantity={totalQuantity} />
-      <FavsProducts />
+      <div id="favPage" className="favPage__wrapper">
+        <NavbarLogin totalQuantity={totalQuantity} />
+        <FavsProducts />
+      </div>
       {ListLength === 0 ? (
         <Cart
           title={"Your cart is empty."}

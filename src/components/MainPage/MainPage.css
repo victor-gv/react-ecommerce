@@ -40,6 +40,21 @@ body {
   margin: 5rem 3rem 1rem 2rem;
 }
 
+.blur__fav {
+  position: fixed;
+  opacity: 0.8;
+  filter: blur(5px);
+}
+.blur__fav .footer {
+  display: none;
+}
+.blur__fav .navbar-container {
+  position: static;
+}
+.blur__fav .title__row {
+  margin: 5rem 3rem 1rem 2rem;
+}
+
 .hidden {
   display: none;
 }

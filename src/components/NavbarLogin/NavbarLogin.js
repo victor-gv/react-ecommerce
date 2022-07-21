@@ -26,9 +26,11 @@ function NavbarLogin(props) {
     const openCart = () => {
       const cart = document.getElementById("cart");
       const loginPage = document.getElementById("loginPage");
+      const favPage = document.getElementById("favPage");
       const footer = document.getElementById("footer");
       
       if (loginPage) loginPage.classList.add("blur");
+      if (favPage) favPage.classList.add("blur");
       if (cart) cart.classList.add("cart-open");
       if (footer) footer.classList.add("hidden");
     }

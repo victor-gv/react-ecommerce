@@ -251,7 +251,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
   const ListLength = totalCart.length;
   return (
     <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
-      <div className="App">
+      <div className="mainPage__wrapper">
         <div className="mainPage" id="mainPage">
           <Container fluid>
             <Row>

@@ -51,6 +51,24 @@ body {
     }
   }
 
+  .blur__fav{
+    position: fixed;
+    opacity: .8;
+    filter: blur(5px);
+
+    .footer {
+      display: none;
+    }
+
+    .navbar-container {
+      position: static;
+    }
+
+    .title__row {
+      margin: 5rem 3rem 1rem 2rem;
+    }
+  }
+
   .hidden {
     display: none;
   }
