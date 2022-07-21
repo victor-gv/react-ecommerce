@@ -105,7 +105,6 @@
 }
 
 .product__added {
-  background-color: rgba(166, 166, 166, 0.105);
   -webkit-animation-name: product-added;
           animation-name: product-added;
   -webkit-animation-duration: 1s;

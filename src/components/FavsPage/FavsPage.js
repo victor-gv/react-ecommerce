@@ -1,7 +1,6 @@
 import React from "react";
 import NavbarLogin from "../NavbarLogin/NavbarLogin";
 import { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import emptyCartImg from "../../images/empty_cart.png";

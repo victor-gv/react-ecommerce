@@ -17,7 +17,7 @@ const FavsProducts = (props) => {
         {favs.map((fav) => (
             <ProductCard key={fav.id}>
               <div data-fav={fav.id} className="card">
-                <img src={fav.img} />
+                <img src={fav.img} alt={`${fav.title} sneaker`}/>
                 <h4 className="card__title">{fav.title}</h4>
                 <span className="card__description">Summer outfits</span>
                 <span className="card__shop__price">{fav.price}€</span>

@@ -1,7 +1,7 @@
 const favsReducer = ( initialState, action ) => {
     switch (action.type) {
       case 'add to fav':
-        //if condictional no avoid adding a product that is already on the list
+        //if conditional to avoid adding a product that is already on the list
         const cardShopFav = document.querySelector(`[fav-id="${action.payload.id}"]`);
         if (!initialState.find((product) => action.payload.id === product.id)){
           cardShopFav.classList.add("fav__added");

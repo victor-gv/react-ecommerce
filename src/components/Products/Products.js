@@ -31,6 +31,33 @@ function Products(props) {
   }, [url]);
 
 
+//function to add the class item__added__background to the buy icon when the products are rendered if they are already in the cart
+useEffect(() => {
+  const cart = JSON.parse(localStorage.getItem("cart"));
+  if (cart) {
+    cart.forEach((product) => {
+      const cartIcon = document.querySelector(
+        `[data-id="${product.id}"]`
+      );
+      if(cartIcon) cartIcon.classList.add("item__added__background");
+    });
+  }
+}
+, [products]);
+
+
+  //function to add the class fav__added__background to the fav icons when the products are rendered if they are already in the cart
+  useEffect(() => {
+    const favs = JSON.parse(localStorage.getItem("favs"));
+    if (favs) {
+      favs.forEach((fav) => {
+        const favIcon = document.querySelector(`[fav-id="${fav.id}"]`);
+        if (favIcon) favIcon.classList.add("fav__added__background");
+      }
+      );
+    }
+  }
+  , [products]);
 
   return (
     <>
@@ -69,7 +96,8 @@ function Products(props) {
                   <button
                     fav-id = {product.id}
                     onClick={() => props.addToFav(product)}
-                    className="card__shop__fav">
+                    className="card__shop__fav"
+                    >
                     <MdFavoriteBorder />
                   </button>
                   <button

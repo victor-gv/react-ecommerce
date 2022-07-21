@@ -8,7 +8,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import emptyCartImg from "../../images/empty_cart.png";
 import noResult from "../../images/no-results.png";
 import favsReducer from "../FavsReducer/FavsReducer";
-import FavsProducts from "../FavsProducts/FavsProducts";
 import "./MainPage.css";
 
 function MainPage() {
@@ -86,6 +85,7 @@ function MainPage() {
 
     const cardShopAction = document.querySelector(`[data-id="${product.id}"]`);
     cardShopAction.classList.add("item__added");
+
 
     cartIcon.classList.add("product__added");
     setTimeout(() => {
@@ -175,36 +175,6 @@ function MainPage() {
    * @returns The return statement is returning the result of the map function.
    */
   const checkCart = () => {
-    //Function to add green background on buy button when the user refreshes the page.
-    totalCart.map((product) => {
-      setTimeout(() => {
-        const cardShopAction = document.querySelector(
-          `[data-id="${product.id}"]`
-        );
-        if (cardShopAction)
-          cardShopAction.classList.add("item__added__background");
-      }, 400);
-
-      return product;
-    });
-    setTimeout(() => {
-      const favs = JSON.parse(localStorage.getItem("favs"));
-      const products = document.querySelectorAll(".card");
-
-      //Check if the products id stored in the local storage matches the id of any of the products (const products). If it matches, then add the class "fav" to the product.
-      if (favs) {
-        favs.map((fav) => {
-          const cardShopFav = document.querySelector(`[fav-id="${fav.id}"]`);
-          products.forEach((product) => {
-            if (product.dataset.card == fav.id) {
-              cardShopFav.classList.add("fav__added__background");
-            }
-          });
-          return fav;
-        }
-        );
-      }
-    }, 400);
 
     return totalCart.map((product) => (
       <ProductItem
