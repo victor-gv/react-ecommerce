@@ -73,8 +73,8 @@
   color: #fff;
   padding-bottom: 0.2rem;
 }
-.card__shop__action:hover {
-  background: rgba(9, 192, 12, 0.5450980392);
+.card__shop__action:hover svg {
+  transform: scale(1.22);
 }
 
 .card__shop__share {
