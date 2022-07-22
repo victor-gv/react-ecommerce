@@ -158,22 +158,22 @@ function FavsPage() {
   const favorites = JSON.parse(localStorage.getItem("favs"));
 
     //Manage fav function
-    const initialState = [favorites];
-
+    const initialState = [];
+    
     const init = () => {
       return JSON.parse(localStorage.getItem("favs")) || initialState;
     };
-
+    
     const [favs, dispatch] = useReducer(favsReducer, initialState, init);// add init function to the useReducer hook to initialize the state
 
     useEffect(() => {
       localStorage.setItem("favs", JSON.stringify(favs));
     }, [favs]);
 
-    const manageFav = (favs) => {
+    const manageFav = (id) => {
       const action = {
         type: "delete from fav",
-        payload: favs
+        payload: id
       };
       dispatch(action);
     };
@@ -217,8 +217,9 @@ function FavsPage() {
       <div id="favPage" className="favPage__wrapper">
         <NavbarLogin totalQuantity={totalQuantity} />
         <FavsProducts
-        manageClick = {addToCart}
-        manageFav = {manageFav}
+          initialState = {favs}
+          manageClick = {addToCart}
+          manageFav = {manageFav}
         />
       </div>
       {ListLength === 0 ? (
