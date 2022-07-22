@@ -31,11 +31,11 @@ function FavsPage() {
     //Check if the product is already in the cart. If so, don't add it again.
     if (totalCart.find((item) => item.id === product.id)) {
       //If the product is already in the cart and the user clicks on the buy button again, we open the cart to let the user add more quantity of the product.
-      const mainPage = document.getElementById("mainPage");
+      const favPage = document.getElementById("favPage");
       const footer = document.getElementById("footer");
       const cart = document.getElementById("cart");
       cart.classList.add("cart-open");
-      mainPage.classList.add("blur");
+      favPage.classList.add("blur");
       footer.classList.add("hidden");
       return;
     }
@@ -155,7 +155,6 @@ function FavsPage() {
 
 
 
-  const favorites = JSON.parse(localStorage.getItem("favs"));
 
     //Manage fav function
     const initialState = [];
@@ -178,9 +177,12 @@ function FavsPage() {
       dispatch(action);
     };
 
+
+
+  const favorites = JSON.parse(localStorage.getItem("favs"));
   const cart = JSON.parse(localStorage.getItem("cart"));
 
-  //function to add the class item__added__background to the buy icon when the products are rendered if they are already in the cart. That way even if the page is refreshed, the icon will indicate that the product is already in the cart.
+  //function to add the class item__added__background to the buy icon when the products are rendered if they are already in the cart. That way, even if the page is refreshed, the icon will indicate that the product is already in the cart.
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart"));
     if (cart) {
@@ -191,7 +193,7 @@ function FavsPage() {
     }
   }, [cart]);
 
-  //function to add the class fav__added__background to the fav icons when the products are rendered if they are alreadthe icon will in
+  //function to add the class fav__added__background to the fav icons when the products are rendered if they are already in favs. That way even if the page is refreshed, the icon will indicate that the product is already in the favs.
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem("favs"));
     if (favs) {
