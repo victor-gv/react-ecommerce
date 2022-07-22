@@ -5,7 +5,7 @@ import { MdFavoriteBorder } from "react-icons/md";
 import "./FavsProducts.css";
 import "../Products/Products.css";
 
-const FavsProducts = ({initialState = [], manageFav, manageClick}) => {
+const FavsProducts = ({initialState = [], manageFav, manageClick, emptyMessage, homePage}) => {
 
 const favs = initialState;
 
@@ -14,6 +14,10 @@ const favs = initialState;
       <div className="title__row--favs">
         <h2 className="products__title">Favorites</h2>
       </div>
+        <div className="favs__emptyMessage">
+          <h3>{emptyMessage}</h3>
+              {homePage}
+        </div>
       <div className="products__container">
         {favs.map((fav) => (
           <ProductCard key={fav.id}>

@@ -1,6 +1,8 @@
 import React from "react";
 import NavbarLogin from "../NavbarLogin/NavbarLogin";
 import { useEffect, useState, useReducer } from "react";
+import { Link } from 'react-router-dom';
+import { AiOutlineHome } from "react-icons/ai"
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import emptyCartImg from "../../images/empty_cart.png";
@@ -105,8 +107,8 @@ function FavsPage() {
         item.quantity = 1;
         const index = newCart.indexOf(item);
         newCart.splice(index, 1);
-        cardShopAction.classList.remove("item__added");
-        cardShopAction.classList.remove("item__added__background");
+        if (cardShopAction) cardShopAction.classList.remove("item__added");
+        if (cardShopAction) cardShopAction.classList.remove("item__added__background");
       }
       return item;
     });
@@ -213,16 +215,27 @@ function FavsPage() {
   totalCart array is not 0, it renders the Cart component with the title '', the totalPrice is the
   totalPrice of the cart, and the productItem is the result of the checkCart() function. */
   const ListLength = totalCart.length;
-
+  const favsLength = favs.length;
   return (
     <>
       <div id="favPage" className="favPage__wrapper">
         <NavbarLogin totalQuantity={totalQuantity} />
-        <FavsProducts
-          initialState = {favs}
-          manageClick = {addToCart}
-          manageFav = {manageFav}
-        />
+        {favsLength === 0 ? (
+                  <FavsProducts
+                  initialState = {favs}
+                  manageClick = {addToCart}
+                  manageFav = {manageFav}
+                  emptyMessage = {`Your favorites are empty.`}
+                  homePage = {<Link to="/"><AiOutlineHome /></Link>}
+                />
+                ) : (
+                  <FavsProducts
+                  initialState = {favs}
+                  manageClick = {addToCart}
+                  manageFav = {manageFav}
+                  emptyMessage = {""}
+                />
+                )}
       </div>
       {ListLength === 0 ? (
         <Cart
