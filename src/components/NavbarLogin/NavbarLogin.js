@@ -11,6 +11,10 @@ import "./NavbarLogin.css";
 
 function NavbarLogin(props) {
 
+/* Removing the class hidden from the footer when the user comes from favPage */
+  const footer = document.getElementById("footer");
+  if (footer) footer.classList.remove("hidden");
+
     //Function for responsive navbar
     const menuToggle = () => {
       const MenuItems = document.getElementById('MenuItemsLogin');
