@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import { BsHandbagFill, BsShareFill } from "react-icons/bs";
 import { MdFavoriteBorder } from "react-icons/md";
@@ -7,8 +7,17 @@ import "./FavsProducts.css";
 import "../Products/Products.css";
 
 const FavsProducts = (props) => {
-  const favs = JSON.parse(localStorage.getItem("favs"));
 
+
+/* Getting the favs from local storage and setting them to the state. */
+const favorites = JSON.parse(localStorage.getItem("favs"));
+const [favs, setFavs] = useState([ ...favorites ]);
+
+  useEffect(() => {
+    localStorage.getItem("favs", JSON.stringify(favs));
+    setFavs([ ...favorites ]);
+  }
+  , [favs]);
 
   return (
     <>

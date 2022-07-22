@@ -1,10 +1,11 @@
 import React from "react";
 import NavbarLogin from "../NavbarLogin/NavbarLogin";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useReducer } from "react";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import emptyCartImg from "../../images/empty_cart.png";
 import FavsProducts from "../FavsProducts/FavsProducts";
+import favsReducer from "../FavsReducer/FavsReducer";
 import "../NavbarLogin/NavbarLogin.css";
 import "./FavsPage.css"
 
@@ -154,7 +155,29 @@ function FavsPage() {
 
 
 
-  const favs = JSON.parse(localStorage.getItem("favs"));
+  const favorites = JSON.parse(localStorage.getItem("favs"));
+
+    //Manage fav function
+    const initialState = [favorites];
+
+    const init = () => {
+      return JSON.parse(localStorage.getItem("favs")) || initialState;
+    };
+
+    const [favs, dispatch] = useReducer(favsReducer, initialState, init);// add init function to the useReducer hook to initialize the state
+
+    useEffect(() => {
+      localStorage.setItem("favs", JSON.stringify(favs));
+    }, [favs]);
+
+    const manageFav = (favs) => {
+      const action = {
+        type: "delete from fav",
+        payload: favs
+      };
+      dispatch(action);
+    };
+
   const cart = JSON.parse(localStorage.getItem("cart"));
 
   //function to add the class item__added__background to the buy icon when the products are rendered if they are already in the cart. That way even if the page is refreshed, the icon will indicate that the product is already in the cart.
@@ -177,7 +200,11 @@ function FavsPage() {
         if (favIcon) favIcon.classList.add("fav__added__background");
       });
     }
-  }, [favs]);
+  }, [favorites]);
+
+
+
+
 
   /* A ternary operator that checks if the length of the totalCart array is 0. If it is, it renders the
   Cart component with the title 'Your cart is empty' and the totalPrice is 0. If the length of the
@@ -191,6 +218,7 @@ function FavsPage() {
         <NavbarLogin totalQuantity={totalQuantity} />
         <FavsProducts
         manageClick = {addToCart}
+        manageFav = {manageFav}
         />
       </div>
       {ListLength === 0 ? (

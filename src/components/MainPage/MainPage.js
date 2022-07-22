@@ -192,7 +192,7 @@ function MainPage() {
     ));
   };
 
-  //Ad to fav function
+  //Manage fav function
   const initialState = [];
 
   const init = () => {
