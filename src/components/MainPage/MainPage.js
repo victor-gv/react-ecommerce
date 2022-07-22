@@ -205,10 +205,10 @@ function MainPage() {
     localStorage.setItem("favs", JSON.stringify(favs));
   }, [favs]);
 
-  const addToFav = (favs) => {
+  const manageFav = (favs) => {
     const action = {
       type: "add to fav",
-      payload: favs,
+      payload: favs
     };
     dispatch(action);
   };
@@ -233,7 +233,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
           </Container>
           <Row>
             <Col className="products__wrapper">
-              <Products manageClick={addToCart} addToFav={addToFav} />
+              <Products manageClick={addToCart} manageFav={manageFav} />
               <div id="emptySearch" className="hidden">
                 <img src={noResult} alt="No found sticker" />
                 <h4>No results found</h4>

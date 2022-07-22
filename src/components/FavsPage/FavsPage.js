@@ -24,6 +24,37 @@ function FavsPage() {
     localStorage.setItem("cart", JSON.stringify(totalCart));
   }, [totalCart]);
 
+
+   //Obtain the product data from the Products component and pass it to the Cart component
+   const addToCart = (product) => {
+    //Check if the product is already in the cart. If so, don't add it again.
+    if (totalCart.find((item) => item.id === product.id)) {
+      //If the product is already in the cart and the user clicks on the buy button again, we open the cart to let the user add more quantity of the product.
+      const mainPage = document.getElementById("mainPage");
+      const footer = document.getElementById("footer");
+      const cart = document.getElementById("cart");
+      cart.classList.add("cart-open");
+      mainPage.classList.add("blur");
+      footer.classList.add("hidden");
+      return;
+    }
+    //Add the product to the cart
+    const cartIcon = document.getElementById("cartIcon");
+
+    const cardShopAction = document.querySelector(`[data-id="${product.id}"]`);
+    cardShopAction.classList.add("item__added");
+
+
+    cartIcon.classList.add("product__added");
+    setTimeout(() => {
+      cartIcon.classList.remove("product__added");
+    }, 500);
+    setData([...totalCart, product]);
+  };
+
+
+
+
   /**
    * If the id of the item in the array matches the id of the item that was clicked, then increment the
    * quantity of that item by 1 when the user clicks on add quantity button.
@@ -46,6 +77,7 @@ function FavsPage() {
   const substractQuantity = (id) => {
     const newCart = [...totalCart];
     newCart.map((item) => {
+      const cardShopAction = document.querySelector(`[data-id="${item.id}"]`);
       if (item.id === id) {
         item.quantity--;
 
@@ -54,6 +86,8 @@ function FavsPage() {
           item.quantity = 1;
           const index = newCart.indexOf(item);
           newCart.splice(index, 1);
+          cardShopAction.classList.remove("item__added");
+          cardShopAction.classList.remove("item__added__background");
         }
       }
       return item;
@@ -65,10 +99,13 @@ function FavsPage() {
   const removeProduct = (id) => {
     const newCart = [...totalCart];
     newCart.map((item) => {
+      const cardShopAction = document.querySelector(`[data-id="${item.id}"]`);
       if (item.id === id) {
         item.quantity = 1;
         const index = newCart.indexOf(item);
         newCart.splice(index, 1);
+        cardShopAction.classList.remove("item__added");
+        cardShopAction.classList.remove("item__added__background");
       }
       return item;
     });
@@ -115,6 +152,33 @@ function FavsPage() {
     ));
   };
 
+
+
+  const favs = JSON.parse(localStorage.getItem("favs"));
+  const cart = JSON.parse(localStorage.getItem("cart"));
+
+  //function to add the class item__added__background to the buy icon when the products are rendered if they are already in the cart. That way even if the page is refreshed, the icon will indicate that the product is already in the cart.
+  useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    if (cart) {
+      cart.forEach((product) => {
+        const cartIcon = document.querySelector(`[data-id="${product.id}"]`);
+        if (cartIcon) cartIcon.classList.add("item__added__background");
+      });
+    }
+  }, [cart]);
+
+  //function to add the class fav__added__background to the fav icons when the products are rendered if they are alreadthe icon will in
+  useEffect(() => {
+    const favs = JSON.parse(localStorage.getItem("favs"));
+    if (favs) {
+      favs.forEach((fav) => {
+        const favIcon = document.querySelector(`[fav-id="${fav.id}"]`);
+        if (favIcon) favIcon.classList.add("fav__added__background");
+      });
+    }
+  }, [favs]);
+
   /* A ternary operator that checks if the length of the totalCart array is 0. If it is, it renders the
   Cart component with the title 'Your cart is empty' and the totalPrice is 0. If the length of the
   totalCart array is not 0, it renders the Cart component with the title '', the totalPrice is the
@@ -125,7 +189,9 @@ function FavsPage() {
     <>
       <div id="favPage" className="favPage__wrapper">
         <NavbarLogin totalQuantity={totalQuantity} />
-        <FavsProducts />
+        <FavsProducts
+        manageClick = {addToCart}
+        />
       </div>
       {ListLength === 0 ? (
         <Cart

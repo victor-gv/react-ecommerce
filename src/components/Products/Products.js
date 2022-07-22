@@ -95,7 +95,7 @@ useEffect(() => {
                   <button className="card__shop__share"><BsShareFill /></button>
                   <button
                     fav-id = {product.id}
-                    onClick={() => props.addToFav(product)}
+                    onClick={() => props.manageFav(product)}
                     className="card__shop__fav"
                     >
                     <MdFavoriteBorder />

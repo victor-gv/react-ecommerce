@@ -5,8 +5,8 @@ import "./cart.css";
 
 const Cart = ({ title, totalPrice, productItem, emptyCartImg }) => {
 
-/* Adding an event listener to the mainPage and loginPage. When the user clicks on the mainPage or
-loginPage, the cart will close. */
+/* Adding an event listener to the mainPage and loginPage. When the user clicks on the mainPage,
+loginPage or favPage while the cart is open, the cart will close. */
   const mainPage = document.getElementById("mainPage");
   if (mainPage){
     mainPage.addEventListener("click", ()=>{
