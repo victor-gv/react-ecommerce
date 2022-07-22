@@ -31,7 +31,7 @@ function Products(props) {
   }, [url]);
 
 
-//function to add the class item__added__background to the buy icon when the products are rendered if they are already in the cart
+//function to add the class item__added__background to the buy icon when the products are rendered if they are already in the cart. That way even if the page is refreshed, the icon will indicate that the product is already in the cart.
 useEffect(() => {
   const cart = JSON.parse(localStorage.getItem("cart"));
   if (cart) {
@@ -46,7 +46,7 @@ useEffect(() => {
 , [products]);
 
 
-  //function to add the class fav__added__background to the fav icons when the products are rendered if they are already in the cart
+  //function to add the class fav__added__background to the fav icons when the products are rendered if they are alreadthe icon will in
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem("favs"));
     if (favs) {
