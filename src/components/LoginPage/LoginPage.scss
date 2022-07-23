@@ -18,6 +18,11 @@ body {
   }
 }
 
+.loginPage__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .login__container {
   display: flex;
   flex-direction: row;

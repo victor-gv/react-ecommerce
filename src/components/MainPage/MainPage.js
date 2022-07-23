@@ -3,7 +3,7 @@ import { useEffect, useState, useReducer } from "react";
 import Products from "../Products/Products";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
-import NavbarMain from "../NavbarMain/NavbarMain";
+import Navbar from "../Navbar/Navbar";
 import { Container, Row, Col } from "react-bootstrap";
 import emptyCartImg from "../../images/empty_cart.png";
 import noResult from "../../images/no-results.png";
@@ -145,8 +145,9 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
         <div className="mainPage" id="mainPage">
           <Container fluid>
             <Row>
-              <NavbarMain
+              <Navbar
                 SearchBar={true}
+                isMainPage={true}
                 manageChange={searchItem}
                 totalQuantity={totalQuantity}
               />

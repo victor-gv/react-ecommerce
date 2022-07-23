@@ -29,6 +29,9 @@
 .navbar-container p {
   color: #555;
 }
+.navbar-container__static {
+  position: static;
+}
 
 .nav {
   display: flex;
@@ -179,4 +182,4 @@
     margin-top: 0.2rem;
     margin-right: 0.2rem;
   }
-}/*# sourceMappingURL=NavbarMain.css.map */
+}/*# sourceMappingURL=Navbar.css.map */

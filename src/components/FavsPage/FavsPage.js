@@ -1,24 +1,73 @@
 import React from "react";
 import useCounterCart from "../Hooks/useCounterCart";
-import NavbarLogin from "../NavbarLogin/NavbarLogin";
+import Navbar from "../Navbar/Navbar";
 import { useEffect, useState, useReducer } from "react";
-import { Link } from 'react-router-dom';
-import { AiOutlineHome } from "react-icons/ai"
+import { Link } from "react-router-dom";
+import { AiOutlineHome } from "react-icons/ai";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import emptyCartImg from "../../images/empty_cart.png";
 import FavsProducts from "../FavsProducts/FavsProducts";
 import favsReducer from "../FavsReducer/FavsReducer";
-import "../NavbarLogin/NavbarLogin.css";
-import "./FavsPage.css"
+import noResult from "../../images/no-results.png";
+import "../Navbar/Navbar.css";
+import "./FavsPage.css";
 
 function FavsPage() {
+  const {
+    addQuantity,
+    substractQuantity,
+    removeProduct,
+    totalPrice,
+    totalCart,
+    setData,
+    totalQuantity,
+    setTotalQuantity,
+  } = useCounterCart();
 
-  const { addQuantity, substractQuantity, removeProduct, totalPrice, totalCart, setData, totalQuantity, setTotalQuantity} = useCounterCart();
+  //Search function
+  const searchItem = () => {
+    const search = document.getElementById("search").value;
+    const products = document.querySelectorAll(".card");
 
+    //Prevent refreshing the page when the user press enter key in the search bar
+    const form = document.getElementById("searchForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
 
-   //Obtain the product data from the Products component and pass it to the Cart component
-   const addToCart = (product) => {
+    /* A function that filters the products and renders only the ones that match the search. */
+    products.forEach((product) => {
+      //We take into account only the title of the product and the price of the product, but not the text of the buy button to match the search.
+      const title = product.querySelector(".card__title").innerText;
+      const price = product.querySelector(".card__shop__price").innerText;
+      const emptySearch = document.getElementById("emptySearch");
+
+      if (
+        title.toLowerCase().includes(search.toLowerCase()) ||
+        price.includes(search)
+      ) {
+        product.style.display = "block";
+        product.setAttribute("matched", "true");
+      } else {
+        product.style.display = "none";
+        product.setAttribute("matched", "false");
+      }
+
+      const unMatchedProducts = document.querySelectorAll("[matched='false']");
+      //If all the products have the attribute matched set to false, we toggle the display of the emptySearch div to display the message "No results found".
+      if (unMatchedProducts.length === products.length) {
+        emptySearch.classList.add("empty-alert");
+        emptySearch.classList.remove("hidden");
+      } else {
+        emptySearch.classList.add("hidden");
+        emptySearch.classList.remove("empty-alert");
+      }
+    });
+  };
+
+  //Obtain the product data from the Products component and pass it to the Cart component
+  const addToCart = (product) => {
     //Check if the product is already in the cart. If so, don't add it again.
     if (totalCart.find((item) => item.id === product.id)) {
       //If the product is already in the cart and the user clicks on the buy button again, we open the cart to let the user add more quantity of the product.
@@ -36,15 +85,12 @@ function FavsPage() {
     const cardShopAction = document.querySelector(`[data-id="${product.id}"]`);
     cardShopAction.classList.add("item__added");
 
-
     cartIcon.classList.add("product__added");
     setTimeout(() => {
       cartIcon.classList.remove("product__added");
     }, 500);
     setData([...totalCart, product]);
   };
-
-  
 
   /**
    * CheckCart() is a function that returns a map of the totalCart array, which is an array of objects,
@@ -68,31 +114,26 @@ function FavsPage() {
     ));
   };
 
+  //Manage fav function
+  const initialState = [];
 
+  const init = () => {
+    return JSON.parse(localStorage.getItem("favs")) || initialState;
+  };
 
+  const [favs, dispatch] = useReducer(favsReducer, initialState, init); // add init function to the useReducer hook to initialize the state
 
-    //Manage fav function
-    const initialState = [];
-    
-    const init = () => {
-      return JSON.parse(localStorage.getItem("favs")) || initialState;
+  useEffect(() => {
+    localStorage.setItem("favs", JSON.stringify(favs));
+  }, [favs]);
+
+  const manageFav = (id) => {
+    const action = {
+      type: "delete from fav",
+      payload: id,
     };
-    
-    const [favs, dispatch] = useReducer(favsReducer, initialState, init);// add init function to the useReducer hook to initialize the state
-
-    useEffect(() => {
-      localStorage.setItem("favs", JSON.stringify(favs));
-    }, [favs]);
-
-    const manageFav = (id) => {
-      const action = {
-        type: "delete from fav",
-        payload: id
-      };
-      dispatch(action);
-    };
-
-
+    dispatch(action);
+  };
 
   const favorites = JSON.parse(localStorage.getItem("favs"));
   const cart = JSON.parse(localStorage.getItem("cart"));
@@ -119,13 +160,10 @@ function FavsPage() {
     }
   }, [favorites]);
 
-
-
-const removeHidden = () => {
-  const footer = document.querySelector(".footer");
-  if (footer) footer.classList.remove("hidden");
-}
-
+  const removeHidden = () => {
+    const footer = document.querySelector(".footer");
+    if (footer) footer.classList.remove("hidden");
+  };
 
   /* A ternary operator that checks if the length of the totalCart array is 0. If it is, it renders the
   Cart component with the title 'Your cart is empty' and the totalPrice is 0. If the length of the
@@ -136,23 +174,39 @@ const removeHidden = () => {
   return (
     <>
       <div id="favPage" className="favPage__wrapper">
-        <NavbarLogin totalQuantity={totalQuantity} />
+        <Navbar
+          SearchBar={true}
+          manageChange={searchItem}
+          isMainPage={false}
+          totalQuantity={totalQuantity}
+
+        />
         {favsLength === 0 ? (
-                  <FavsProducts
-                  initialState = {favs}
-                  manageClick = {addToCart}
-                  manageFav = {manageFav}
-                  emptyMessage = {`Your favorites are empty.`}
-                  homePage = {<Link to="/"><AiOutlineHome /></Link>}
-                />
-                ) : (
-                  <FavsProducts
-                  initialState = {favs}
-                  manageClick = {addToCart}
-                  manageFav = {manageFav}
-                  emptyMessage = {""}
-                />
-                )}
+          <FavsProducts
+            initialState={favs}
+            manageClick={addToCart}
+            manageFav={manageFav}
+            emptyMessage={`Your favorites are empty.`}
+            homePage={
+              <Link to="/">
+                <AiOutlineHome />
+              </Link>
+            }
+          />
+        ) : (
+          <>
+            <FavsProducts
+              initialState={favs}
+              manageClick={addToCart}
+              manageFav={manageFav}
+              emptyMessage={""}
+            />
+            <div id="emptySearch" className="hidden">
+              <img src={noResult} alt="No found sticker" />
+              <h4>No results found</h4>
+            </div>
+          </>
+        )}
       </div>
       {ListLength === 0 ? (
         <Cart
@@ -168,7 +222,12 @@ const removeHidden = () => {
           }
         />
       ) : (
-        <Cart removeHidden={removeHidden} title={""} totalPrice={totalPrice} productItem={checkCart()} />
+        <Cart
+          removeHidden={removeHidden}
+          title={""}
+          totalPrice={totalPrice}
+          productItem={checkCart()}
+        />
       )}
     </>
   );

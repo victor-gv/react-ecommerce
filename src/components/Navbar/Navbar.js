@@ -5,9 +5,9 @@ import { FaUserCircle } from "react-icons/fa"
 import { MdFavoriteBorder } from "react-icons/md"
 import { BsCart } from "react-icons/bs"
 import { Link } from 'react-router-dom';
-import "./NavbarMain.css";
+import "./Navbar.css";
 
-function NavbarMain(props) {
+function Navbar(props) {
 
 
 
@@ -40,7 +40,7 @@ function NavbarMain(props) {
 
   return (
     <>
-      <div className="navbar-container">
+      <div className={`navbar-container ${props.isMainPage ? "" : 'navbar-container__static'}`.trimEnd()}>
       <div className="nav">
         <div className="logo">
           <Link to="/">
@@ -60,7 +60,7 @@ function NavbarMain(props) {
             <Link className='nav-link' to="/">Categories</Link>
             </li>
             <li>
-            <Link className='login__nav-link login__icon' to="/login">Login <FaUserCircle /></Link>
+            <Link className='nav-link login__icon' to="/login">Login <FaUserCircle /></Link>
             </li>
           </ul>
         </nav>
@@ -77,10 +77,9 @@ function NavbarMain(props) {
         />
       </div>
       </div>
-      <hr></hr>
     </>
 
   );
 }
 
-export default NavbarMain;
+export default Navbar;
