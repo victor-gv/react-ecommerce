@@ -12,7 +12,6 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useEffect, useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
@@ -22,7 +21,7 @@ import "./LoginPage.css";
 
 function LoginPage() {
 
-  const { addQuantity, substractQuantity, removeProduct, totalPrice, totalCart, setData, totalQuantity, setTotalQuantity} = useCounterCart();
+  const { addQuantity, substractQuantity, removeProduct, totalPrice, totalCart, totalQuantity} = useCounterCart();
 
 
   /**

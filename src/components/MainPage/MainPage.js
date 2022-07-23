@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import Products from "../Products/Products";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
@@ -14,7 +14,7 @@ import "./MainPage.css";
 
 function MainPage() {
 
-  const { addQuantity, substractQuantity, removeProduct, totalPrice, totalCart, setData, totalQuantity, setTotalQuantity} = useCounterCart();
+  const { addQuantity, substractQuantity, removeProduct, totalPrice, totalCart, setData, totalQuantity} = useCounterCart();
   const { searchItem } = useSearch();
 
 

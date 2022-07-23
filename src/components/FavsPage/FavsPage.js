@@ -2,7 +2,7 @@ import React from "react";
 import useCounterCart from "../Hooks/useCounterCart";
 import useSearch from "../Hooks/useSearch";
 import Navbar from "../Navbar/Navbar";
-import { useEffect, useState, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import Cart from "../Cart/Cart";
@@ -22,8 +22,7 @@ function FavsPage() {
     totalPrice,
     totalCart,
     setData,
-    totalQuantity,
-    setTotalQuantity,
+    totalQuantity
   } = useCounterCart();
 
   const { searchItem } = useSearch();
