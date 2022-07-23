@@ -1,15 +1,21 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import useCounterCart from "../Hooks/useCounterCart";
 import Navbar from "../Navbar/Navbar";
 import { useEffect, useReducer } from "react";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
+import ProductPageItem from "./ProductPageItem/ProductPageItem";
 import emptyCartImg from "../../images/empty_cart.png";
 import favsReducer from "../FavsPage/FavsReducer/FavsReducer"
 import "../Navbar/Navbar.css";
 import "../FavsPage/FavsPage.css";
+import "./ProductPage.css";
 
 function ProductPage() {
+
+const location = useLocation();
+const product = location.state;
 
 /* Destructuring the useCounterCart() hook. */
   const {
@@ -28,11 +34,11 @@ function ProductPage() {
     //Check if the product is already in the cart. If so, don't add it again.
     if (totalCart.find((item) => item.id === product.id)) {
       //If the product is already in the cart and the user clicks on the buy button again, we open the cart to let the user add more quantity of the product.
-      const favPage = document.getElementById("favPage");
+      const productPage = document.getElementById("productPage");
       const footer = document.getElementById("footer");
       const cart = document.getElementById("cart");
       cart.classList.add("cart-open");
-      favPage.classList.add("blur");
+      productPage.classList.add("blur");
       footer.classList.add("hidden");
       return;
     }
@@ -86,7 +92,7 @@ function ProductPage() {
 
   const manageFav = (id) => {
     const action = {
-      type: "delete from fav",
+      type: "add to fav",
       payload: id,
     };
     dispatch(action);
@@ -127,16 +133,21 @@ function ProductPage() {
   totalCart array is not 0, it renders the Cart component with the title '', the totalPrice is the
   totalPrice of the cart, and the productItem is the result of the checkCart() function. */
   const ListLength = totalCart.length;
-  const favsLength = favs.length;
   return (
     <>
-      <div id="ProductPage" className="ProductPage__wrapper">
+      <div id="productPage" className="productPage__wrapper">
         <Navbar
           SearchBar={false}
           isMainPage={false}
           totalQuantity={totalQuantity}
-
         />
+       <div className="productPageItem__container">
+         <ProductPageItem
+          product={product}
+          manageClick={addToCart}
+          manageFav={manageFav}
+               />
+       </div>
 
       </div>
       {ListLength === 0 ? (

@@ -28,11 +28,13 @@ function Navbar(props) {
     const mainPage = document.getElementById("mainPage");
     const loginPage = document.getElementById("loginPage");
     const favPage = document.getElementById("favPage");
+    const productPage = document.getElementById("productPage");
     const footer = document.getElementById("footer");
 
     if (mainPage) mainPage.classList.add("blur");
     if (loginPage) loginPage.classList.add("blur");
     if (favPage) favPage.classList.add("blur");
+    if (productPage) productPage.classList.add("blur");
     if (cart) cart.classList.add("cart-open");
     if (footer) footer.classList.add("hidden");
 
