@@ -1,5 +1,5 @@
 import React from "react";
-import useCounterCart from "../Hooks/useCounterCart";
+import useCart from "../Hooks/useCart";
 import useSearch from "../Hooks/useSearch";
 import Navbar from "../Navbar/Navbar";
 import { useEffect, useReducer } from "react";
@@ -16,7 +16,7 @@ import "./FavsPage.css";
 
 function FavsPage() {
 
-/* Destructuring the useCounterCart() and useSearch() hooks. */
+/* Destructuring the useCart() and useSearch() hooks. */
   const {
     addToCart,
     addQuantity,
@@ -24,9 +24,8 @@ function FavsPage() {
     removeProduct,
     totalPrice,
     totalCart,
-    setData,
     totalQuantity
-  } = useCounterCart();
+  } = useCart();
 
   const { searchItem } = useSearch();
 

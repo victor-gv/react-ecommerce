@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import ProductCard from "../ProductCard/ProductCard";
 import { BsHandbagFill, BsShareFill } from "react-icons/bs";
 import { MdFavoriteBorder } from "react-icons/md";
@@ -22,10 +23,12 @@ const favs = initialState;
         {favs.map((fav) => (
           <ProductCard key={fav.id}>
             <div data-fav={fav.id} className="card">
+            <Link to={`/product/${fav.id}`} state={fav}>
               <img src={fav.img} alt={`${fav.title} sneaker`} />
               <h4 className="card__title">{fav.title}</h4>
               <span className="card__description">Summer outfits</span>
               <span className="card__shop__price">{fav.price}€</span>
+              </Link>
               <div className="card__shop">
                 <button className="card__shop__share">
                   <BsShareFill />

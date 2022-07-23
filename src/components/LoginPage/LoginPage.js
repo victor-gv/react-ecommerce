@@ -1,5 +1,5 @@
 import React from "react";
-import useCounterCart from "../Hooks/useCounterCart";
+import useCart from "../Hooks/useCart";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -22,8 +22,8 @@ import "./LoginPage.css";
 function LoginPage() {
 
 
-/* Destructuring the useCounterCart hook. */
-  const { addQuantity, substractQuantity, removeProduct, totalPrice, totalCart, totalQuantity} = useCounterCart();
+/* Destructuring the useCart hook. */
+  const { addQuantity, substractQuantity, removeProduct, totalPrice, totalCart, totalQuantity} = useCart();
 
 
   /**

@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import useCounterCart from "../Hooks/useCounterCart";
+import useCart from "../Hooks/useCart";
 import Navbar from "../Navbar/Navbar";
 import { useEffect, useReducer } from "react";
 import Cart from "../Cart/Cart";
@@ -17,7 +17,7 @@ function ProductPage() {
 const location = useLocation();
 const product = location.state;
 
-/* Destructuring the useCounterCart() hook. */
+/* Destructuring the useCart() hook. */
   const {
     addToCart,
     addQuantity,
@@ -25,9 +25,8 @@ const product = location.state;
     removeProduct,
     totalPrice,
     totalCart,
-    setData,
     totalQuantity
-  } = useCounterCart();
+  } = useCart();
 
 
 
