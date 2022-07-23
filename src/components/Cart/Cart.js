@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { RiCloseFill } from "react-icons/ri"
 import "./cart.css";
 
-const Cart = ({ title, totalPrice, productItem, emptyCartImg }) => {
+const Cart = ({ title, totalPrice, productItem, emptyCartImg, removeHidden }) => {
 
 /* Adding an event listener to the mainPage and loginPage. When the user clicks on the mainPage,
 loginPage or favPage while the cart is open, the cart will close. */
@@ -63,7 +63,7 @@ loginPage or favPage while the cart is open, the cart will close. */
         <div className="totalPrice__container">
           <h3 className="totalPrice">Total: {totalPrice}€</h3>
           <hr></hr>
-            <div className="checkout-container">
+            <div onClick={removeHidden} className="checkout-container">
               <Link className="btn btn-primary btn-block btn-lg checkout" to="/login">Checkout</Link>
             </div>
         </div>

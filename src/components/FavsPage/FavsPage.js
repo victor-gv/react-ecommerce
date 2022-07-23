@@ -89,8 +89,10 @@ function FavsPage() {
           item.quantity = 1;
           const index = newCart.indexOf(item);
           newCart.splice(index, 1);
-          cardShopAction.classList.remove("item__added");
-          cardShopAction.classList.remove("item__added__background");
+          if (cardShopAction) {
+            cardShopAction.classList.remove("item__added");
+            cardShopAction.classList.remove("item__added__background");
+          }
         }
       }
       return item;
@@ -208,6 +210,10 @@ function FavsPage() {
 
 
 
+const removeHidden = () => {
+  const footer = document.querySelector(".footer");
+  if (footer) footer.classList.remove("hidden");
+}
 
 
   /* A ternary operator that checks if the length of the totalCart array is 0. If it is, it renders the
@@ -239,6 +245,7 @@ function FavsPage() {
       </div>
       {ListLength === 0 ? (
         <Cart
+          removeHidden={removeHidden}
           title={"Your cart is empty."}
           totalPrice={0}
           emptyCartImg={
@@ -250,7 +257,7 @@ function FavsPage() {
           }
         />
       ) : (
-        <Cart title={""} totalPrice={totalPrice} productItem={checkCart()} />
+        <Cart removeHidden={removeHidden} title={""} totalPrice={totalPrice} productItem={checkCart()} />
       )}
     </>
   );

@@ -20,6 +20,7 @@ import "./LoginPage.css";
 
 
 function LoginPage() {
+
   const loadCart = () => {
     const cart = localStorage.getItem("cart");
     return cart ? JSON.parse(cart) : [];
