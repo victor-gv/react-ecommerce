@@ -13,43 +13,18 @@ import useSearch from "../Hooks/useSearch";
 import "./MainPage.css";
 
 function MainPage() {
-
-/* Destructuring the useCounterCart() and useSearch() hooks. */
-  const { addQuantity, substractQuantity, removeProduct, totalPrice, totalCart, setData, totalQuantity} = useCounterCart();
+  /* Destructuring the useCounterCart() and useSearch() hooks. */
+  const {
+    addToCart,
+    addQuantity,
+    substractQuantity,
+    removeProduct,
+    totalPrice,
+    totalCart,
+    setData,
+    totalQuantity,
+  } = useCounterCart();
   const { searchItem } = useSearch();
-
-
-
-  //Obtain the product data from the Products component and pass it to the Cart component
-  const addToCart = (product) => {
-    //Check if the product is already in the cart. If so, don't add it again.
-    if (totalCart.find((item) => item.id === product.id)) {
-      //If the product is already in the cart and the user clicks on the buy button again, we open the cart to let the user add more quantity of the product.
-      const mainPage = document.getElementById("mainPage");
-      const footer = document.getElementById("footer");
-      const cart = document.getElementById("cart");
-      cart.classList.add("cart-open");
-      mainPage.classList.add("blur");
-      footer.classList.add("hidden");
-      return;
-    }
-    //Add the product to the cart
-    const cartIcon = document.getElementById("cartIcon");
-
-    const cardShopAction = document.querySelector(`[data-id="${product.id}"]`);
-    cardShopAction.classList.add("item__added");
-
-
-    cartIcon.classList.add("product__added");
-    setTimeout(() => {
-      cartIcon.classList.remove("product__added");
-    }, 500);
-    setData([...totalCart, product]);
-  };
-
- 
-
-
 
   /**
    * CheckCart() is a function that returns a map of the totalCart array, which is an array of objects,
@@ -57,7 +32,6 @@ function MainPage() {
    * @returns The return statement is returning the result of the map function.
    */
   const checkCart = () => {
-
     return totalCart.map((product) => (
       <ProductItem
         key={product.id}
@@ -81,7 +55,7 @@ function MainPage() {
     return JSON.parse(localStorage.getItem("favs")) || initialState;
   };
 
-  const [favs, dispatch] = useReducer(favsReducer, initialState, init);// add init function to the useReducer hook to initialize the state
+  const [favs, dispatch] = useReducer(favsReducer, initialState, init); // add init function to the useReducer hook to initialize the state
 
   useEffect(() => {
     localStorage.setItem("favs", JSON.stringify(favs));
@@ -90,11 +64,10 @@ function MainPage() {
   const manageFav = (favs) => {
     const action = {
       type: "add to fav",
-      payload: favs
+      payload: favs,
     };
     dispatch(action);
   };
-
 
   /* A ternary operator that checks if the length of the totalCart array is 0. If it is, it renders the
 Cart component with the title 'Your cart is empty' and the totalPrice is 0. If the length of the
