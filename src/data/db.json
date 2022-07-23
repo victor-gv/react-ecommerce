@@ -61,6 +61,13 @@
       "price": 105,
       "quantity": 1,
       "img": "../img/img_9.jpeg"
+    },
+    {
+      "id": 109,
+      "title": "Air Force W",
+      "price": 105,
+      "quantity": 1,
+      "img": "../img/img_10.jpeg"
     }
  ]
 }
