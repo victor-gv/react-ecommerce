@@ -11,7 +11,7 @@ const SearchBar = (props) => {
         placeholder="Search"
         className="me-2"
         aria-label="Search"
-        onChange={() => props.manageChange()}
+        onChange={props.manageChange}
       />
       <Button variant="outline-success">Search</Button>
     </Form>
