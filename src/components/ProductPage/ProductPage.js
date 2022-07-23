@@ -1,22 +1,17 @@
 import React from "react";
 import useCounterCart from "../Hooks/useCounterCart";
-import useSearch from "../Hooks/useSearch";
 import Navbar from "../Navbar/Navbar";
 import { useEffect, useReducer } from "react";
-import { Link } from "react-router-dom";
-import { AiOutlineHome } from "react-icons/ai";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import emptyCartImg from "../../images/empty_cart.png";
-import FavsProducts from "../FavsProducts/FavsProducts";
-import favsReducer from "./FavsReducer/FavsReducer"
-import noResult from "../../images/no-results.png";
+import favsReducer from "../FavsPage/FavsReducer/FavsReducer"
 import "../Navbar/Navbar.css";
-import "./FavsPage.css";
+import "../FavsPage/FavsPage.css";
 
-function FavsPage() {
+function ProductPage() {
 
-/* Destructuring the useCounterCart() and useSearch() hooks. */
+/* Destructuring the useCounterCart() hook. */
   const {
     addQuantity,
     substractQuantity,
@@ -27,7 +22,6 @@ function FavsPage() {
     totalQuantity
   } = useCounterCart();
 
-  const { searchItem } = useSearch();
 
   //Obtain the product data from the Products component and pass it to the Cart component
   const addToCart = (product) => {
@@ -136,40 +130,14 @@ function FavsPage() {
   const favsLength = favs.length;
   return (
     <>
-      <div id="favPage" className="favPage__wrapper">
+      <div id="ProductPage" className="ProductPage__wrapper">
         <Navbar
-          SearchBar={true}
-          manageChange={searchItem}
+          SearchBar={false}
           isMainPage={false}
           totalQuantity={totalQuantity}
 
         />
-        {favsLength === 0 ? (
-          <FavsProducts
-            initialState={favs}
-            manageClick={addToCart}
-            manageFav={manageFav}
-            emptyMessage={`Your favorites are empty.`}
-            homePage={
-              <Link to="/">
-                <AiOutlineHome />
-              </Link>
-            }
-          />
-        ) : (
-          <>
-            <FavsProducts
-              initialState={favs}
-              manageClick={addToCart}
-              manageFav={manageFav}
-              emptyMessage={""}
-            />
-            <div id="emptySearch" className="hidden">
-              <img src={noResult} alt="No found sticker" />
-              <h4>No results found</h4>
-            </div>
-          </>
-        )}
+
       </div>
       {ListLength === 0 ? (
         <Cart
@@ -196,4 +164,4 @@ function FavsPage() {
   );
 }
 
-export default FavsPage;
+export default ProductPage;

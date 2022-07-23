@@ -21,6 +21,8 @@ import "./LoginPage.css";
 
 function LoginPage() {
 
+
+/* Destructuring the useCounterCart hook. */
   const { addQuantity, substractQuantity, removeProduct, totalPrice, totalCart, totalQuantity} = useCounterCart();
 
 

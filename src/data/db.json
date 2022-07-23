@@ -1,69 +1,69 @@
 {
  "products":  [{
-      "id": 100,
+      "id": 1,
       "title": "Nike Runner 2",
       "price": 90,
       "quantity": 1,
       "img": "../img/img_1.jpeg"
     },
     {
-      "id": 101,
+      "id": 2,
       "title": "Puma 80's",
       "price": 109,
       "quantity": 1,
       "img": "../img/img_2.jpeg"
     },
     {
-      "id": 102,
+      "id": 3,
       "title": "New Balance Sky",
       "price": 66,
       "quantity": 1,
       "img": "../img/img_3.jpeg"
     },
     {
-      "id": 103,
+      "id": 4,
       "title": "Nike Sub 3",
       "price": 87,
       "quantity": 1,
       "img": "../img/img_4.jpeg"
     },
     {
-      "id": 104,
+      "id": 5,
       "title": "Nike Max v2",
       "price": 100,
       "quantity": 1,
       "img": "../img/img_5.jpeg"
     },
     {
-      "id": 105,
+      "id": 6,
       "title": "Nike Run 5",
       "price": 77,
       "quantity": 1,
       "img": "../img/img_6.jpeg"
     },
     {
-      "id": 106,
+      "id": 7,
       "title": "Puma JSX",
       "price": 65,
       "quantity": 1,
       "img": "../img/img_7.jpeg"
     },
     {
-      "id": 107,
+      "id": 8,
       "title": "Air Force 1",
       "price": 105,
       "quantity": 1,
       "img": "../img/img_8.jpeg"
     },
     {
-      "id": 108,
+      "id": 9,
       "title": "Air Max Fly",
       "price": 105,
       "quantity": 1,
       "img": "../img/img_9.jpeg"
     },
     {
-      "id": 109,
+      "id": 10,
       "title": "Air Force W",
       "price": 105,
       "quantity": 1,

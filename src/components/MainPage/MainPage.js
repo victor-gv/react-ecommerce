@@ -7,13 +7,14 @@ import Navbar from "../Navbar/Navbar";
 import { Container, Row, Col } from "react-bootstrap";
 import emptyCartImg from "../../images/empty_cart.png";
 import noResult from "../../images/no-results.png";
-import favsReducer from "../FavsReducer/FavsReducer";
+import favsReducer from "../FavsPage/FavsReducer/FavsReducer";
 import useCounterCart from "../Hooks/useCounterCart";
 import useSearch from "../Hooks/useSearch";
 import "./MainPage.css";
 
 function MainPage() {
 
+/* Destructuring the useCounterCart() and useSearch() hooks. */
   const { addQuantity, substractQuantity, removeProduct, totalPrice, totalCart, setData, totalQuantity} = useCounterCart();
   const { searchItem } = useSearch();
 

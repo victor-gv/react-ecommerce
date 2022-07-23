@@ -8,6 +8,10 @@ body {
   color: #528af2;
   height: 3px;
 }
+.products__wrapper a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .empty-alert {
   display: flex;
