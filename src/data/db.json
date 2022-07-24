@@ -68,6 +68,48 @@
       "price": 105,
       "quantity": 1,
       "img": "../img/img_10.jpeg"
+    },
+    {
+      "id": 11,
+      "title": "Jordan Delta 3",
+      "price": 120,
+      "quantity": 1,
+      "img": "../img/img_11.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Nike Air Huarache",
+      "price": 130,
+      "quantity": 1,
+      "img": "../img/img_12.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Air Max 90",
+      "price": 99,
+      "quantity": 1,
+      "img": "../img/img_13.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Air Jordan 1 Zoom",
+      "price": 110,
+      "quantity": 1,
+      "img": "../img/img_14.jpg"
+    },
+    {
+      "id": 15,
+      "title": "Kyrie Infinity",
+      "price": 115,
+      "quantity": 1,
+      "img": "../img/img_15.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Adidas Gazelle",
+      "price": 80,
+      "quantity": 1,
+      "img": "../img/img_16.jpg"
     }
  ]
 }
