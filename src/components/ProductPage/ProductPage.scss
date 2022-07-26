@@ -1,8 +1,8 @@
 
 
-// .productPage__wrapper {
-//     width: 100%;
-// }
+.productPage__wrapper {
+    width: 100%;
+}
 
 // .productPageItem__container {
 //   display: flex;
@@ -30,9 +30,12 @@
 
 .row {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
+
+  .product_img{
+    align-self: center;
+  }
 
 }
 

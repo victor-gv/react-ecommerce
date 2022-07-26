@@ -8,10 +8,10 @@
     },
     {
       "id": 2,
-      "title": "Puma 80's",
-      "price": 109,
+      "title": "Air Max Fly",
+      "price": 105,
       "quantity": 1,
-      "img": "../img/img_2.jpeg"
+      "img": "../img/img_9.jpeg"
     },
     {
       "id": 3,
@@ -57,10 +57,10 @@
     },
     {
       "id": 9,
-      "title": "Air Max Fly",
-      "price": 105,
+      "title": "Puma 80's",
+      "price": 109,
       "quantity": 1,
-      "img": "../img/img_9.jpeg"
+      "img": "../img/img_2.jpeg"
     },
     {
       "id": 10,

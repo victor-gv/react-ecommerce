@@ -36,45 +36,10 @@ const ProductPageItem = ({ product, manageFav, manageClick }) => {
         <div className="product_img col-6">
           <img
             src={product.img}
-            alt=""
+            alt={product.title}
             width="100%"
-            id="ProductImg"
           />
 
-          {/* <div className="small-img-row">
-            <div className="small-img-col">
-              <img
-                src={product.img}
-                alt={product.title}
-                width="100%"
-                className="small-img"
-              />
-            </div>
-            <div className="small-img-col">
-              <img
-                src={product.img}
-                alt={product.title}
-                width="100%"
-                className="small-img"
-              />
-            </div>
-            <div className="small-img-col">
-              <img
-                src={product.img}
-                alt={product.title}
-                width="100%"
-                className="small-img"
-              />
-            </div>
-            <div className="small-img-col">
-              <img
-                src={product.img}
-                alt={product.title}
-                width="100%"
-                className="small-img"
-              />
-            </div>
-          </div> */}
         </div>
         <div className="col-6">
           <p>Home / Sneakers</p>

@@ -1,3 +1,7 @@
+.productPage__wrapper {
+  width: 100%;
+}
+
 /* single product details */
 .small-container {
   max-width: 1080px;
@@ -11,9 +15,11 @@
 
 .row {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+.row .product_img {
+  align-self: center;
 }
 
 .single-product {
