@@ -30,11 +30,11 @@
     
     a {
         text-decoration: none;
-        color: #555;
+        color: #ffffff;
     }
     
     p {
-        color: #555;
+        color: #ffffff;
     }
     
     &__static{
@@ -47,19 +47,21 @@
     align-items: center;
     min-width: 342px;
     padding: 20px 20px 20px 20px;
-    background-color: $secondary-color;
+    background: $black;
+    color: #b5b5b5;
 }
 
 .menu-icon {
-    width: 28px;
-    margin-left: 20px;
     display: none;
+    font-size: 2rem;
+    margin-left: .8rem;
+    margin-top: .3rem;
+    color: white;
 }
 
 .menu-items {
     max-height: 0px;
     margin-bottom: 0 !important;
-
 }
 
 
@@ -80,14 +82,20 @@
 
 .nav-link {
     display: block;
-    color: rgba(85, 85, 85, 0.928);
+    color: #ffffff;
     padding: 0.2rem !important;
     text-decoration: none;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
     font-size: 1.2rem;
 
+    &.fav-link{
+        &:hover{
+            color: $red;
+        }
+    }
+
     &:hover {
-      color: $black;
+        color: $primary-color;
     }
 }
 
@@ -115,31 +123,25 @@
     flex-direction: row;
     align-items: center;
     font-size: 2.2rem;
+    color: #ffffff;
 
     &:hover {
         cursor: pointer;
         transform: scale(1.09);
+        color: $yellow;
     }
 
     span {
         padding-top: .3rem;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 1.3rem;
-        color: $black;
+        color: #ffffff;
     }
 }
 
 .product__added{
     animation-name: product-added;
     animation-duration: 1s;
-
-    span {
-        background-color: $secondary-color;
-    }
-
-    img {
-        background-color: $secondary-color;
-    }
 }
 
 .form-control {
@@ -178,7 +180,7 @@
         top: 110px;
         left: 0;
         z-index: 1;
-        background: #333;
+        background: $black;
         width: 100%;
         overflow: hidden;
         transition: max-height 0.5s;

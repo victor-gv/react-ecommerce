@@ -2,8 +2,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   justify-items: center;
-  gap: 1rem;
+  gap: 3rem;
   margin-top: 3rem;
+  margin-inline: 2rem;
 }
 
 .title__row {

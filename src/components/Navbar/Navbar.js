@@ -1,8 +1,9 @@
 import React from "react";
 import SearchBar from './SearchBar/SearchBar'
-import logo from "../../images/logo.png";
+import logo from "../../images/black_logo.png"
 import { FaUserCircle } from "react-icons/fa"
 import { MdFavoriteBorder } from "react-icons/md"
+import { AiOutlineMenu } from "react-icons/ai"
 import { BsCart } from "react-icons/bs"
 import { Link } from 'react-router-dom';
 import "./Navbar.css";
@@ -66,14 +67,12 @@ function Navbar(props) {
             </li>
           </ul>
         </nav>
-        <Link className='nav-link' to="/favs"><MdFavoriteBorder className="mainPage__favIcon"/></Link>
+        <Link className='nav-link fav-link' to="/favs"><MdFavoriteBorder className="mainPage__favIcon"/></Link>
         <div id="cartIcon" className="cart__icon" onClick={openCart}>
           <BsCart />
           <span>({props.totalQuantity})</span>
         </div>
-        <img
-          src="https://i.ibb.co/6XbqwjD/menu.png"
-          alt=""
+        <AiOutlineMenu
           className="menu-icon"
           onClick={menuToggle}
         />

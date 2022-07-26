@@ -4,4 +4,7 @@
 .favPage__wrapper a {
   text-decoration: none;
   color: inherit;
+}
+.favPage__wrapper .nav-link {
+  color: white;
 }/*# sourceMappingURL=FavsPage.css.map */
