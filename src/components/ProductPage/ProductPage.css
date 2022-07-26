@@ -72,4 +72,13 @@ input:focus {
 .small-img-col {
   flex-basis: 24%;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 750px) {
+  .col-6 {
+    width: 100%;
+  }
+  .product_img {
+    width: 80%;
+  }
 }/*# sourceMappingURL=ProductPage.css.map */

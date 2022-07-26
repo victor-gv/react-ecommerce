@@ -90,3 +90,14 @@ input:focus {
   flex-basis: 24%;
   cursor: pointer;
 }
+
+  //Media queries
+  @media only screen and (max-width: 750px) {
+    .col-6{
+      width: 100%;
+    }
+
+    .product_img{
+      width: 80%;
+    }
+  }
