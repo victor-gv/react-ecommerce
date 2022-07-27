@@ -10,7 +10,7 @@ const ProductRelated = () => {
     <>
       {products.length > 0 &&
         products
-          .sort(() => Math.random() - 0.5)
+          .sort(() => Math.random() - Math.random())
           .slice(0, 4)
           .map((product) => (
             <div key={product.id} className="col-4">
