@@ -4,112 +4,128 @@
       "title": "Nike Runner 2",
       "price": 90,
       "quantity": 1,
-      "img": "../img/img_1.jpeg"
+      "img": "../img/img_1.jpeg",
+      "category": "Sneakers"
     },
     {
       "id": 2,
       "title": "Air Max Fly",
       "price": 105,
       "quantity": 1,
-      "img": "../img/img_9.jpeg"
+      "img": "../img/img_9.jpeg",
+      "category": "Sneakers"
     },
     {
       "id": 3,
       "title": "New Balance Sky",
       "price": 66,
       "quantity": 1,
-      "img": "../img/img_3.jpeg"
+      "img": "../img/img_3.jpeg",
+      "category": "Sneakers"
     },
     {
       "id": 4,
       "title": "Nike Sub 3",
       "price": 87,
       "quantity": 1,
-      "img": "../img/img_4.jpeg"
+      "img": "../img/img_4.jpeg",
+      "category": "Sneakers"
     },
     {
       "id": 5,
       "title": "Nike Max v2",
       "price": 100,
       "quantity": 1,
-      "img": "../img/img_5.jpeg"
+      "img": "../img/img_5.jpeg",
+      "category": "Sneakers"
     },
     {
       "id": 6,
       "title": "Nike Run 5",
       "price": 77,
       "quantity": 1,
-      "img": "../img/img_6.jpeg"
+      "img": "../img/img_6.jpeg",
+      "category": "Sneakers"
     },
     {
       "id": 7,
       "title": "Puma JSX",
       "price": 65,
       "quantity": 1,
-      "img": "../img/img_7.jpeg"
+      "img": "../img/img_7.jpeg",
+      "category": "Sneakers"
     },
     {
       "id": 8,
       "title": "Air Force 1",
       "price": 105,
       "quantity": 1,
-      "img": "../img/img_8.jpeg"
+      "img": "../img/img_8.jpeg",
+      "category": "Sneakers"
     },
     {
       "id": 9,
       "title": "Puma 80's",
       "price": 109,
       "quantity": 1,
-      "img": "../img/img_2.jpeg"
+      "img": "../img/img_2.jpeg",
+      "category": "Sneakers"
     },
     {
       "id": 10,
       "title": "Air Force W",
       "price": 105,
       "quantity": 1,
-      "img": "../img/img_10.jpeg"
+      "img": "../img/img_10.jpeg",
+      "category": "Sneakers"
     },
     {
       "id": 11,
       "title": "Jordan Delta 3",
       "price": 120,
       "quantity": 1,
-      "img": "../img/img_11.jpg"
+      "img": "../img/img_11.jpg",
+      "category": "Sneakers"
     },
     {
       "id": 12,
       "title": "Nike Air Huarache",
       "price": 130,
       "quantity": 1,
-      "img": "../img/img_12.jpg"
+      "img": "../img/img_12.jpg",
+      "category": "Sneakers"
     },
     {
       "id": 13,
       "title": "Air Max 90",
       "price": 99,
       "quantity": 1,
-      "img": "../img/img_13.jpg"
+      "img": "../img/img_13.jpg",
+      "category": "Sneakers"
     },
     {
       "id": 14,
       "title": "Air Jordan 1 Zoom",
       "price": 110,
       "quantity": 1,
-      "img": "../img/img_14.jpg"
+      "img": "../img/img_14.jpg",
+      "category": "Sneakers"
     },
     {
       "id": 15,
       "title": "Kyrie Infinity",
       "price": 115,
       "quantity": 1,
-      "img": "../img/img_15.jpg"
+      "img": "../img/img_15.jpg",
+      "category": "Sneakers"
     },
     {
       "id": 16,
       "title": "Adidas Gazelle",
       "price": 80,
       "quantity": 1,
-      "img": "../img/img_16.jpg"
+      "img": "../img/img_16.jpg",
+      "category": "Sneakers"
     }
  ]
 }

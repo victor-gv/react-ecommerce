@@ -22,6 +22,13 @@
   align-self: center;
 }
 
+.row-2 {
+  display: flex;
+}
+.row-2 p {
+  text-align: end;
+}
+
 .single-product {
   margin-top: 80px;
 }
@@ -72,6 +79,26 @@ input:focus {
 .small-img-col {
   flex-basis: 24%;
   cursor: pointer;
+}
+
+.related-products {
+  margin-top: 4rem;
+}
+.related-products a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.col-4 {
+  flex-basis: 25%;
+  padding: 10px;
+  min-width: 200px;
+  margin-bottom: 50px;
+  transition: transform 0.5s;
+}
+.col-4 img {
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
 @media only screen and (max-width: 750px) {

@@ -7,7 +7,7 @@ const useFetch = () => {
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
-  
+
     useEffect(() => {
       setError(false);
       setLoading(true);

@@ -1,23 +1,24 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import useCart from "../Hooks/useCart";
 import Navbar from "../Navbar/Navbar";
 import { useEffect, useReducer } from "react";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import ProductPageItem from "./ProductPageItem/ProductPageItem";
+import ProductRelated from "./ProductRelated/ProductRelated"
 import emptyCartImg from "../../images/empty_cart.png";
-import favsReducer from "../FavsPage/FavsReducer/FavsReducer"
+import favsReducer from "../FavsPage/FavsReducer/FavsReducer";
 import "../Navbar/Navbar.css";
 import "../FavsPage/FavsPage.css";
 import "./ProductPage.css";
 
 function ProductPage() {
+  const location = useLocation();
+  const product = location.state;
 
-const location = useLocation();
-const product = location.state;
 
-/* Destructuring the useCart() hook. */
+  /* Destructuring the useCart() hook. */
   const {
     addToCart,
     addQuantity,
@@ -25,9 +26,8 @@ const product = location.state;
     removeProduct,
     totalPrice,
     totalCart,
-    totalQuantity
+    totalQuantity,
   } = useCart();
-
 
 
   /**
@@ -116,14 +116,30 @@ const product = location.state;
           isMainPage={false}
           totalQuantity={totalQuantity}
         />
-       <div className="productPageItem__container">
-         <ProductPageItem
-          product={product}
-          manageClick={addToCart}
-          manageFav={manageFav}
-               />
-       </div>
+        <div className="productPageItem__container">
+          <ProductPageItem
+            product={product}
+            manageClick={addToCart}
+            manageFav={manageFav}
+          />
+        </div>
 
+        {/* Related products */}
+        <div className="related-products">
+          <div className="small-container">
+            <div className="row row-2">
+              <h2>Related Products</h2>
+              <Link to="/">
+                <p>View more</p>
+              </Link>
+            </div>
+          </div>
+          <div className="small-container">
+            <div className="row">
+             <ProductRelated />
+            </div>
+          </div>
+        </div>
       </div>
       {ListLength === 0 ? (
         <Cart
