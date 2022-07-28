@@ -26,7 +26,7 @@ const favs = initialState;
             <Link to={`/product/${fav.id}`} state={fav}>
               <img src={fav.img} alt={`${fav.title} sneaker`} />
               <h4 className="card__title">{fav.title}</h4>
-              <span className="card__description">Summer outfits</span>
+              <span className="card__description">{fav.category}</span>
               <span className="card__shop__price">{fav.price}€</span>
               </Link>
               <div className="card__shop">

@@ -73,7 +73,7 @@ useEffect(() => {
                 <Link to={`product/${product.id}`} state={product}>
                   <img src={product.img} alt={product.title} />
                       <h4 className="card__title">{product.title}</h4>
-                  <span className="card__description">Summer outfits</span>
+                  <span className="card__description">{product.category}</span>
                       <span className="card__shop__price">{product.price}€</span>
                 </Link>
                 <div className="card__shop">
