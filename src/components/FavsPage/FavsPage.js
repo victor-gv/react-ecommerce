@@ -3,14 +3,12 @@ import useCart from "../Hooks/useCart";
 import useSearch from "../Hooks/useSearch";
 import useFavs from "../Hooks/useFavs";
 import Navbar from "../Navbar/Navbar";
-import { useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import emptyCartImg from "../../images/empty_cart.png";
 import FavsProducts from "../FavsProducts/FavsProducts";
-import favsReducer from "./FavsReducer/FavsReducer"
 import noResult from "../../images/no-results.png";
 import "../Navbar/Navbar.css";
 import "./FavsPage.css";

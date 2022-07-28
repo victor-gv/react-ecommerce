@@ -24,7 +24,7 @@ function MainPage() {
   } = useCart();
 
   const { searchItem } = useSearch();
-  const { manageFav, removeHidden } = useFavs();
+  const { manageFav } = useFavs();
   
 
   /**
