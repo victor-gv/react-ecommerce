@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect, useReducer } from "react";
 import Products from "../Products/Products";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
@@ -7,7 +6,7 @@ import Navbar from "../Navbar/Navbar";
 import { Container, Row, Col } from "react-bootstrap";
 import emptyCartImg from "../../images/empty_cart.png";
 import noResult from "../../images/no-results.png";
-import favsReducer from "../FavsPage/FavsReducer/FavsReducer";
+import useFavs from "../Hooks/useFavs";
 import useCart from "../Hooks/useCart";
 import useSearch from "../Hooks/useSearch";
 import "./MainPage.css";
@@ -23,7 +22,10 @@ function MainPage() {
     totalCart,
     totalQuantity,
   } = useCart();
+
   const { searchItem } = useSearch();
+  const { manageFav, removeHidden } = useFavs();
+  
 
   /**
    * CheckCart() is a function that returns a map of the totalCart array, which is an array of objects,
@@ -47,26 +49,7 @@ function MainPage() {
     ));
   };
 
-  //Manage fav function
-  const initialState = [];
-
-  const init = () => {
-    return JSON.parse(localStorage.getItem("favs")) || initialState;
-  };
-
-  const [favs, dispatch] = useReducer(favsReducer, initialState, init); // add init function to the useReducer hook to initialize the state
-
-  useEffect(() => {
-    localStorage.setItem("favs", JSON.stringify(favs));
-  }, [favs]);
-
-  const manageFav = (favs) => {
-    const action = {
-      type: "add to fav",
-      payload: favs,
-    };
-    dispatch(action);
-  };
+  
 
   /* A ternary operator that checks if the length of the totalCart array is 0. If it is, it renders the
 Cart component with the title 'Your cart is empty' and the totalPrice is 0. If the length of the
