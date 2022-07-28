@@ -7,7 +7,6 @@ import "./FavsProducts.css";
 import "../Products/Products.css";
 
 const FavsProducts = ({initialState = [], manageFav, manageClick, emptyMessage, homePage}) => {
-
 const favs = initialState;
 
   return (

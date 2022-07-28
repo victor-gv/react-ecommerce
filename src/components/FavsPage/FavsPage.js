@@ -17,25 +17,22 @@ function FavsPage() {
 
 /* Destructuring the useCart() and useSearch() hooks. */
   const {
+    cart,
     addToCart,
     addQuantity,
     substractQuantity,
     removeProduct,
     totalPrice,
-    totalCart,
     totalQuantity
   } = useCart();
 
   const { searchItem } = useSearch();
   const { manageFav, removeHidden, favs } = useFavs();
 
-  /**
-   * CheckCart() is a function that returns a map of the totalCart array, which is an array of objects,
-   * and maps each object to a ProductItem component, which is a component that renders a product item.
-   * @returns The return statement is returning the result of the map function.
-   */
+
+  
   const checkCart = () => {
-    return totalCart.map((product) => (
+    return cart.map((product) => (
       <ProductItem
         key={product.id}
         id={product.id}
@@ -52,11 +49,8 @@ function FavsPage() {
   };
 
 
-  /* A ternary operator that checks if the length of the totalCart array is 0. If it is, it renders the
-  Cart component with the title 'Your cart is empty' and the totalPrice is 0. If the length of the
-  totalCart array is not 0, it renders the Cart component with the title '', the totalPrice is the
-  totalPrice of the cart, and the productItem is the result of the checkCart() function. */
-  const ListLength = totalCart.length;
+
+  const ListLength = cart.length;
   const favsLength = favs.length;
   return (
     <>

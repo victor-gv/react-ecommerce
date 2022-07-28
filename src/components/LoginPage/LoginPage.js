@@ -23,16 +23,12 @@ function LoginPage() {
 
 
 /* Destructuring the useCart hook. */
-  const { addQuantity, substractQuantity, removeProduct, totalPrice, totalCart, totalQuantity} = useCart();
+  const { addQuantity, substractQuantity, removeProduct, totalPrice, cart, totalQuantity} = useCart();
 
 
-  /**
-   * CheckCart() is a function that returns a map of the totalCart array, which is an array of objects,
-   * and maps each object to a ProductItem component, which is a component that renders a product item.
-   * @returns The return statement is returning the result of the map function.
-   */
+
   const checkCart = () => {
-    return totalCart.map((product) => (
+    return cart.map((product) => (
       <ProductItem
         key={product.id}
         id={product.id}
@@ -48,7 +44,7 @@ function LoginPage() {
     ));
   };
 
-  const ListLength = totalCart.length;
+  const ListLength = cart.length;
   return (
     <>
         <div className="loginPage__wrapper">

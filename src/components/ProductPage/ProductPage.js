@@ -24,7 +24,7 @@ function ProductPage() {
     substractQuantity,
     removeProduct,
     totalPrice,
-    totalCart,
+    cart,
     totalQuantity,
   } = useCart();
 
@@ -38,7 +38,7 @@ function ProductPage() {
    * @returns The return statement is returning the result of the map function.
    */
   const checkCart = () => {
-    return totalCart.map((product) => (
+    return cart.map((product) => (
       <ProductItem
         key={product.id}
         id={product.id}
@@ -60,7 +60,7 @@ function ProductPage() {
   Cart component with the title 'Your cart is empty' and the totalPrice is 0. If the length of the
   totalCart array is not 0, it renders the Cart component with the title '', the totalPrice is the
   totalPrice of the cart, and the productItem is the result of the checkCart() function. */
-  const ListLength = totalCart.length;
+  const ListLength = cart.length;
   return (
     <>
       <div id="productPage" className="productPage__wrapper">
