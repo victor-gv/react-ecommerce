@@ -14,7 +14,7 @@ const ProductRelated = () => {
           .slice(0, 4)
           .map((product) => (
             <div key={product.id} className="col-4">
-              <Link to="" state={product}>
+              <Link to={`/product/${product.id}`} state={product}>
                 <img src={product.img} alt={product.title} />
                 <h4>{product.title}</h4>
                 <p>{product.category}</p>
