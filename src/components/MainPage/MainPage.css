@@ -4,6 +4,9 @@ body {
   box-sizing: border-box;
 }
 
+.products__wrapper {
+  margin-bottom: 3rem;
+}
 .products__wrapper hr {
   color: #528af2;
   height: 3px;
@@ -106,5 +109,16 @@ body {
   .remove-btn {
     margin-right: 1rem;
     margin-left: 1rem;
+  }
+}
+@media (max-width: 530px) {
+  .card {
+    width: 20rem;
+  }
+  .col-10 {
+    width: 100%;
+  }
+  .products__container {
+    margin-inline: 0;
   }
 }/*# sourceMappingURL=MainPage.css.map */

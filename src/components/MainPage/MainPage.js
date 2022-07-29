@@ -67,7 +67,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
             </Row>
           </Container>
           <Row>
-            <Col className="products__wrapper">
+            <Col xs="10" className="products__wrapper">
               <Products manageClick={addToCart} manageFav={manageFav} />
               <div id="emptySearch" className="hidden">
                 <img src={noResult} alt="No found sticker" />

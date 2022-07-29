@@ -1,11 +1,11 @@
 
 .products__container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     justify-items: center;
-    gap: 3rem;
+    gap: 5rem;
     margin-top: 3rem;
-    margin-inline: 2rem;
+    margin-inline: 3rem;
 }
 
 .title__row {

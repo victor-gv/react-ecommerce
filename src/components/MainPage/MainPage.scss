@@ -9,6 +9,8 @@ body {
 
 
   .products__wrapper {
+    margin-bottom: 3rem;
+    
     hr {
       color: $blue;
       height: 3px;
@@ -137,4 +139,17 @@ body {
   }
 }
 
+@media (max-width: 530px){
+  .card{
+    width: 20rem
+  }
+
+  .col-10 {
+    width: 100%;
+  }
+
+  .products__container {
+    margin-inline: 0;
+  }
+}
 

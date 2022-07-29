@@ -2,30 +2,35 @@
 
 
 .card {
-  width: 18rem;
-  height: 23rem;
-  border-radius: 20px;
-  padding: 15px;
-  margin-bottom: 1.5rem;
-  font-family: sans-serif;
+  width: 25rem;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 1.5rem;
+  font-family: sans-serif;
   transition: transform 0.3s, background 0.3s;
-  box-shadow: 10px 3px 70px 3px #3c3b5121;
+  padding: 15px;
+  border: none;
+  border-radius: 20px;
 
 
   &:hover {
     transform: scale(1.09);
     background-color: rgba(166, 166, 166, 0.105);
     box-shadow: 10px 20px 25px #3c3b515e;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+
+    img {
+      border-radius: 10px;
+    }
   }
 
   & img {
     width: 100%;
     height: auto;
-    border-radius: 14px;
     object-fit: cover;
+    border-radius: 5px;
   }
 
   &__title {
@@ -78,6 +83,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.card__shop {
+  border-block: 1px solid $border;
+  padding-block: .5rem;
 }
 
 
