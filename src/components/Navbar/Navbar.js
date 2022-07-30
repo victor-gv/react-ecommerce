@@ -1,16 +1,13 @@
 import React from "react";
 import SearchBar from './SearchBar/SearchBar'
 import logo from "../../images/black_logo.png"
+import IconsNavbar from "./Icons/IconsNavbar";
 import { FaUserCircle } from "react-icons/fa"
-import { MdFavoriteBorder } from "react-icons/md"
 import { AiOutlineMenu } from "react-icons/ai"
-import { BsCart } from "react-icons/bs"
 import { Link } from 'react-router-dom';
 import "./Navbar.css";
 
 function Navbar(props) {
-
-
 
   //Function for responsive navbar
   const menuToggle = () => {
@@ -38,7 +35,6 @@ function Navbar(props) {
     if (productPage) productPage.classList.add("blur");
     if (cart) cart.classList.add("cart-open");
     if (footer) footer.classList.add("hidden");
-
   }
 
   return (
@@ -67,11 +63,7 @@ function Navbar(props) {
             </li>
           </ul>
         </nav>
-        <Link className='nav-link fav-link' to="/favs"><MdFavoriteBorder className="mainPage__favIcon"/></Link>
-        <div id="cartIcon" className="cart__icon" onClick={openCart}>
-          <BsCart />
-          <span>({props.totalQuantity})</span>
-        </div>
+        {props.IconsNavbar ? <IconsNavbar openCart={openCart} totalQuantity={props.totalQuantity} /> : null}
         <AiOutlineMenu
           className="menu-icon"
           onClick={menuToggle}

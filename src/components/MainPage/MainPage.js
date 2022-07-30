@@ -61,6 +61,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
               <Navbar
                 SearchBar={true}
                 isMainPage={true}
+                IconsNavbar={true}
                 manageChange={searchItem}
                 totalQuantity={totalQuantity}
               />

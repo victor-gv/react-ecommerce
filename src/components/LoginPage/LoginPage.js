@@ -52,6 +52,7 @@ function LoginPage() {
             <Navbar
               SearchBar={false}
               isMainPage={false}
+              IconsNavbar={true}
               totalQuantity={totalQuantity}
               />
             <section className="login__title">

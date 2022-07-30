@@ -67,6 +67,7 @@ function ProductPage() {
         <Navbar
           SearchBar={false}
           isMainPage={false}
+          IconsNavbar={true}
           totalQuantity={totalQuantity}
         />
         <div className="productPageItem__container">

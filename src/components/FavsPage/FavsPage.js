@@ -59,6 +59,7 @@ function FavsPage() {
           SearchBar={true}
           manageChange={searchItem}
           isMainPage={false}
+          IconsNavbar={true}
           totalQuantity={totalQuantity}
 
         />

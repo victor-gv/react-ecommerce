@@ -44,6 +44,7 @@ const ErrorPage = () => {
       <Navbar
         SearchBar={false}
         isMainPage={false}
+        IconsNavbar={false}
         totalQuantity={totalQuantity}
       />
       <div className="page_404">

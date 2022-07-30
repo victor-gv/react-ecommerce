@@ -2,6 +2,7 @@ import { useState, useEffect, useReducer } from "react";
 import cartReducer from "../Cart/CartReducer/CartReducer";
 
 const useCart = () => {
+  
 
   const initialState = [];
 
