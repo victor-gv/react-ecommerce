@@ -15,7 +15,7 @@ const ProductRelated = () => {
       .sort(() => Math.random() - Math.random())
       .slice(0, 4)
   }
-    , [products]);
+    , [products, mainProduct]);
 
   return (
     <>
