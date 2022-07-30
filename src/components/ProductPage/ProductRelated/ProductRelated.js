@@ -8,7 +8,6 @@ const ProductRelated = () => {
 
   const location = useLocation();
   const mainProduct = location.state;
-  console.log(mainProduct);
 
   const relatedProducts = useMemo(() => {
     return products
