@@ -5,6 +5,7 @@ import FavsPage from './components/FavsPage/FavsPage'
 import ProductPage from './components/ProductPage/ProductPage'
 import Footer from './components/Footer/Footer'
 import { Routes, Route } from 'react-router-dom'
+import ErrorPage from './components/ErrorPage/ErrorPage'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/login' element={<LoginPage />} />
         <Route path='/favs' element={<FavsPage />} />
         <Route path='/product/:id' element={<ProductPage />} />
+        <Route path ="*" element = {<ErrorPage />} />
       </Routes>
         <Footer />
     </>
