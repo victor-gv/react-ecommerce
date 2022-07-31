@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Products from "../Products/Products";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
@@ -9,6 +9,7 @@ import noResult from "../../images/no-results.png";
 import useFavs from "../Hooks/useFavs";
 import useCart from "../Hooks/useCart";
 import useSearch from "../Hooks/useSearch";
+import useFetch from "../Hooks/useFetch";
 import "./MainPage.css";
 
 function MainPage() {
@@ -23,10 +24,37 @@ function MainPage() {
     totalQuantity
   } = useCart();
 
+  const { products } = useFetch();
   const { searchItem } = useSearch();
-  const { manageFav } = useFavs();
-  
+  const { manageFav, favs } = useFavs();
 
+
+
+    //function to add the class item__added__background to the buy icon when the products are rendered if they are already in the cart. That way even if the page is refreshed, the icon will indicate that the product is already in the cart.
+    useEffect(() => {
+      if (cart) {
+        cart.forEach((product) => {
+          const cartIcon = document.querySelector(
+            `[data-id="${product.id}"]`
+          );
+          if(cartIcon) cartIcon.classList.add("item__added__background");
+        });
+      }
+    }
+    , [cart, products]);
+    
+    
+        //function to add the class fav__added__background to the buy icon when the products are rendered if they are already in favs. That way even if the page is refreshed, the icon will indicate that the product is already in favs.
+        useEffect(() => {
+        if (favs) {
+          favs.forEach((fav) => {
+            const favIcon = document.querySelector(`[fav-id="${fav.id}"]`);
+            if (favIcon) favIcon.classList.add("fav__added__background");
+          }
+          );
+        }
+      }
+      , [favs, products]);
 
   const checkCart = () => {
     return cart.map((product) => (
