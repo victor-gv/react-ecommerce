@@ -24,16 +24,6 @@ const manageFav = (id) => {
   dispatch(action);
 };
 
-//function to add the class fav__added__background to the fav icons when the products are rendered if they are already in favs. That way even if the page is refreshed, the icon will indicate that the product is already in the favs.
-useEffect(() => {
-  const favs = JSON.parse(localStorage.getItem("favs"));
-  if (favs) {
-    favs.forEach((fav) => {
-      const favIcon = document.querySelector(`[fav-id="${fav.id}"]`);
-      if (favIcon) favIcon.classList.add("fav__added__background");
-    });
-  }
-}, [favs]);
 
 const removeHidden = () => {
   const footer = document.querySelector(".footer");

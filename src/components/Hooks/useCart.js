@@ -105,17 +105,6 @@ const useCart = () => {
 
 
 
-//function to add the class item__added__background to the buy icon when the products are rendered if they are already in the cart. That way, even if the page is refreshed, the icon will indicate that the product is already in the cart.
-useEffect(() => {
-  const cart = JSON.parse(localStorage.getItem("cart"));
-  if (cart) {
-    cart.forEach((product) => {
-      const cartIcon = document.querySelector(`[data-id="${product.id}"]`);
-      if (cartIcon) cartIcon.classList.add("item__added__background");
-    });
-  }
-}, [cart]);
-
   return {
     addToCart,
     addQuantity,

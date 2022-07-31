@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import useCart from "../Hooks/useCart";
 import Navbar from "../Navbar/Navbar";
 import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import ProductPageItem from "./ProductPageItem/ProductPageItem";
-import ProductRelated from "./ProductRelated/ProductRelated"
+import ProductRelated from "./ProductRelated/ProductRelated";
 import emptyCartImg from "../../images/empty_cart.png";
 import useFavs from "../Hooks/useFavs";
 import "../Navbar/Navbar.css";
@@ -15,7 +15,6 @@ import "./ProductPage.css";
 function ProductPage() {
   const location = useLocation();
   const product = location.state;
-
 
   /* Destructuring the useCart() hook. */
   const {
@@ -28,9 +27,35 @@ function ProductPage() {
     totalQuantity,
   } = useCart();
 
+  const { manageFav, removeHidden, favs } = useFavs();
 
-  const { manageFav, removeHidden } = useFavs();
 
+  //function to add the class fav__added__background to the fav icons when the products are rendered if the product is already in favs.
+  useEffect(() => {
+    const favIcon = document.querySelector(`[fav-id="${product.id}"]`);
+    if (favs) {
+      //Check if the product is in the favs, if it is, add the class fav__added__background to the fav icon.
+      if (favs.find((fav) => fav.id === product.id)) {
+        favIcon.classList.add("fav__added__background");
+      } else {
+        favIcon.classList.remove("fav__added__background");
+      }
+    }
+  }, [product, favs]);
+
+
+  //function to add the class item__added__background to the buy icon when the products are rendered if they are already in the cart. That way even if the page is refreshed, the icon will indicate that the product is already in the cart.
+  useEffect(() => {
+    const cartIcon = document.querySelector(`[data-id="${product.id}"]`);
+    if (cart) {
+      if (cart.find((item) => item.id === product.id)) {
+        cartIcon.classList.add("item__added__background");
+      } else {
+        cartIcon.classList.remove("item__added");
+        cartIcon.classList.remove("item__added__background");
+      }
+    }
+  }, [product, cart]);
 
   /**
    * CheckCart() is a function that returns a map of the totalCart array, which is an array of objects,
@@ -53,8 +78,6 @@ function ProductPage() {
       />
     ));
   };
-
-  
 
   /* A ternary operator that checks if the length of the totalCart array is 0. If it is, it renders the
   Cart component with the title 'Your cart is empty' and the totalPrice is 0. If the length of the
@@ -90,7 +113,7 @@ function ProductPage() {
           </div>
           <div className="small-container">
             <div className="row">
-             <ProductRelated />
+              <ProductRelated />
             </div>
           </div>
         </div>

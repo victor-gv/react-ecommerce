@@ -3,6 +3,7 @@ import { BsHandbagFill, BsShareFill } from "react-icons/bs";
 import { MdFavoriteBorder } from "react-icons/md";
 
 const ProductPageItem = ({ product, manageFav, manageClick }) => {
+
   return (
     <div data-card={product.id} className="small-container single-product">
       <div className="row">
