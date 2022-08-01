@@ -1,51 +1,17 @@
+import { useSearchParams } from "react-router-dom"
 
 const useSearch = () => {
 
 //Search function
-const searchItem = () => {
-    const search = document.getElementById("search").value;
-    const products = document.querySelectorAll(".card");
+const [searchParams, setSearchParams] = useSearchParams();
 
-    //Prevent refreshing the page when the user press enter key in the search bar
-    const form = document.getElementById("searchForm");
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-    });
+const searchItem = (e) => {
+  setSearchParams({ filter : e.target.value })
+}
 
-    /* A function that filters the products and renders only the ones that match the search. */
-    products.forEach((product) => {
-      //We take into account only the title of the product and the price of the product, but not the text of the buy button to match the search.
-      const title = product.querySelector(".card__title").innerText;
-      const price = product.querySelector(".card__shop__price").innerText;
-      const emptySearch = document.getElementById("emptySearch");
+const filter = searchParams.get("filter") || "";
 
-      if (
-        title.toLowerCase().includes(search.toLowerCase()) ||
-        price.includes(search)
-      ) {
-        product.style.display = "block";
-        product.setAttribute("matched", "true");
-      } else {
-        product.style.display = "none";
-        product.setAttribute("matched", "false");
-      }
-
-      const unMatchedProducts = document.querySelectorAll("[matched='false']");
-      //If all the products have the attribute matched set to false, we toggle the display of the emptySearch div to display the message "No results found".
-      if (unMatchedProducts.length === products.length) {
-        emptySearch.classList.add("empty-alert");
-        emptySearch.classList.remove("hidden");
-      } else {
-        emptySearch.classList.add("hidden");
-        emptySearch.classList.remove("empty-alert");
-      }
-    });
-  };
-
-
-  return (
-    {searchItem}
-  )
+return { filter, searchItem };
 }
 
 export default useSearch

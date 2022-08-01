@@ -5,7 +5,6 @@ import ProductItem from "../ProducItem/ProductItem";
 import Navbar from "../Navbar/Navbar";
 import { Container, Row, Col } from "react-bootstrap";
 import emptyCartImg from "../../images/empty_cart.png";
-import noResult from "../../images/no-results.png";
 import useFavs from "../Hooks/useFavs";
 import useCart from "../Hooks/useCart";
 import useSearch from "../Hooks/useSearch";
@@ -25,8 +24,8 @@ function MainPage() {
   } = useCart();
 
   const { products } = useFetch();
-  const { searchItem } = useSearch();
   const { manageFav, favs } = useFavs();
+  const { searchItem } = useSearch();
 
 
 
@@ -98,10 +97,6 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
           <Row>
             <Col xs="10" className="products__wrapper">
               <Products manageClick={addToCart} manageFav={manageFav} />
-              <div id="emptySearch" className="hidden">
-                <img src={noResult} alt="No found sticker" />
-                <h4>No results found</h4>
-              </div>
             </Col>
           </Row>
         </div>
