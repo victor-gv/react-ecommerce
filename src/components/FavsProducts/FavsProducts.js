@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import useSearch from "../Hooks/useSearch";
+import noResult from "../../images/no-results.png";
 import ProductCard from "../ProductCard/ProductCard";
 import { BsHandbagFill, BsShareFill } from "react-icons/bs";
 import { MdFavoriteBorder } from "react-icons/md";
@@ -8,6 +10,10 @@ import "../Products/Products.css";
 
 const FavsProducts = ({initialState = [], manageFav, manageClick, emptyMessage, homePage}) => {
 const favs = initialState;
+
+const { filter } = useSearch();
+
+let renderedProducts;
 
   return (
     <>
@@ -19,7 +25,15 @@ const favs = initialState;
               {homePage}
         </div>
       <div className="products__container">
-        {favs.map((fav) => (
+        {renderedProducts = favs
+         .filter((product) => {
+          const match = product.title
+            .toLowerCase()
+            .includes(filter.toLowerCase());
+          if (!filter) return true;
+          return match;
+        })
+        .map((fav) => (
           <ProductCard key={fav.id}>
             <div data-fav={fav.id} className="card">
             <Link to={`/product/${fav.id}`} state={fav}>
@@ -50,6 +64,12 @@ const favs = initialState;
             </div>
           </ProductCard>
         ))}
+                {renderedProducts.length === 0 && filter !== "" ? (
+          <div id="emptySearch" className="empty-alert">
+            <img src={noResult} alt="No found sticker" />
+            <h4>No results found</h4>
+          </div>
+        ) : null}
       </div>
     </>
   );
