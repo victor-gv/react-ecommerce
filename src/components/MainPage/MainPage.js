@@ -80,7 +80,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
     <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
       <div className="mainPage__wrapper">
         <div className="mainPage" id="mainPage">
-          <Container fluid>
+          <Container>
             <Row>
               <Navbar
                 SearchBar={true}
@@ -92,7 +92,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
             </Row>
           </Container>
           {!searchCall.searchCall ? (
-            <Container fluid>
+            <Container className="frontPage_wrapper">
               <Row id="banner" className="frontPage_container">
                 <Col md="4">
                   <img src={frontPage1} alt="front models page" />
