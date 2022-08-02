@@ -60,11 +60,18 @@ body {
   opacity: 0.8;
   filter: blur(5px);
 }
+.blur .container {
+  width: 100% !important;
+  margin-inline: 0;
+}
 .blur .footer {
   display: none;
 }
 .blur .navbar-container {
   position: static;
+}
+.blur .frontPage_container {
+  margin-top: 0;
 }
 .blur .frontPage_container img {
   margin-top: 3rem;
