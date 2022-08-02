@@ -18,7 +18,7 @@ body {
   width: 100%;
 }
 
-.container {
+.container-errorPage {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -72,17 +72,17 @@ p {
 }
 
 @media (min-width: 1200px) {
-  .container {
+  .container-errorPage {
     width: 1170px;
   }
 }
 @media (min-width: 992px) {
-  .container {
+  .container-errorPage {
     width: 970px;
   }
 }
 @media (min-width: 768px) {
-  .container {
+  .container-errorPage {
     width: 750px;
   }
 }/*# sourceMappingURL=ErrorPage.css.map */
