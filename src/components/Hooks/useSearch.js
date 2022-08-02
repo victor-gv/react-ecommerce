@@ -6,6 +6,8 @@ const useSearch = () => {
 const [searchParams, setSearchParams] = useSearchParams();
 
 const searchItem = (e) => {
+  const banner = document.getElementById("banner");
+  banner.style.display = "none";
   setSearchParams({ filter : e.target.value })
 }
 

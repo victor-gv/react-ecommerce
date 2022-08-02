@@ -15,6 +15,7 @@ function Products(props) {
   const { filter } = useSearch();
 
   let renderedProducts;
+  const banner = document.getElementById("banner");
 
   return (
     <>
@@ -43,7 +44,8 @@ function Products(props) {
               const match = product.title
                 .toLowerCase()
                 .includes(filter.toLowerCase());
-              if (!filter) return true;
+              if (!filter)   
+              banner.style.display = "flex"; 
               return match;
             })
 

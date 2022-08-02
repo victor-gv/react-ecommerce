@@ -98,7 +98,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
             </Row>
           </Container>
           <Container fluid>
-            <Row className="frontPage_container">
+            <Row id="banner" className="frontPage_container">
               <Col md="4">
                 <img src={frontPage1} alt="front models page" />
               </Col>
