@@ -155,9 +155,13 @@ body {
 }
 
 
-@media (max-width: 760px){
+@media (max-width: 767px){
   .cart {
     width: 100%;
+  }
+
+  .frontPage_container{
+    display: none !important;
   }
 }
 

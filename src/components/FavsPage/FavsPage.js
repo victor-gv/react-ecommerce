@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import useCart from "../Hooks/useCart";
 import useSearch from "../Hooks/useSearch";
 import useFavs from "../Hooks/useFavs";
@@ -102,16 +103,20 @@ useEffect(() => {
           />
         ) : (
           <>
-            <FavsProducts
-              initialState={favs}
-              manageClick={addToCart}
-              manageFav={manageFav}
-              emptyMessage={""}
-            />
-            <div id="emptySearch" className="hidden">
-              <img src={noResult} alt="No found sticker" />
-              <h4>No results found</h4>
-            </div>
+            <Row>
+              <Col xs="11">
+                <FavsProducts
+                  initialState={favs}
+                  manageClick={addToCart}
+                  manageFav={manageFav}
+                  emptyMessage={""}
+                />
+                <div id="emptySearch" className="hidden">
+                  <img src={noResult} alt="No found sticker" />
+                  <h4>No results found</h4>
+                </div>
+              </Col>
+            </Row>
           </>
         )}
       </div>

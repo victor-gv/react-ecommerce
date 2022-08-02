@@ -6,11 +6,14 @@ import ProductPage from './components/ProductPage/ProductPage'
 import Footer from './components/Footer/Footer'
 import { Routes, Route } from 'react-router-dom'
 import ErrorPage from './components/ErrorPage/ErrorPage'
+import SearchCallProvider from './context/searchContext';
+
 
 
 function App() {
   return (
     <>
+  <SearchCallProvider>
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/login' element={<LoginPage />} />
@@ -18,6 +21,7 @@ function App() {
         <Route path='/product/:id' element={<ProductPage />} />
         <Route path ="*" element = {<ErrorPage />} />
       </Routes>
+  </SearchCallProvider>
         <Footer />
     </>
   )

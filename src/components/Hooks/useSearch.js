@@ -1,13 +1,16 @@
+import { useContext } from "react";
+import { searchContext } from "../../context/searchContext";
 import { useSearchParams } from "react-router-dom"
 
 const useSearch = () => {
+
+const searchCall = useContext(searchContext);
 
 //Search function
 const [searchParams, setSearchParams] = useSearchParams();
 
 const searchItem = (e) => {
-  const banner = document.getElementById("banner");
-  banner.style.display = "none";
+  searchCall.setSearchCall(true);
   setSearchParams({ filter : e.target.value })
 }
 

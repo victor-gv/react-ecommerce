@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import useFetch from "../Hooks/useFetch";
 import useSearch from "../Hooks/useSearch";
 import noResult from "../../images/no-results.png";
@@ -8,6 +8,7 @@ import { BsHandbagFill, BsShareFill } from "react-icons/bs";
 import { MdFavoriteBorder } from "react-icons/md";
 import errorImg from "../../images/error-404.png";
 import ProductCard from "../ProductCard/ProductCard";
+import { searchContext } from "../../context/searchContext";
 import "./Products.css";
 
 function Products(props) {
@@ -15,7 +16,7 @@ function Products(props) {
   const { filter } = useSearch();
 
   let renderedProducts;
-  const banner = document.getElementById("banner");
+  const searchCall = useContext(searchContext);
 
   return (
     <>
@@ -44,8 +45,8 @@ function Products(props) {
               const match = product.title
                 .toLowerCase()
                 .includes(filter.toLowerCase());
-              if (!filter)   
-              banner.style.display = "flex"; 
+              if (!filter) searchCall.setSearchCall(false);
+              if (filter !== "") searchCall.setSearchCall(true);
               return match;
             })
 

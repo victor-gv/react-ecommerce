@@ -123,9 +123,12 @@ body {
     width: 60%;
   }
 }
-@media (max-width: 760px) {
+@media (max-width: 767px) {
   .cart {
     width: 100%;
+  }
+  .frontPage_container {
+    display: none !important;
   }
 }
 @media (max-width: 1043px) {
