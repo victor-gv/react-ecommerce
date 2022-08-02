@@ -4,7 +4,7 @@
   justify-items: center;
   gap: 5rem;
   margin-top: 3rem;
-  margin-inline: 3rem;
+  margin-inline: 1rem;
 }
 
 .title__row {
@@ -12,7 +12,7 @@
   flex-direction: row;
   justify-content: space-between;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 12rem 3rem 1rem 2rem;
+  margin: 6rem 3rem 1rem 2rem;
 }
 .title__row select {
   font-size: 1rem;

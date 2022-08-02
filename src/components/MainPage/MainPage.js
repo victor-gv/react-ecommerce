@@ -5,6 +5,9 @@ import ProductItem from "../ProducItem/ProductItem";
 import Navbar from "../Navbar/Navbar";
 import { Container, Row, Col } from "react-bootstrap";
 import emptyCartImg from "../../images/empty_cart.png";
+import frontPage1 from "../../images/front-page_1.jpg"
+import frontPage2 from "../../images/front-page_2.jpg"
+import frontPage3 from "../../images/front-page_3.jpg"
 import useFavs from "../Hooks/useFavs";
 import useCart from "../Hooks/useCart";
 import useSearch from "../Hooks/useSearch";
@@ -92,6 +95,19 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
                 manageChange={searchItem}
                 totalQuantity={totalQuantity}
               />
+            </Row>
+          </Container>
+          <Container fluid>
+            <Row className="frontPage_container">
+              <Col md="4">
+                <img src={frontPage1} alt="front models page" />
+              </Col>
+              <Col md="4">
+                <img src={frontPage2} alt="front models page" />
+              </Col>
+              <Col md="4">
+                <img src={frontPage3} alt="front models page" />
+              </Col>
             </Row>
           </Container>
           <Row>
