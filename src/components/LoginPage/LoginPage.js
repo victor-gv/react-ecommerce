@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import useCart from "../Hooks/useCart";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";

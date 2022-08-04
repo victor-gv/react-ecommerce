@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar"
 
 const PrivateArea = () => {
@@ -14,7 +13,6 @@ const PrivateArea = () => {
         isMainPage={false}
         IconsNavbar={false}
       />
-      <div>PrivateArea</div>
       <div>Hello, {user} </div>
     </>
   );
