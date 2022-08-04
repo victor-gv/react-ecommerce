@@ -23,10 +23,8 @@ import users from "../../data/users";
 function LoginPage() {
 
 
-  const {login} = useAuthContext();
+  const {login, userEmail, setUserEmail, userPassword, setUserPassword} = useAuthContext();
 
-  const [userEmail, setUserEmail] = useState("");
-  const [userPassword, setUserPassword] = useState("");
 
 /**
  * If the name of the input is email, set the userEmail state to the value of the input. If the name of
@@ -45,11 +43,14 @@ function LoginPage() {
     e.preventDefault();
     users.forEach((user) => {
       if (user.email === userEmail && user.password === userPassword) {
+        localStorage.setItem("user", JSON.stringify(user.username));
         login();
       }
     }
     );
   }
+
+
 
 
 /* Destructuring the useCart hook. */

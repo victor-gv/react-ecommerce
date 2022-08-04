@@ -4,9 +4,9 @@ import Navbar from "../Navbar/Navbar"
 
 const PrivateArea = () => {
 
-  
-/* Destructuring the useCart hook. */
 
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log(user);
 
   return (
     <>
@@ -16,6 +16,7 @@ const PrivateArea = () => {
         IconsNavbar={false}
       />
       <div>PrivateArea</div>
+      <div>Hello, {user} </div>
       <Link to="/private/logout">Logout</Link>
     </>
   );
