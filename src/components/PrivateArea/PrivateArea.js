@@ -1,17 +1,24 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
+import React from "react";
+import { Link } from "react-router-dom";
+import Navbar from "../Navbar/Navbar"
 
 const PrivateArea = () => {
 
+  
+/* Destructuring the useCart hook. */
+
+
   return (
     <>
-    <div>PrivateArea</div>
-    <Link to="/private/logout">Logout</Link>
+      <Navbar
+        SearchBar={false}
+        isMainPage={false}
+        IconsNavbar={true}
+      />
+      <div>PrivateArea</div>
+      <Link to="/private/logout">Logout</Link>
     </>
-  )
+  );
+};
 
-
-}
-
-export default PrivateArea
+export default PrivateArea;
