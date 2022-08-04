@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import useCart from "../Hooks/useCart";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -25,6 +25,11 @@ function LoginPage() {
 
   const {login, userEmail, setUserEmail, userPassword, setUserPassword} = useAuthContext();
 
+  const [newName, setNewName] = useState("");
+  const [newUsername, setNewUsername] = useState("");
+  const [newEmail, setNewEmail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+
 
 /**
  * If the name of the input is email, set the userEmail state to the value of the input. If the name of
@@ -49,7 +54,32 @@ function LoginPage() {
     );
   }
 
+  function handleNewUser (e) {
+    e.preventDefault();
+    const name = e.target.name === "firstName" ? e.target.value : newName;
+    const username = e.target.name === "username" ? e.target.value : newUsername;
+    const email = e.target.name === "email" ? e.target.value : newEmail;
+    const password = e.target.name === "password" ? e.target.value : newPassword;
+    setNewName(name);
+    setNewUsername(username);
+    setNewEmail(email);
+    setNewPassword(password);
+  }
 
+  
+  function createNewUser (e) {
+    e.preventDefault();
+    const newUser = {
+      id: users.length + 1,
+      name: newName,
+      username: newUsername,
+      email: newEmail,
+      password: newPassword
+    }
+    users.push(newUser);
+    localStorage.setItem("user", JSON.stringify(newUser.username));
+    login();
+  }
 
 
 /* Destructuring the useCart hook. */
@@ -171,7 +201,7 @@ function LoginPage() {
                     >
                       <h3>New to Shophub?</h3>
                       <p>Create your Shophub account to take advantage of amazing discounts across all of our categories.</p>
-                      <Box component="form" noValidate sx={{ mt: 3 }}>
+                      <Box component="form" onSubmit={createNewUser} noValidate sx={{ mt: 3 }}>
                         <Grid container spacing={2}>
                           <Grid item xs={12} sm={6}>
                             <TextField
@@ -181,16 +211,18 @@ function LoginPage() {
                               fullWidth
                               id="firstName"
                               label="First Name"
+                              onChange={handleNewUser}
                             />
                           </Grid>
                           <Grid item xs={12} sm={6}>
                             <TextField
                               required
                               fullWidth
-                              id="lastName"
-                              label="Last Name"
-                              name="lastName"
+                              id="userName"
+                              label="User Name"
+                              name="username"
                               autoComplete="family-name"
+                              onChange={handleNewUser}
                             />
                           </Grid>
                           <Grid item xs={12}>
@@ -201,6 +233,7 @@ function LoginPage() {
                               label="Email Address"
                               name="email"
                               autoComplete="email"
+                              onChange={handleNewUser}
                             />
                           </Grid>
                           <Grid item xs={12}>
@@ -212,6 +245,7 @@ function LoginPage() {
                               type="password"
                               id="password"
                               autoComplete="new-password"
+                              onChange={handleNewUser}
                             />
                           </Grid>
                           <Grid item xs={12}>
