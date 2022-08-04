@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import useCart from "../Hooks/useCart";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -17,9 +17,39 @@ import Cart from "../Cart/Cart";
 import ProductItem from "../ProducItem/ProductItem";
 import emptyCartImg from "../../images/empty_cart.png";
 import "./LoginPage.css";
-
+import { useAuthContext } from "../../context/authContext";
+import users from "../../data/users";
 
 function LoginPage() {
+
+
+  const {login} = useAuthContext();
+
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+
+/**
+ * If the name of the input is email, set the userEmail state to the value of the input. If the name of
+ * the input is password, set the userPassword state to the value of the input.
+ * @param e - the event object
+ */
+  function handleInputChange(e) {
+    const email = e.target.name === "email" ? e.target.value : userEmail;
+    const password = e.target.name === "password" ? e.target.value : userPassword;
+    setUserEmail(email);
+    setUserPassword(password);
+  }
+
+  function handleSubmit(e) {
+    //console.log(userEmail, userPassword);
+    e.preventDefault();
+    users.forEach((user) => {
+      if (user.email === userEmail && user.password === userPassword) {
+        login();
+      }
+    }
+    );
+  }
 
 
 /* Destructuring the useCart hook. */
@@ -79,16 +109,17 @@ function LoginPage() {
                       <Typography component="h1" variant="h5">
                         Sign in
                       </Typography>
-                      <Box component="form" noValidate sx={{ mt: 3 }}>
+                      <Box component="form" onSubmit={handleSubmit}  noValidate sx={{ mt: 3 }}>
                         <Grid container spacing={2}>
                           <Grid item xs={12}>
                             <TextField
                               required
                               fullWidth
-                              id="email"
                               label="Email Address"
                               name="email"
                               autoComplete="email"
+                              onChange={handleInputChange}
+                              value={userEmail}
                               autoFocus
                             />
                           </Grid>
@@ -99,7 +130,8 @@ function LoginPage() {
                               name="password"
                               label="Password"
                               type="password"
-                              id="password"
+                              onChange={handleInputChange}
+                              value={userPassword}
                               autoComplete="new-password"
                             />
                           </Grid>

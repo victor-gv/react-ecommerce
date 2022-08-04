@@ -16,6 +16,7 @@ import { searchContext } from "../../context/searchContext";
 import "./MainPage.css";
 
 function MainPage() {
+  
   /* Destructuring the useCart() and useSearch() hooks. */
   const {
     addToCart,
