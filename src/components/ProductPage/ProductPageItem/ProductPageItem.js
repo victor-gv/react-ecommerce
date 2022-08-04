@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BsHandbagFill, BsShareFill } from "react-icons/bs";
 import { MdFavoriteBorder } from "react-icons/md";
+import { useNavigate, useParams } from "react-router-dom";
 
-const ProductPageItem = ({ product, manageFav, manageClick }) => {
+const ProductPageItem = ({ manageFav, manageClick }) => {
+
+  const params = useParams();
+  const navigate = useNavigate();
+  const [product, setProduct] = useState({});
+
+
+const getProduct = async () => {
+  try {
+    const response = await fetch(`http://localhost:5000/products/${params.id}`);
+    if (response.ok) {
+      const product = await response.json();
+      setProduct(product);
+    } else {
+      navigate("/error");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+useEffect(() => {
+  getProduct();
+}
+, [params]);
+
 
   return (
     <div data-card={product.id} className="small-container single-product">

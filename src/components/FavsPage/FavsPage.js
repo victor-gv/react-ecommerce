@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import useCart from "../Hooks/useCart";
 import useSearch from "../Hooks/useSearch";
 import useFavs from "../Hooks/useFavs";
@@ -42,7 +42,6 @@ function FavsPage() {
   }
   , [favs]);
 
-  
 
 //function to add the class item__added__background to the buy icon when the products are rendered if they are already in the cart. That way, even if the page is refreshed, the icon will indicate that the product is already in the cart.
 useEffect(() => {

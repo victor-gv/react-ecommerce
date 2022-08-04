@@ -1,21 +1,44 @@
-import React, { useMemo } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState, useMemo, useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import useFetch from "../../Hooks/useFetch";
 
 const ProductRelated = () => {
 
   const { products } = useFetch();
+  const params = useParams();
+  const navigate = useNavigate();
+  const [product, setProduct] = useState({});
 
-  const location = useLocation();
-  const mainProduct = location.state;
+
+const getProduct = async () => {
+  try {
+    const response = await fetch(`http://localhost:5000/products/${params.id}`);
+    if (response.ok) {
+      const product = await response.json();
+      setProduct(product);
+    } else {
+      navigate("/error");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+useEffect(() => {
+  getProduct();
+}
+, [params]);
+
+
 
   const relatedProducts = useMemo(() => {
     return products
-      .filter((product) => product.id !== mainProduct.id)
+      .filter((item) => item.id !== product.id)
       .sort(() => Math.random() - Math.random())
       .slice(0, 4)
   }
-    , [products, mainProduct]);
+    , [products, product]);
 
   return (
     <>
@@ -23,7 +46,7 @@ const ProductRelated = () => {
         relatedProducts
           .map((product) => (
               <div key={product.id} className="col-4">
-              <Link to={`/product/${product.id}`} state={product}>
+              <Link to={`/product/${product.id}`}>
                 <img src={product.img} alt={product.title} />
                 <h4>{product.title}</h4>
                 <p>{product.category}</p>
