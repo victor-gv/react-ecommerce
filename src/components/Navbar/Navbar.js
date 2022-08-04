@@ -48,7 +48,12 @@ function Navbar(props) {
           props.isMainPage ? "" : "navbar-container__static"
         }`.trimEnd()}
       >
-        <div className="nav">
+          {isAuthenticated ? (
+                            <div className="login__user">
+                            <FaUserCircle /><span>Hi, {user}</span>
+                          </div>
+                          ) : null}
+        <div className={`nav ${isAuthenticated ? 'nav-logged' : ""}`}>
           <div className="logo">
             <Link to="/">
               <img src={logo} alt="Logo of the page" />
@@ -69,18 +74,13 @@ function Navbar(props) {
                   Categories
                 </Link>
               </li>
-              {isAuthenticated ? (
-                <li className="login__icon">
-                  <p>Hi, {user}</p>
-                  <FaUserCircle />
-                </li>
-              ) : (
+              {!isAuthenticated ? (
                 <li>
                   <Link className="nav-link" to="/login">
                     Login
                   </Link>
                 </li>
-              )}
+              ) : null }
             </ul>
           </nav>
           {props.IconsNavbar ? (

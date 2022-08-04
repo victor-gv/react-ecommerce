@@ -39,6 +39,8 @@
     
     &__static{
         position: static;
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -49,6 +51,10 @@
     padding: 20px 20px 20px 20px;
     background: $black;
     color: #b5b5b5;
+}
+
+.nav-logged {
+    padding-top: 0;
 }
 
 .menu-icon {
@@ -99,10 +105,22 @@
     }
 }
 
-.login__icon {
+.login__user {
+    background-color: $black;
+    text-align: end;
+    padding-right: 0.8rem;
+    padding-top: 0.8rem;
+
     svg {
         font-size: 1.8rem;
         color: $blue;
+        margin-right: .2rem;
+    }
+    span {
+        margin-top: 1rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1rem;
+        color: #ffffff;
     }
 }
 
