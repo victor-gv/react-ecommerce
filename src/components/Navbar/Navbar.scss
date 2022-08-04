@@ -55,6 +55,7 @@
 
 .nav-logged {
     padding-top: 0;
+    padding-right: 0rem;
 }
 
 .menu-icon {
@@ -93,6 +94,12 @@
     text-decoration: none;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
     font-size: 1.2rem;
+
+    svg{
+        font-size: 1.8rem;
+        color: $blue;
+        margin-right: .2rem;
+    }
 
     &.fav-link{
         &:hover{

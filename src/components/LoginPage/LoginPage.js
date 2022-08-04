@@ -39,7 +39,6 @@ function LoginPage() {
   }
 
   function handleSubmit(e) {
-    //console.log(userEmail, userPassword);
     e.preventDefault();
     users.forEach((user) => {
       if (user.email === userEmail && user.password === userPassword) {

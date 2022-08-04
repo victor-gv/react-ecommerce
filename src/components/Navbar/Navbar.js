@@ -4,13 +4,13 @@ import logo from "../../images/black_logo.png";
 import IconsNavbar from "./Icons/IconsNavbar";
 import { FaUserCircle } from "react-icons/fa";
 import { AiOutlineMenu } from "react-icons/ai";
+import { BiLogOut } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { useAuthContext } from "../../context/authContext";
 
 function Navbar(props) {
-
-  const {isAuthenticated} = useAuthContext();
+  const { isAuthenticated } = useAuthContext();
   const user = JSON.parse(localStorage.getItem("user"));
 
   //Function for responsive navbar
@@ -48,12 +48,13 @@ function Navbar(props) {
           props.isMainPage ? "" : "navbar-container__static"
         }`.trimEnd()}
       >
-          {isAuthenticated ? (
-                            <div className="login__user">
-                            <FaUserCircle /><span>Hi, {user}</span>
-                          </div>
-                          ) : null}
-        <div className={`nav ${isAuthenticated ? 'nav-logged' : ""}`}>
+        {isAuthenticated ? (
+          <div className="login__user">
+            <FaUserCircle />
+            <span>Hi, {user}</span>
+          </div>
+        ) : null}
+        <div className={`nav ${isAuthenticated ? "nav-logged" : ""}`}>
           <div className="logo">
             <Link to="/">
               <img src={logo} alt="Logo of the page" />
@@ -80,7 +81,14 @@ function Navbar(props) {
                     Login
                   </Link>
                 </li>
-              ) : null }
+              ) : (
+                <li>
+                  <Link className="nav-link" to="/private/logout">
+                    Logout
+                    <BiLogOut />
+                  </Link>
+                </li>
+              )}
             </ul>
           </nav>
           {props.IconsNavbar ? (

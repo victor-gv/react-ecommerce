@@ -6,7 +6,6 @@ const PrivateArea = () => {
 
 
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log(user);
 
   return (
     <>
@@ -17,7 +16,6 @@ const PrivateArea = () => {
       />
       <div>PrivateArea</div>
       <div>Hello, {user} </div>
-      <Link to="/private/logout">Logout</Link>
     </>
   );
 };
