@@ -13,7 +13,7 @@ const PrivateArea = () => {
       <Navbar
         SearchBar={false}
         isMainPage={false}
-        IconsNavbar={true}
+        IconsNavbar={false}
       />
       <div>PrivateArea</div>
       <Link to="/private/logout">Logout</Link>
