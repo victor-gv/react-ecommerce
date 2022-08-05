@@ -77,7 +77,7 @@ function LoginPage() {
       password: newPassword
   }
     getUser(user.email);
-    if (!user.email === newEmail) {
+    if (user.email === newEmail) {
       addNewUser(user);
       localStorage.setItem("user", JSON.stringify(user.username));
       login();
@@ -144,7 +144,7 @@ function LoginPage() {
                       <Typography component="h1" variant="h5">
                         Sign in
                       </Typography>
-                      <Box component="form" onSubmit={handleSubmit}  noValidate sx={{ mt: 3 }}>
+                      <Box component="form" onSubmit={handleSubmit}  sx={{ mt: 3 }}>
                         <Grid container spacing={2}>
                           <Grid item xs={12}>
                             <TextField
@@ -206,7 +206,7 @@ function LoginPage() {
                     >
                       <h3>New to Shophub?</h3>
                       <p>Create your Shophub account to take advantage of amazing discounts across all of our categories.</p>
-                      <Box component="form" onSubmit={createNewUser} noValidate sx={{ mt: 3 }}>
+                      <Box component="form" onSubmit={createNewUser} sx={{ mt: 3 }}>
                         <Grid container spacing={2}>
                           <Grid item xs={12} sm={6}>
                             <TextField
