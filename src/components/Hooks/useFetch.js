@@ -44,11 +44,35 @@ const useFetch = () => {
     } , [urlUsers]);
 
 
+    function getAllUsers() {
+      return users;
+    }
+
+
+    function getUser(email) {
+      return users.find(user => user.email === email);
+    }
+
+    function addNewUser(user) {
+      fetch("http://localhost:5000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(user)
+      })
+      .then(res => res.json())
+    }
+
   return {
     products,
     error,
     loading,
-    users
+    users,
+    setUsers,
+    getAllUsers,
+    getUser,
+    addNewUser
   }
 }
 

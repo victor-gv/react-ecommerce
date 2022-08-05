@@ -24,7 +24,7 @@ function LoginPage() {
 
 
   const {login, userEmail, setUserEmail, userPassword, setUserPassword} = useAuthContext();
-  const { users } = useFetch();
+  const { users, setUsers, getUser, getAllUsers, addNewUser } = useFetch();
 
   const [newName, setNewName] = useState("");
   const [newUsername, setNewUsername] = useState("");
@@ -76,21 +76,14 @@ function LoginPage() {
       email: newEmail,
       password: newPassword
   }
-    // post with axios to create new user
-    fetch("http://localhost:5000/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(user)
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
+    getUser(user.email);
+    if (!user.email === newEmail) {
+      addNewUser(user);
+      localStorage.setItem("user", JSON.stringify(user.username));
+      login();
+    } else {
+      alert("User already exists");
     }
-    )
-    localStorage.setItem("user", JSON.stringify(user.username));
-    login();
   }
 
 
