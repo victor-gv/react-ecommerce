@@ -22,33 +22,16 @@ import { useAuthContext } from "../../context/authContext";
 import useFetch from "../Hooks/useFetch";
 
 function LoginPage() {
-  const { login, userEmail, setUserEmail, userPassword, setUserPassword } =
-    useAuthContext();
-  const { users, setUsers, getUser, getAllUsers, addNewUser } = useFetch();
-  const {
-    register,
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm();
+  const { login } = useAuthContext();
+  const { users, getUser, addNewUser } = useFetch();
+  const { handleSubmit, control } = useForm();
+
 
   const [newName, setNewName] = useState("");
   const [newUsername, setNewUsername] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
 
-  /**
-   * If the name of the input is email, set the userEmail state to the value of the input. If the name of
-   * the input is password, set the userPassword state to the value of the input.
-   * @param e - the event object
-   */
-  function handleInputChange(e) {
-    const email = e.target.name === "email" ? e.target.value : userEmail;
-    const password =
-      e.target.name === "password" ? e.target.value : userPassword;
-    setUserEmail(email);
-    setUserPassword(password);
-  }
 
 
   const onSubmit = (data) => {
@@ -189,8 +172,6 @@ function LoginPage() {
                           />
 
                         </Grid>
-
-                        
                         <Grid item xs={12}>
                         <Controller
                           name="password"
@@ -209,7 +190,7 @@ function LoginPage() {
                             helperText={error ? error.message : null}
                           />
                           )}
-                          rules={{ required: 'Password is required', pattern: { value: /^[a-zA-Z0-9]{6,}$/, message: 'Password must be at least 6 characters long' } }}
+                          rules={{ required: 'Password is required', pattern: { value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/, message: 'Password must include one number, one uppercase letter, one lowercase letter and one special character. The length must be between 8 and 20 characters.' } }}
                           />
                         </Grid>
                         <Grid item xs={12}>
