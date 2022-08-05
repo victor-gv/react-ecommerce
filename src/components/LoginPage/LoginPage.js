@@ -70,15 +70,26 @@ function LoginPage() {
   
   function createNewUser (e) {
     e.preventDefault();
-    const newUser = {
-      id: users.length + 1,
+    const user = {
       name: newName,
       username: newUsername,
       email: newEmail,
       password: newPassword
+  }
+    // post with axios to create new user
+    fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(user)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
     }
-    users.push(newUser);
-    localStorage.setItem("user", JSON.stringify(newUser.username));
+    )
+    localStorage.setItem("user", JSON.stringify(user.username));
     login();
   }
 
