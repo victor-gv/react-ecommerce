@@ -15,6 +15,7 @@ function Products(props) {
   const { products, error, loading } = useFetch();
   const { filter } = useSearch();
 
+
   let renderedProducts;
   const searchCall = useContext(searchContext);
 

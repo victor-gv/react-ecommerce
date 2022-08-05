@@ -1,5 +1,5 @@
 {
- "products":  [{
+  "products": [{
       "id": 1,
       "title": "Nike Runner 2",
       "price": 90,
@@ -127,5 +127,12 @@
       "img": "../img/img_16.jpg",
       "category": "Sneakers"
     }
- ]
+  ],
+  "users": [{
+    "id": 1,
+    "name": "Víctor García-Vao",
+    "username": "Victor",
+    "email": "victorgarciavao@gmail.com",
+    "password": "123456"
+  }]
 }

@@ -18,12 +18,13 @@ import ProductItem from "../ProducItem/ProductItem";
 import emptyCartImg from "../../images/empty_cart.png";
 import "./LoginPage.css";
 import { useAuthContext } from "../../context/authContext";
-import users from "../../data/users";
+import useFetch from "../Hooks/useFetch";
 
 function LoginPage() {
 
 
   const {login, userEmail, setUserEmail, userPassword, setUserPassword} = useAuthContext();
+  const { users } = useFetch();
 
   const [newName, setNewName] = useState("");
   const [newUsername, setNewUsername] = useState("");
