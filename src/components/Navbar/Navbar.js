@@ -83,7 +83,7 @@ function Navbar(props) {
                 </li>
               ) : (
                 <li>
-                  <Link className="nav-link" to="/private/logout">
+                  <Link className="nav-link logout-link" to="/private/logout">
                     Logout
                     <BiLogOut />
                   </Link>

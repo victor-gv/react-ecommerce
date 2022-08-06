@@ -84,14 +84,21 @@
 }
 .nav-link svg {
   font-size: 1.8rem;
-  color: #528af2;
   margin-right: 0.2rem;
-}
-.nav-link.fav-link:hover {
-  color: #FF5252;
 }
 .nav-link:hover {
   color: #d8e7f2;
+}
+
+.logout-link svg {
+  color: #528af2;
+}
+
+.fav-link {
+  color: #FF5252 !important;
+}
+.fav-link:hover {
+  transform: scale(1.09);
 }
 
 .login__user {

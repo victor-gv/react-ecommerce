@@ -36,6 +36,7 @@
     p {
         color: #ffffff;
     }
+
     
     &__static{
         position: static;
@@ -97,18 +98,25 @@
 
     svg{
         font-size: 1.8rem;
-        color: $blue;
         margin-right: .2rem;
     }
 
-    &.fav-link{
-        &:hover{
-            color: $red;
-        }
-    }
 
     &:hover {
         color: $primary-color;
+    }
+}
+
+.logout-link {
+    svg {
+        color: $blue;
+    }
+}
+
+.fav-link{
+    color: $red !important;
+    &:hover{
+        transform: scale(1.09);
     }
 }
 
