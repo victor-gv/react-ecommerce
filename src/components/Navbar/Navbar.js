@@ -56,7 +56,7 @@ function Navbar(props) {
         ) : null}
         <div className={`nav ${isAuthenticated ? "nav-logged" : ""}`}>
           <div className="logo">
-            <Link to="/">
+            <Link to={isAuthenticated ? '/private/home' : '/'}>
               <img src={logo} alt="Logo of the page" />
             </Link>
           </div>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Cart from "../Cart/Cart";
 import useCart from "../Hooks/useCart";
-import useFavs from "../Hooks/useFavs";
+import { useAuthContext } from "../../context/authContext";
 import ProductItem from "../ProducItem/ProductItem";
 import emptyCartImg from "../../images/empty_cart.png";
 import "./ErrorPage.css";
@@ -17,6 +17,9 @@ const ErrorPage = () => {
     cart,
     totalQuantity,
   } = useCart();
+
+  const { isAuthenticated } = useAuthContext();
+
 
 
   const checkCart = () => {
@@ -56,7 +59,7 @@ const ErrorPage = () => {
                 </div>
                 <div className="contant_box_404">
                   <h2 className="h2">Look like you're lost</h2>
-                  <Link to="/">
+                  <Link to={isAuthenticated ? '/private/home' : '/'}>
                     <p className="link_404">Go to Home</p>
                   </Link>
                 </div>
