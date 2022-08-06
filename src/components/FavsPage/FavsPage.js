@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useAuthContext } from "../../context/authContext";
 import { Row, Col } from "react-bootstrap";
 import useCart from "../Hooks/useCart";
 import useSearch from "../Hooks/useSearch";
@@ -15,6 +16,9 @@ import "../Navbar/Navbar.css";
 import "./FavsPage.css";
 
 function FavsPage() {
+
+  const { isAuthenticated } = useAuthContext();
+
 
 /* Destructuring the useCart() and useSearch() hooks. */
   const {
@@ -95,7 +99,7 @@ useEffect(() => {
             manageFav={manageFav}
             emptyMessage={`Your favorites are empty.`}
             homePage={
-              <Link to="/">
+              <Link to={isAuthenticated ? '/private/home' : '/'}>
                 <AiOutlineHome />
               </Link>
             }

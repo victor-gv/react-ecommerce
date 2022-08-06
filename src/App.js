@@ -29,7 +29,11 @@ function App() {
               </Route>
               <Route path="/private" element={<PrivateRoute /> }>
                 <Route index element={<PrivateArea />} />
+                <Route path="/private/home" element={<MainPage />} />
                 <Route path="/private/logout" element={<Logout />} />
+                <Route path="/private/favs" element={<FavsPage />} />
+                <Route path="/private/product/:id" element={<ProductPage />} />
+                <Route path="*" element={<ErrorPage />} />
               </Route>
             </Routes>
           </BrowserRouter>

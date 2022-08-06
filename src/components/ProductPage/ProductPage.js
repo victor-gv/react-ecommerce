@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useAuthContext } from "../../context/authContext";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import useCart from "../Hooks/useCart";
 import Navbar from "../Navbar/Navbar";
@@ -16,6 +17,7 @@ function ProductPage() {
   const params = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState({});
+  const { isAuthenticated } = useAuthContext();
 
 
 
@@ -130,7 +132,7 @@ useEffect(() => {
           <div className="small-container">
             <div className="row row-2">
               <h2>Related Products</h2>
-              <Link to="/">
+              <Link className="nav-link" to={isAuthenticated ? '/private/home' : '/'}>
                 <p>View more</p>
               </Link>
             </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useAuthContext } from "../../context/authContext";
 import { Link } from 'react-router-dom';
 import useSearch from "../Hooks/useSearch";
 import noResult from "../../images/no-results.png";
@@ -12,6 +13,8 @@ const FavsProducts = ({initialState = [], manageFav, manageClick, emptyMessage, 
 const favs = initialState;
 
 const { filter } = useSearch();
+const { isAuthenticated } = useAuthContext();
+
 
 let renderedProducts;
 
@@ -36,7 +39,7 @@ let renderedProducts;
         .map((fav) => (
           <ProductCard key={fav.id}>
             <div data-fav={fav.id} className="card">
-            <Link to={`/product/${fav.id}`}>
+            <Link to={isAuthenticated ? `/private/product/${fav.id}` : `/product/${fav.id}`}>
               <img src={fav.img} alt={`${fav.title} sneaker`} />
               <h4 className="card__title">{fav.title}</h4>
               <span className="card__description">{fav.category}</span>

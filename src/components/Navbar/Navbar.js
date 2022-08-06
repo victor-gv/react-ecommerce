@@ -66,12 +66,12 @@ function Navbar(props) {
           <nav>
             <ul id="MenuItems" className="menu-items">
               <li>
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to={isAuthenticated ? '/private/home' : '/'}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to={isAuthenticated ? '/private/home' : '/'}>
                   Categories
                 </Link>
               </li>

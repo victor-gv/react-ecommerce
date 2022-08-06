@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
+import { useAuthContext } from "../../../context/authContext";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import useFetch from "../../Hooks/useFetch";
 
@@ -8,6 +9,8 @@ const ProductRelated = () => {
   const params = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState({});
+  const { isAuthenticated } = useAuthContext();
+
 
 
 const getProduct = async () => {
@@ -46,7 +49,7 @@ useEffect(() => {
         relatedProducts
           .map((product) => (
               <div key={product.id} className="col-4">
-              <Link to={`/product/${product.id}`}>
+              <Link to={isAuthenticated ? `/private/product/${product.id}` : `/product/${product.id}`}>
                 <img src={product.img} alt={product.title} />
                 <h4>{product.title}</h4>
                 <p>{product.category}</p>

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useAuthContext } from "../../context/authContext";
 import useFetch from "../Hooks/useFetch";
 import useSearch from "../Hooks/useSearch";
 import noResult from "../../images/no-results.png";
@@ -14,6 +15,7 @@ import "./Products.css";
 function Products(props) {
   const { products, error, loading } = useFetch();
   const { filter } = useSearch();
+  const { isAuthenticated } = useAuthContext();
 
 
   let renderedProducts;
@@ -54,7 +56,7 @@ function Products(props) {
             .map((product) => (
               <ProductCard key={product.id}>
                 <div data-card={product.id} className="card">
-                  <Link to={`product/${product.id}`}>
+                  <Link to={isAuthenticated ? `/private/product/${product.id}` : `product/${product.id}`}>
                     <img src={product.img} alt={product.title} />
                     <h4 className="card__title">{product.title}</h4>
                     <span className="card__description">
