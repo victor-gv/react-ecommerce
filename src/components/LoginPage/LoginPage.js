@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import useCart from "../Hooks/useCart";
+import Alert from "@mui/material/Alert";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -26,22 +27,27 @@ function LoginPage() {
   const { users, getUser, addNewUser } = useFetch();
   const { handleSubmit, control } = useForm();
 
-
   const [newName, setNewName] = useState("");
   const [newUsername, setNewUsername] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
-
-
+  const [loginError, setLoginError] = useState(false);
 
   const onSubmit = (data) => {
     users.forEach((user) => {
       if (user.email === data.email && user.password === data.password) {
         localStorage.setItem("user", JSON.stringify(user.username));
+        setLoginError(false);
         login();
+      } else {
+        setLoginError(true);
+        setTimeout(() => {
+          setLoginError(false);
+        } , 3000);
       }
     });
   };
+
 
   function handleNewUser(e) {
     e.preventDefault();
@@ -152,46 +158,64 @@ function LoginPage() {
                       <Grid container spacing={2}>
                         <Grid item xs={12}>
                           <Controller
-                          name="email"
-                          control={control}
-                          defaultValue=""
-                          render = {({ field: {onChange, value}, fieldState: { error } }) => (
-                            <TextField
-                            autoFocus
-                            autoComplete="email"
-                            fullWidth
-                            label="Email Address"
-                            onChange={onChange}
-                            value={value}
-                            error={!!error}
-                            helperText={error ? error.message : null}
-                            type="email"
+                            name="email"
+                            control={control}
+                            defaultValue=""
+                            render={({
+                              field: { onChange, value },
+                              fieldState: { error },
+                            }) => (
+                              <TextField
+                                autoFocus
+                                autoComplete="email"
+                                fullWidth
+                                label="Email Address"
+                                onChange={onChange}
+                                value={value}
+                                error={!!error}
+                                helperText={error ? error.message : null}
+                                type="email"
+                              />
+                            )}
+                            rules={{ required: "Email is required" }}
                           />
-                          )}
-                          rules={{ required: 'Email is required' }}
-                          />
-
                         </Grid>
                         <Grid item xs={12}>
-                        <Controller
-                          name="password"
-                          control={control}
-                          defaultValue=""
-                          render = {({ field: {onChange, value}, fieldState: { error } }) => (
-                            <TextField
-                            fullWidth
+                          <Controller
                             name="password"
-                            label="Password"
-                            type="password"
-                            onChange={onChange}
-                            value={value}
-                            autoComplete="new-password"
-                            error={!!error}
-                            helperText={error ? error.message : null}
+                            control={control}
+                            defaultValue=""
+                            render={({
+                              field: { onChange, value },
+                              fieldState: { error },
+                            }) => (
+                              <TextField
+                                fullWidth
+                                name="password"
+                                label="Password"
+                                type="password"
+                                onChange={onChange}
+                                value={value}
+                                autoComplete="new-password"
+                                error={!!error}
+                                helperText={error ? error.message : null}
+                              />
+                            )}
+                            rules={{
+                              required: "Password is required",
+                              pattern: {
+                                value:
+                                  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/,
+                                message:
+                                  "Password must include one number, one uppercase letter, one lowercase letter and one special character. The length must be between 8 and 20 characters.",
+                              },
+                            }}
                           />
-                          )}
-                          rules={{ required: 'Password is required', pattern: { value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/, message: 'Password must include one number, one uppercase letter, one lowercase letter and one special character. The length must be between 8 and 20 characters.' } }}
-                          />
+                          {loginError ? (
+                            <Alert severity="error">
+                              Email or password is incorrect.
+                            </Alert>
+                          ) : null}
                         </Grid>
                         <Grid item xs={12}>
                           <FormControlLabel
