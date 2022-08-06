@@ -18,7 +18,6 @@ const ErrorPage = () => {
     totalQuantity,
   } = useCart();
 
-  const { removeHidden } = useFavs();
 
   const checkCart = () => {
     return cart.map((product) => (
@@ -68,7 +67,6 @@ const ErrorPage = () => {
       </div>
       {ListLength === 0 ? (
         <Cart
-          removeHidden={removeHidden}
           title={"Your cart is empty."}
           totalPrice={0}
           emptyCartImg={
@@ -81,7 +79,6 @@ const ErrorPage = () => {
         />
       ) : (
         <Cart
-          removeHidden={removeHidden}
           title={""}
           totalPrice={totalPrice}
           productItem={checkCart()}

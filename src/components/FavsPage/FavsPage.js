@@ -32,7 +32,7 @@ function FavsPage() {
   } = useCart();
 
   const { searchItem } = useSearch();
-  const { manageFav, removeHidden, favs } = useFavs();
+  const { manageFav, favs } = useFavs();
 
   //function to add the class fav__added__background to the fav icons when the products are rendered if they are alreadthe icon will in
   useEffect(() => {
@@ -125,7 +125,6 @@ useEffect(() => {
       </div>
       {ListLength === 0 ? (
         <Cart
-          removeHidden={removeHidden}
           title={"Your cart is empty."}
           totalPrice={0}
           emptyCartImg={
@@ -138,7 +137,6 @@ useEffect(() => {
         />
       ) : (
         <Cart
-          removeHidden={removeHidden}
           title={""}
           totalPrice={totalPrice}
           productItem={checkCart()}

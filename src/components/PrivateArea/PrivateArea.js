@@ -1,19 +1,67 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar"
+import useCart from "../Hooks/useCart";
+import ProductItem from "../ProducItem/ProductItem";
+import Cart from "../Cart/Cart";
+import emptyCartImg from "../../images/empty_cart.png";
+import useFavs from "../Hooks/useFavs";
 
 const PrivateArea = () => {
 
 
-  const user = JSON.parse(localStorage.getItem("user"));
+    /* Destructuring the useCart hook. */
+    const {
+      addQuantity,
+      substractQuantity,
+      removeProduct,
+      totalPrice,
+      cart,
+      totalQuantity,
+    } = useCart();
+
+
+    const checkCart = () => {
+      return cart.map((product) => (
+        <ProductItem
+          key={product.id}
+          id={product.id}
+          title={product.title}
+          price={product.price}
+          img={product.img}
+          addQuantity={addQuantity}
+          substractQuantity={substractQuantity}
+          quantity={product.quantity}
+          totalPrice={totalPrice}
+          removeProduct={removeProduct}
+        />
+      ));
+    };
+
+    const ListLength = cart.length;
 
   return (
     <>
       <Navbar
-        SearchBar={false}
-        isMainPage={false}
-        IconsNavbar={false}
+          SearchBar={false}
+          isMainPage={false}
+          IconsNavbar={true}
+          totalQuantity={totalQuantity}
       />
-      <div>Hello, {user} </div>
+              {ListLength === 0 ? (
+          <Cart
+            title={"Your cart is empty."}
+            totalPrice={0}
+            emptyCartImg={
+              <img
+                className="empty__cart"
+                src={emptyCartImg}
+                alt="Sad empty cart"
+              />
+            }
+          />
+        ) : (
+          <Cart title={""} totalPrice={totalPrice} productItem={checkCart()} />
+        )}
     </>
   );
 };

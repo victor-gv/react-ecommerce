@@ -32,7 +32,7 @@ function ProductPage() {
     totalQuantity,
   } = useCart();
 
-  const { manageFav, removeHidden, favs } = useFavs();
+  const { manageFav, favs } = useFavs();
 
 
 const getProduct = async () => {
@@ -146,7 +146,6 @@ useEffect(() => {
       </div>
       {ListLength === 0 ? (
         <Cart
-          removeHidden={removeHidden}
           title={"Your cart is empty."}
           totalPrice={0}
           emptyCartImg={
@@ -159,7 +158,6 @@ useEffect(() => {
         />
       ) : (
         <Cart
-          removeHidden={removeHidden}
           title={""}
           totalPrice={totalPrice}
           productItem={checkCart()}

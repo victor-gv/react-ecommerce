@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { RiCloseFill } from "react-icons/ri"
 import "./cart.css";
 
-const Cart = ({ title, totalPrice, productItem, emptyCartImg, removeHidden }) => {
+const Cart = ({ title, totalPrice, productItem, emptyCartImg }) => {
 
   const { isAuthenticated } = useAuthContext();
 
@@ -38,6 +38,11 @@ loginPage or favPage while the cart is open, the cart will close. */
       closeCart();
     })
   }
+
+  const removeHidden = () => {
+    const footer = document.querySelector(".footer");
+    if (footer) footer.classList.remove("hidden");
+  };
 
   //Function to close the cart when click on close icon
   const closeCart = () => {
@@ -77,7 +82,7 @@ loginPage or favPage while the cart is open, the cart will close. */
           <h3 className="totalPrice">Total: {totalPrice}€</h3>
           <hr></hr>
             <div onClick={removeHidden} className="checkout-container">
-              <Link className="btn btn-primary btn-block btn-lg checkout" to={isAuthenticated ? '/private/home' : '/login'}>Checkout</Link>
+              <Link className="btn btn-primary btn-block btn-lg checkout" to={isAuthenticated ? '/private' : '/login'}>Checkout</Link>
             </div>
         </div>
       </div>

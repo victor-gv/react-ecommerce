@@ -25,13 +25,9 @@ const manageFav = (id) => {
 };
 
 
-const removeHidden = () => {
-  const footer = document.querySelector(".footer");
-  if (footer) footer.classList.remove("hidden");
-};
 
   return {
-    favs, manageFav, removeHidden
+    favs, manageFav
   }
 }
 
