@@ -131,18 +131,39 @@
   ],
   "users": [
     {
-      "id": 1,
-      "name": "Víctor García-Vao",
+      "name": "Victor",
       "username": "Victor",
       "email": "victorgarciavao@gmail.com",
-      "password": "1aA*1111"
+      "password": "1aA*1111",
+      "id": 1
     },
     {
-      "name": "Lolo",
-      "username": "lolito",
+      "name": "Paco",
+      "username": "lolillo",
       "email": "loloperez@gmail.com",
       "password": "1aA*1111",
       "id": 2
+    },
+    {
+      "name": "Lolo",
+      "username": "Lolito",
+      "email": "vct2205@gmail.com",
+      "password": "1aA*1111",
+      "id": 3
+    },
+    {
+      "name": "Lolo",
+      "username": "Klk",
+      "email": "lolo@lolo.com",
+      "password": "1aA*1111",
+      "id": 4
+    },
+    {
+      "name": "Victor",
+      "username": "lolo",
+      "email": "loloperez2@gmail.com",
+      "password": "1aA*1111",
+      "id": 5
     }
   ]
 }

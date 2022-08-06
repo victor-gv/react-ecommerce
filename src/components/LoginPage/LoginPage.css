@@ -41,7 +41,7 @@ body p {
 .login__container .login__signup input {
   background-color: white;
 }
-.login__container .login__signup p {
+.login__container .login__signup__text {
   font-size: 1.1rem;
   text-align: justify;
 }
@@ -60,6 +60,10 @@ body p {
 
 .signin__icon {
   background-color: #528af2 !important;
+}
+
+.errorAlert {
+  margin-top: 0.5rem;
 }
 
 /* Media queries */

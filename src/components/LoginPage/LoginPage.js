@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import useCart from "../Hooks/useCart";
 import Alert from "@mui/material/Alert";
@@ -24,14 +24,13 @@ import useFetch from "../Hooks/useFetch";
 
 function LoginPage() {
   const { login } = useAuthContext();
-  const { users, getUser, addNewUser } = useFetch();
+  const { users, addNewUser } = useFetch();
   const { handleSubmit, control } = useForm();
+  const { handleSubmit: handleSubmit2, control: control2, reset } = useForm();
 
-  const [newName, setNewName] = useState("");
-  const [newUsername, setNewUsername] = useState("");
-  const [newEmail, setNewEmail] = useState("");
-  const [newPassword, setNewPassword] = useState("");
   const [loginError, setLoginError] = useState(false);
+  const [usernameError, setUsernameError] = useState(false);
+  const [newEmailError, setNewEmailError] = useState(false);
 
   const onSubmit = (data) => {
     users.forEach((user) => {
@@ -43,43 +42,45 @@ function LoginPage() {
         setLoginError(true);
         setTimeout(() => {
           setLoginError(false);
-        } , 3000);
+        }, 3000);
       }
     });
   };
 
 
-  function handleNewUser(e) {
-    e.preventDefault();
-    const name = e.target.name === "firstName" ? e.target.value : newName;
-    const username =
-      e.target.name === "username" ? e.target.value : newUsername;
-    const email = e.target.name === "email" ? e.target.value : newEmail;
-    const password =
-      e.target.name === "password" ? e.target.value : newPassword;
-    setNewName(name);
-    setNewUsername(username);
-    setNewEmail(email);
-    setNewPassword(password);
+
+  const onSubmitNewUser = (newUser) => {
+    const emailExist = users.find((user) => user.email === newUser.emailNewUser);
+    const usernameExist = users.find((user) => user.username === newUser.username);
+
+    if (emailExist) {
+      setNewEmailError(true);
+      setTimeout(() => {
+        setNewEmailError(false);
+      } , 3000);
+    }
+    if (usernameExist) {
+      setUsernameError(true);
+      setTimeout(() => {
+        setUsernameError(false);
+      } , 3000);
+    }
+    if (!emailExist && !usernameExist) {
+      const newUserData = {
+        name: newUser.firstName,
+        username: newUser.username,
+        email: newUser.emailNewUser,
+        password: newUser.passwordNewUser,
+      };
+      addNewUser(newUserData);
+      localStorage.setItem("user", JSON.stringify(newUser.username));
+      reset();
+      login();
+  };
+
   }
 
-  function createNewUser(e) {
-    e.preventDefault();
-    const user = {
-      name: newName,
-      username: newUsername,
-      email: newEmail,
-      password: newPassword,
-    };
-    getUser(user.email);
-    if (user.email === newEmail) {
-      addNewUser(user);
-      localStorage.setItem("user", JSON.stringify(user.username));
-      login();
-    } else {
-      alert("User already exists");
-    }
-  }
+
 
   /* Destructuring the useCart hook. */
   const {
@@ -203,16 +204,10 @@ function LoginPage() {
                             )}
                             rules={{
                               required: "Password is required",
-                              pattern: {
-                                value:
-                                  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/,
-                                message:
-                                  "Password must include one number, one uppercase letter, one lowercase letter and one special character. The length must be between 8 and 20 characters.",
-                              },
                             }}
                           />
                           {loginError ? (
-                            <Alert severity="error">
+                            <Alert className="errorAlert" severity="error">
                               Email or password is incorrect.
                             </Alert>
                           ) : null}
@@ -255,61 +250,137 @@ function LoginPage() {
                     }}
                   >
                     <h3>New to Shophub?</h3>
-                    <p>
+                    <p className="login__signup__text">
                       Create your Shophub account to take advantage of amazing
                       discounts across all of our categories.
                     </p>
                     <Box
                       component="form"
-                      onSubmit={createNewUser}
+                      onSubmit={handleSubmit2(onSubmitNewUser)}
                       sx={{ mt: 3 }}
                     >
                       <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
-                          <TextField
-                            autoComplete="given-name"
+                          <Controller
                             name="firstName"
-                            required
-                            fullWidth
-                            id="firstName"
-                            label="First Name"
-                            onChange={handleNewUser}
+                            control={control2}
+                            defaultValue=""
+                            render={({
+                              field: { onChange, value },
+                              fieldState: { error },
+                            }) => (
+                              <TextField
+                                autoComplete="given-name"
+                                fullWidth
+                                label="First Name"
+                                onChange={onChange}
+                                value={value}
+                                error={!!error}
+                                helperText={error ? error.message : null}
+                                type="text"
+                              />
+                            )}
+                            rules={{ required: "First name is required" }}
                           />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                          <TextField
-                            required
-                            fullWidth
-                            id="userName"
-                            label="User Name"
+                          <Controller
                             name="username"
-                            autoComplete="family-name"
-                            onChange={handleNewUser}
+                            control={control2}
+                            defaultValue=""
+                            render={({
+                              field: { onChange, value },
+                              fieldState: { error },
+                            }) => (
+                              <TextField
+                                fullWidth
+                                label="User Name"
+                                autoComplete="family-name"
+                                onChange={onChange}
+                                value={value}
+                                error={!!error}
+                                helperText={error ? error.message : null}
+                                type="text"
+                              />
+                            )}
+                            rules={{
+                              required: "User name is required",
+                              pattern: {
+                                value: /^[a-zA-Z0-9]{3,10}$/,
+                                message:
+                                  "User name must be alphanumeric between 3 and 10 characters.",
+                              },
+                            }}
                           />
                         </Grid>
                         <Grid item xs={12}>
-                          <TextField
-                            required
-                            fullWidth
-                            id="email"
-                            label="Email Address"
-                            name="email"
-                            autoComplete="email"
-                            onChange={handleNewUser}
+                          <Controller
+                            name="emailNewUser"
+                            control={control2}
+                            defaultValue=""
+                            render={({
+                              field: { onChange, value },
+                              fieldState: { error },
+                            }) => (
+                              <TextField
+                                fullWidth
+                                label="Email Address"
+                                autoComplete="email"
+                                onChange={onChange}
+                                value={value}
+                                error={!!error}
+                                helperText={error ? error.message : null}
+                                type="email"
+                              />
+                            )}
+                            rules={{ required: "Email is required" }}
                           />
                         </Grid>
                         <Grid item xs={12}>
-                          <TextField
-                            required
-                            fullWidth
-                            name="password"
-                            label="Password"
-                            type="password"
-                            id="password"
-                            autoComplete="new-password"
-                            onChange={handleNewUser}
+                          <Controller
+                            name="passwordNewUser"
+                            control={control2}
+                            defaultValue=""
+                            render={({
+                              field: { onChange, value },
+                              fieldState: { error },
+                            }) => (
+                              <TextField
+                                fullWidth
+                                label="Password"
+                                type="password"
+                                id="password"
+                                autoComplete="new-password"
+                                onChange={onChange}
+                                value={value}
+                                error={!!error}
+                                helperText={error ? error.message : null}
+                              />
+                            )}
+                            rules={{
+                              required: "Password is required",
+                              pattern: {
+                                value:
+                                  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/,
+                                message:
+                                  "Password must include one number, one uppercase letter, one lowercase letter and one special character. The length must be between 8 and 20 characters.",
+                              },
+                            }}
                           />
+
+                          {usernameError ? (
+                            <Alert className="errorAlert" severity="error">
+                              There is already an account with this username.
+                            </Alert>
+                          ) : null}
+                          {newEmailError ? (
+                            <Alert className="errorAlert" severity="error">
+                              There is already an account associated with this
+                              email.
+                            </Alert>
+                          ) : null}
                         </Grid>
+
                         <Grid item xs={12}>
                           <FormControlLabel
                             control={

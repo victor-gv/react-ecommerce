@@ -51,9 +51,9 @@ body {
       background-color: white;
     }
 
-    p {
-      font-size: 1.1rem;
-      text-align: justify;
+    &__text{
+        font-size: 1.1rem;
+        text-align: justify;
     }
 
   }
@@ -75,6 +75,10 @@ body {
 
 .signin__icon {
   background-color: $blue !important;
+}
+
+.errorAlert {
+  margin-top: .5rem;
 }
 
 
