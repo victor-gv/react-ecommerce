@@ -12,6 +12,7 @@ import useFavs from "../Hooks/useFavs";
 import useCart from "../Hooks/useCart";
 import useSearch from "../Hooks/useSearch";
 import useFetch from "../Hooks/useFetch";
+import useShare from "../Hooks/useShare";
 import { searchContext } from "../../context/searchContext";
 import "./MainPage.css";
 
@@ -31,6 +32,8 @@ function MainPage() {
   const { products } = useFetch();
   const { manageFav, favs } = useFavs();
   const { searchItem } = useSearch();
+  const { manageShare } = useShare();
+
 
   const searchCall = useContext(searchContext);
 
@@ -110,7 +113,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
 
           <Row>
             <Col xs="10" className="products__wrapper">
-              <Products manageClick={addToCart} manageFav={manageFav} />
+              <Products manageClick={addToCart} manageFav={manageFav} manageShare={manageShare} />
             </Col>
           </Row>
         </div>

@@ -3,7 +3,7 @@ import { BsHandbagFill, BsShareFill } from "react-icons/bs";
 import { MdFavoriteBorder } from "react-icons/md";
 import { useNavigate, useParams } from "react-router-dom";
 
-const ProductPageItem = ({ manageFav, manageClick }) => {
+const ProductPageItem = ({ manageFav, manageClick, manageShare }) => {
 
   const params = useParams();
   const navigate = useNavigate();
@@ -66,7 +66,10 @@ useEffect(() => {
             corrupti eum perspiciatis.
           </p>
           <div className="card__shop">
-            <button className="card__shop__share"><BsShareFill /></button>
+            <button 
+              className="card__shop__share"
+              onClick={() => manageShare(product)}
+              ><BsShareFill /></button>
             <button
               fav-id = {product.id}
               onClick={() => manageFav(product)}

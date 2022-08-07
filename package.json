@@ -21,6 +21,8 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "^2.1.8",
     "styled-components": "^5.3.5",
+    "sweetalert2": "^11.4.26",
+    "sweetalert2-react-content": "^5.0.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

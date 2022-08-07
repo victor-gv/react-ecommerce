@@ -4,6 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import useCart from "../Hooks/useCart";
 import useSearch from "../Hooks/useSearch";
 import useFavs from "../Hooks/useFavs";
+import useShare from "../Hooks/useShare";
 import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
@@ -33,6 +34,7 @@ function FavsPage() {
 
   const { searchItem } = useSearch();
   const { manageFav, favs } = useFavs();
+  const { manageShare } = useShare();
 
   //function to add the class fav__added__background to the fav icons when the products are rendered if they are alreadthe icon will in
   useEffect(() => {
@@ -97,6 +99,7 @@ useEffect(() => {
             initialState={favs}
             manageClick={addToCart}
             manageFav={manageFav}
+            manageShare={manageShare}
             emptyMessage={`Your favorites are empty.`}
             homePage={
               <Link to={isAuthenticated ? '/private/home' : '/'}>
@@ -112,6 +115,7 @@ useEffect(() => {
                   initialState={favs}
                   manageClick={addToCart}
                   manageFav={manageFav}
+                  manageShare={manageShare}
                   emptyMessage={""}
                 />
                 <div id="emptySearch" className="hidden">

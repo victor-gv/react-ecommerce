@@ -9,7 +9,7 @@ import { MdFavoriteBorder } from "react-icons/md";
 import "./FavsProducts.css";
 import "../Products/Products.css";
 
-const FavsProducts = ({initialState = [], manageFav, manageClick, emptyMessage, homePage}) => {
+const FavsProducts = ({initialState = [], manageFav, manageClick, manageShare, emptyMessage, homePage}) => {
 const favs = initialState;
 
 const { filter } = useSearch();
@@ -46,7 +46,10 @@ let renderedProducts;
               <span className="card__shop__price">{fav.price}€</span>
               </Link>
               <div className="card__shop">
-                <button className="card__shop__share">
+                <button 
+                  className="card__shop__share"
+                  onClick={() => manageShare(fav)}
+                  >
                   <BsShareFill />
                 </button>
                 <button

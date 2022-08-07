@@ -9,6 +9,7 @@ import ProductPageItem from "./ProductPageItem/ProductPageItem";
 import ProductRelated from "./ProductRelated/ProductRelated";
 import emptyCartImg from "../../images/empty_cart.png";
 import useFavs from "../Hooks/useFavs";
+import useShare from "../Hooks/useShare";
 import "../Navbar/Navbar.css";
 import "../FavsPage/FavsPage.css";
 import "./ProductPage.css";
@@ -33,6 +34,7 @@ function ProductPage() {
   } = useCart();
 
   const { manageFav, favs } = useFavs();
+  const { manageShare } = useShare();
 
 
 const getProduct = async () => {
@@ -124,6 +126,7 @@ useEffect(() => {
             product={product}
             manageClick={addToCart}
             manageFav={manageFav}
+            manageShare={manageShare}
           />
         </div>
 

@@ -27,6 +27,8 @@
         "react-router-dom": "^6.3.0",
         "react-scripts": "^2.1.8",
         "styled-components": "^5.3.5",
+        "sweetalert2": "^11.4.26",
+        "sweetalert2-react-content": "^5.0.2",
         "web-vitals": "^2.1.4"
       },
       "devDependencies": {
@@ -20994,6 +20996,25 @@
         "url": "https://github.com/sponsors/ljharb"
       }
     },
+    "node_modules/sweetalert2": {
+      "version": "11.4.26",
+      "resolved": "https://registry.npmjs.org/sweetalert2/-/sweetalert2-11.4.26.tgz",
+      "integrity": "sha512-YqH/C6IPudeWVK9R0x3pCOqP7m90Ae50tl98SQBpAwL3+UBl1WYD2+5OaKy0ybiVTKbYe76wwJ3PV+bITLjl+A==",
+      "funding": {
+        "type": "individual",
+        "url": "https://sweetalert2.github.io/#donations"
+      }
+    },
+    "node_modules/sweetalert2-react-content": {
+      "version": "5.0.2",
+      "resolved": "https://registry.npmjs.org/sweetalert2-react-content/-/sweetalert2-react-content-5.0.2.tgz",
+      "integrity": "sha512-c5nBiqOhBDNaoBuI9x6bYPDlHmaCo1Yd0N4hq+VD2PgZdxIaqRCahjzvsZ0zasT/IRi2vjpntU98Sq/zzNQ2zQ==",
+      "peerDependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "sweetalert2": "^11.0.0"
+      }
+    },
     "node_modules/symbol-tree": {
       "version": "3.2.4",
       "resolved": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.4.tgz",
@@ -39958,6 +39979,17 @@
           }
         }
       }
+    },
+    "sweetalert2": {
+      "version": "11.4.26",
+      "resolved": "https://registry.npmjs.org/sweetalert2/-/sweetalert2-11.4.26.tgz",
+      "integrity": "sha512-YqH/C6IPudeWVK9R0x3pCOqP7m90Ae50tl98SQBpAwL3+UBl1WYD2+5OaKy0ybiVTKbYe76wwJ3PV+bITLjl+A=="
+    },
+    "sweetalert2-react-content": {
+      "version": "5.0.2",
+      "resolved": "https://registry.npmjs.org/sweetalert2-react-content/-/sweetalert2-react-content-5.0.2.tgz",
+      "integrity": "sha512-c5nBiqOhBDNaoBuI9x6bYPDlHmaCo1Yd0N4hq+VD2PgZdxIaqRCahjzvsZ0zasT/IRi2vjpntU98Sq/zzNQ2zQ==",
+      "requires": {}
     },
     "symbol-tree": {
       "version": "3.2.4",

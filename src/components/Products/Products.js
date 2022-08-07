@@ -65,7 +65,9 @@ function Products(props) {
                     <span className="card__shop__price">{product.price}€</span>
                   </Link>
                   <div className="card__shop">
-                    <button className="card__shop__share">
+                    <button
+                      onClick={() => props.manageShare(product)}
+                      className="card__shop__share">
                       <BsShareFill />
                     </button>
                     <button
