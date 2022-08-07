@@ -140,12 +140,12 @@
 }
 
 .remove-btn {
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: $black;
-    padding: 0rem;
-    width: 5%;
+    padding: .3rem;
     margin-right: 2rem;
     margin-left: 2rem;
+    align-self: center;
 
     &:hover{
         cursor: pointer;

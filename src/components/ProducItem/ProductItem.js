@@ -28,11 +28,11 @@ function ProductItem({ id, img, title, price, substractQuantity, quantity, addQu
                   +
                 </button>
               </div>
-
+              <div className="remove-btn">
               <AiFillDelete
-                className="remove-btn"
                 onClick={() => removeProduct(id)}
                 />
+              </div>
     </div>
     </div>
     </>
