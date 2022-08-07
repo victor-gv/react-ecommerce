@@ -1,6 +1,4 @@
-import React from "react";
 import { useAuthContext } from "../../context/authContext";
-import Alert from "@mui/material/Alert";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 

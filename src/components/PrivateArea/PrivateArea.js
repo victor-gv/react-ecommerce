@@ -4,7 +4,6 @@ import useCart from "../Hooks/useCart";
 import ProductItem from "../ProducItem/ProductItem";
 import Cart from "../Cart/Cart";
 import emptyCartImg from "../../images/empty_cart.png";
-import useFavs from "../Hooks/useFavs";
 import useShare from "../Hooks/useShare";
   
 
@@ -21,7 +20,6 @@ const PrivateArea = () => {
       totalQuantity,
     } = useCart();
 
-const { manageShare } = useShare();
 
 
     const checkCart = () => {
