@@ -18,16 +18,9 @@ function ProductDetails() {
 
           /* Destructuring the useCart hook. */
           const {
-            addQuantity,
-            substractQuantity,
-            removeProduct,
             totalPrice,
             cart,
-            totalQuantity,
           } = useCart();
-  
-          console.log(cart);
-
 
   const classes = useStyles();
   return (

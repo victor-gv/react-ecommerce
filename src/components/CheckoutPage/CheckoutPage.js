@@ -86,10 +86,7 @@ const CheckoutPage = () => {
       setActiveStep(activeStep - 1);
     }
 
-    
 
-
-console.log(cart)
     const checkCart = () => {
       return cart.map((product) => (
         <ProductItem
