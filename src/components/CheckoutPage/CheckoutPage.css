@@ -1,0 +1,11 @@
+.checkout__wrapper {
+  margin-top: 3rem;
+}
+.checkout__wrapper h1 {
+  margin-bottom: 2rem;
+}
+
+.checkout__container {
+  box-shadow: 10px 20px 35px rgba(60, 59, 81, 0.368627451);
+  padding: 1rem;
+}/*# sourceMappingURL=CheckoutPage.css.map */

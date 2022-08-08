@@ -16,10 +16,10 @@ function Products(props) {
   const { products, error, loading } = useFetch();
   const { filter } = useSearch();
   const { isAuthenticated } = useAuthContext();
+  const searchCall = useContext(searchContext);
 
 
   let renderedProducts;
-  const searchCall = useContext(searchContext);
 
   return (
     <>

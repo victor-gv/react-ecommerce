@@ -36,6 +36,11 @@ function ProductPage() {
   const { manageFav, favs } = useFavs();
   const { manageShare } = useShare();
 
+  useEffect(() => {
+    getProduct();
+  }
+  , [params]);
+
 
 const getProduct = async () => {
   try {
@@ -52,10 +57,7 @@ const getProduct = async () => {
 }
 
 
-useEffect(() => {
-  getProduct();
-}
-, [params]);
+
 
 
   //function to add the class fav__added__background to the fav icons when the products are rendered if the product is already in favs.

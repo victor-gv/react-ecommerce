@@ -11,6 +11,11 @@ const ProductRelated = () => {
   const [product, setProduct] = useState({});
   const { isAuthenticated } = useAuthContext();
 
+  useEffect(() => {
+    getProduct();
+  }
+  , [params]);
+
 
 
 const getProduct = async () => {
@@ -28,10 +33,7 @@ const getProduct = async () => {
 }
 
 
-useEffect(() => {
-  getProduct();
-}
-, [params]);
+
 
 
 

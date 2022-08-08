@@ -3,7 +3,7 @@ import MainPage from "./components/MainPage/MainPage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import FavsPage from "./components/FavsPage/FavsPage";
 import ProductPage from "./components/ProductPage/ProductPage";
-import PrivateArea from "./components/PrivateArea/PrivateArea";
+import CheckoutPage from "./components/CheckoutPage/CheckoutPage";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
@@ -28,7 +28,7 @@ function App() {
                 <Route path="*" element={<ErrorPage />} />
               </Route>
               <Route path="/private" element={<PrivateRoute /> }>
-                <Route index element={<PrivateArea />} />
+                <Route index element={<CheckoutPage />} />
                 <Route path="/private/home" element={<MainPage />} />
                 <Route path="/private/logout" element={<Logout />} />
                 <Route path="/private/favs" element={<FavsPage />} />
