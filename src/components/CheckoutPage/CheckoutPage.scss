@@ -1,13 +1,81 @@
+
+
 .checkout__wrapper {
     margin-top: 3rem;
 
     h1 {
         margin-bottom: 2rem;
     }
+
+    h6 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    span {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1rem;
+    }
+
+}
+
+.checkout__stepper {
+    margin-bottom: 2rem;
+}
+
+.checkout__buttons__wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.3rem;
 }
 
 
 .checkout__container {
     box-shadow: 10px 20px 35px #3c3b515e;
     padding: 1rem;
+}
+
+
+.productDetails__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+   span{
+    font-size: 1rem;
+    font-weight: bold;
+   }
+
+   img {
+    width: 100%;
+    height: auto;
+    max-height: 96px;
+    object-fit: cover;
+   }
+
+   
+}
+
+.prductDetails__title {
+    align-self: flex-start;
+}
+
+.productDetails__img {
+    height: 100%;
+    vertical-align: middle;
+    margin-right: .7rem;
+}
+
+.productDetails__price {
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+}
+
+.productDetails__total {
+    span, h6 {
+        font-size: 1.4rem !important;
+        font-weight: bold !important;
+    }
+
 }

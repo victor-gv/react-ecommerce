@@ -22,7 +22,6 @@ import CheckoutSuccess from './CheckoutSuccess/CheckoutSuccess';
 import ValidationSchema from './FormModel/ValidationSchema';
 import CheckoutFormModel from './FormModel/CheckoutFormModel';
 import FormInitialValues from './FormModel/FormInitialValues';
-import useStyles from './styles';
 import './CheckoutPage.css'
 
 
@@ -45,7 +44,6 @@ function _renderStepContent(step) {
 const CheckoutPage = () => {
 
 
-    const classes = useStyles();
     const [activeStep, setActiveStep] = useState(0);
     const currentValidationSchema = ValidationSchema[activeStep];
     const isLastStep = activeStep === steps.length - 1;
@@ -66,10 +64,10 @@ const CheckoutPage = () => {
   
     async function _submitForm(values, actions) {
       await _sleep(1000);
-      alert(JSON.stringify(values, null, 2));
       actions.setSubmitting(false);
-  
       setActiveStep(activeStep + 1);
+      //clear out the cart
+      cart.forEach(product => removeProduct(product.id));
     }
   
     function _handleSubmit(values, actions) {
@@ -111,7 +109,7 @@ const CheckoutPage = () => {
       <Navbar
           SearchBar={false}
           isMainPage={false}
-          IconsNavbar={true}
+          IconsNavbar={false}
           totalQuantity={totalQuantity}
       />
        <div className="checkout__wrapper">
@@ -119,7 +117,7 @@ const CheckoutPage = () => {
           Checkout
                </Typography>
                <Container className="checkout__container" component="main" maxWidth="lg">
-          <Stepper activeStep={activeStep} className={classes.stepper}>
+          <Stepper activeStep={activeStep} className="checkout__stepper">
             {steps.map(label => (
               <Step key={label}>
                 <StepLabel>{label}</StepLabel>
@@ -138,26 +136,26 @@ const CheckoutPage = () => {
                 {({ isSubmitting }) => (
                   <Form id={formId}>
                     {_renderStepContent(activeStep)}
-                    <div className={classes.buttons}>
+                    <div className="checkout__buttons__wrapper">
                       {activeStep !== 0 && (
-                        <Button onClick={_handleBack} className={classes.button}>
+                        <Button onClick={_handleBack}>
                           Back
                         </Button>
                       )}
-                      <div className={classes.wrapper}>
+                      <div>
                         <Button
                           disabled={isSubmitting}
                           type="submit"
                           variant="contained"
                           color="primary"
-                          className={classes.button}
+                          className="checkout__button"
                         >
                           {isLastStep ? 'Place order' : 'Next'}
                         </Button>
                         {isSubmitting && (
                           <CircularProgress
                             size={24}
-                            className={classes.buttonProgress}
+                 
                           />
                         )}
                       </div>

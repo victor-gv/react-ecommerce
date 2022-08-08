@@ -1,15 +1,13 @@
 import React from 'react';
 import moment from 'moment';
 import { Typography, Grid } from '@mui/material';
-import useStyles from './styles';
 
 function PaymentDetails(props) {
   const { formValues } = props;
-  const classes = useStyles();
   const { nameOnCard, cardNumber, expiryDate } = formValues;
   return (
     <Grid item container direction="column" xs={12} sm={6}>
-      <Typography variant="h6" gutterBottom className={classes.title}>
+      <Typography variant="h6" gutterBottom>
         Payment details
       </Typography>
       <Grid container>
