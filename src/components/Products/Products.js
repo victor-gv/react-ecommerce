@@ -26,7 +26,7 @@ function Products(props) {
       <div className="title__row">
         <h2 className="products__title">All Products</h2>
         <select>
-          <option value="">Default Shorting</option>
+          <option value="">Default Sorting</option>
           <option value="">Short by price</option>
           <option value="">Short by popularity</option>
           <option value="">Short by rating</option>
