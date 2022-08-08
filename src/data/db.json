@@ -6,7 +6,8 @@
       "price": 90,
       "quantity": 1,
       "img": "../../img/img_1.jpeg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "The upper is made of fabric and mesh, and usually refers to everything above the sole of the shoe. Look for an upper that has smooth seams to minimize chafing and blisters."
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "price": 105,
       "quantity": 1,
       "img": "../../img/img_9.jpeg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "Different outsole combinations of foam and rubber can provide a mix of durability and protection. Keep in mind that the more durable the outsole, the more weight it’s likely to add, so finding the right balance for you may take some trial and error."
     },
     {
       "id": 3,
@@ -22,7 +24,8 @@
       "price": 66,
       "quantity": 1,
       "img": "../../img/img_3.jpeg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "The midsole cushioning is sandwiched between the shoe’s outsole and the mesh or fabric upper. This section of the shoe serves to cushion the foot from the impact of hitting the ground. The amount of cushioning is a personal preference, so be sure to try a few types before committing."
     },
     {
       "id": 4,
@@ -30,7 +33,8 @@
       "price": 87,
       "quantity": 1,
       "img": "../../img/img_4.jpeg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "The heel counter is a cup that’s situated near the rearfoot and serves to provide support and stability upon landing."
     },
     {
       "id": 5,
@@ -38,7 +42,8 @@
       "price": 100,
       "quantity": 1,
       "img": "../../img/img_5.jpeg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "The ankle collar is the padding near the, you guessed it, ankle. The padding serves to hold the ankle down and keep the foot secure. Some ankle collars might rub or cause Achilles tendon irritation, so this is an important feature to test."
     },
     {
       "id": 6,
@@ -46,7 +51,8 @@
       "price": 77,
       "quantity": 1,
       "img": "../../img/img_6.jpeg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "The toe box is at the very end of your shoe located between the laces and the beginning of the sole. Look for a shape that allows your toes to spread naturally. Some trail running shoes are reinforced in this area to prevent stubs."
     },
     {
       "id": 7,
@@ -54,7 +60,8 @@
       "price": 65,
       "quantity": 1,
       "img": "../../img/img_7.jpeg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "The toe spring is the upward curvature of the toe box. It keeps the toes flexed upward and helps the foot move forward in its stride."
     },
     {
       "id": 8,
@@ -62,7 +69,8 @@
       "price": 105,
       "quantity": 1,
       "img": "../../img/img_8.jpeg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "The saddle works in conjunction with the eyelets and laces to keep the foot secure. To make sure the saddle is sturdy and keeps your foot in place, make sure the shoe doesn’t slip and that you don’t experience any rubbing while wear-testing the shoe."
     },
     {
       "id": 9,
@@ -70,7 +78,8 @@
       "price": 109,
       "quantity": 1,
       "img": "../../img/img_2.jpeg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "Shoes can be well-cushioned and still have a low drop, but the key here is to have a similar amount of cushioning in the heel and forefoot areas. Keep in mind that more cushioning often means added weight. That’s not necessarily a bad thing for all runners, but something to pay attention to if you’re in the market for racing shoes."
     },
     {
       "id": 10,
@@ -78,7 +87,8 @@
       "price": 105,
       "quantity": 1,
       "img": "../../img/img_10.jpeg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "Heel cushioning is mainly a matter of preference. Do you like that weightless feeling that mimics running on clouds? Or do you prefer more contact with the ground? Be sure to consider your own comfort preferences when browsing different options."
     },
     {
       "id": 11,
@@ -86,7 +96,8 @@
       "price": 120,
       "quantity": 1,
       "img": "../../img/img_11.jpg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "The drop of a shoe is the angle between the heel/rearfoot and the toe/forefront. The greater the angle, the bigger the drop. Many traditional running shoes have a drop of about 10mm, and the extra cushioning in the rear serves to absorb impact. Many shoes on the market now have a lower (or even zero) drop, which encourages a mid-foot strike (vs. heel striking)."
     },
     {
       "id": 12,
@@ -94,7 +105,8 @@
       "price": 130,
       "quantity": 1,
       "img": "../../img/img_12.jpg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "Many stability and motion control shoes include things like medial posts and guard rails to keep the foot in a more neutral pronation position. Stability features are most important to runners who tend to overpronate, which is when the outer edge of the heel hits the ground first with the foot rolling inwards onto the arch."
     },
     {
       "id": 13,
@@ -102,7 +114,8 @@
       "price": 99,
       "quantity": 1,
       "img": "../../img/img_13.jpg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "This is the removable foam pad at the bottom of your shoe. Depending on the shoe, the liner can offer a lot of cushioning, or only minimal padding and arch support."
     },
     {
       "id": 14,
@@ -110,7 +123,8 @@
       "price": 110,
       "quantity": 1,
       "img": "../../img/img_14.jpg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "Travel sneakers built for ultimate comfort and functionality. Designed to cover all-terrains with Water Friendly features, 3D Dual cushioning and ultra lightweight portability. Sustainably created with recycled plastic bottles and 20% recycled EVA."
     },
     {
       "id": 15,
@@ -118,7 +132,8 @@
       "price": 115,
       "quantity": 1,
       "img": "../../img/img_15.jpg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "The all-terrain, reinforced sneaker designed to get you to the top. AirTech Rev and perforated high density foam ensure breathability and comfort. WR treated and quick dry drainage holes for a Water Friendly experience. Sustainably created with recycled plastic bottles and 20% recycled EVA. "
     },
     {
       "id": 16,
@@ -126,7 +141,8 @@
       "price": 80,
       "quantity": 1,
       "img": "../../img/img_16.jpg",
-      "category": "Sneakers"
+      "category": "Sneakers",
+      "description": "The ultimate adventurer’s high performance, low impact sneaker. An all-terrain design made to be Water Friendly, Dual Density and high grip so you can jump into new experiences anytime and anywhere. Sustainably created with recycled plastic bottles and 20% recycled EVA. "
     }
   ],
   "users": [

@@ -61,11 +61,8 @@ const getProduct = async () => {
             Product Details
           </h3>
           <br />
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias,
-            accusamus soluta quasi illum, deserunt ut iste rem obcaecati
-            inventore, est harum repellendus fuga velit odio sint officia
-            corrupti eum perspiciatis.
+          <p className="product__description">
+            {product.description}
           </p>
           <div className="card__shop">
             <button 
