@@ -215,7 +215,19 @@ const cities = [
   },
   {
     value: '52',
-    label: 'Andorra'
+    label: 'Mallorca'
+  },
+  {
+    value: '53',
+    label: 'Menorca'
+  },
+  {
+    value: '54',
+    label: 'Ibiza'
+  },
+  {
+    value: '55',
+    label: 'Andorra la Vella'
   }
 ];
 
@@ -287,6 +299,10 @@ const states = [
   {
     value: '106',
     label: 'Melilla'
+  }, 
+  {
+    value: '107',
+    label: 'Islas Baleares',
   }
 ];
 
