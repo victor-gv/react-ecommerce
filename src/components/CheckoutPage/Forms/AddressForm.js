@@ -11,15 +11,211 @@ const cities = [
   },
   {
     value: '1',
-    label: 'New York'
+    label: 'Álava'
   },
   {
     value: '2',
-    label: 'Chicago'
+    label: 'Albacete'
   },
   {
     value: '3',
-    label: 'Saigon'
+    label: 'Alicante'
+  },
+  {
+    value: '4',
+    label: 'Almería'
+  },
+  {
+    value: '5',
+    label: 'Asturias'
+  },
+  {
+    value: '6',
+    label: 'Ávila'
+  },
+  {
+    value: '7',
+    label: 'Badajoz'
+  },
+  {
+    value: '8',
+    label: 'Barcelona'
+  },
+  {
+    value: '9',
+    label: 'Burgos'
+  },
+  {
+    value: '10',
+    label: 'Cáceres'
+  },
+  {
+    value: '11',
+    label: 'Cádiz'
+  },
+  {
+    value: '12',
+    label: 'Cantabria'
+  },
+  {
+    value: '13',
+    label: 'Castellón'
+  },
+  {
+    value: '14',
+    label: 'Ciudad Real'
+  },
+  {
+    value: '15',
+    label: 'Córdoba'
+  },
+  {
+    value: '16',
+    label: 'Cuenca'
+  },
+  {
+    value: '17',
+    label: 'Girona'
+  },
+  {
+    value: '18',
+    label: 'Granada'
+  },
+  {
+    value: '19',
+    label: 'Guadalajara'
+  },
+  {
+    value: '20',
+    label: 'Guipúzcoa'
+  },
+  {
+    value: '21',
+    label: 'Huelva'
+  },
+  {
+    value: '22',
+    label: 'Huesca'
+  },
+  {
+    value: '23',
+    label: 'Jaén'
+  },
+  {
+    value: '24',
+    label: 'La Coruña'
+  },
+  {
+    value: '25',
+    label: 'La Rioja'
+  },
+  {
+    value: '26',
+    label: 'Las Palmas'
+  },
+  {
+    value: '27',
+    label: 'León'
+  },
+  {
+    value: '28',
+    label: 'Lleida'
+  },
+  {
+    value: '29',
+    label: 'Lugo'
+  },
+  {
+    value: '30',
+    label: 'Madrid'
+  },
+  {
+    value: '31',
+    label: 'Málaga'
+  },
+  {
+    value: '32',
+    label: 'Murcia'
+  },
+  {
+    value: '33',
+    label: 'Navarra'
+  },
+  {
+    value: '34',
+    label: 'Orense'
+  },
+  {
+    value: '35',
+    label: 'Palencia'
+  },
+  {
+    value: '36',
+    label: 'Pontevedra'
+  },
+  {
+    value: '37',
+    label: 'Salamanca'
+  },
+  {
+    value: '38',
+    label: 'Santa Cruz de Tenerife'
+  },
+  {
+    value: '39',
+    label: 'Segovia'
+  },
+  {
+    value: '40',
+    label: 'Sevilla'
+  },
+  {
+    value: '41',
+    label: 'Soria'
+  },
+  {
+    value: '42',
+    label: 'Tarragona'
+  },
+  {
+    value: '43',
+    label: 'Teruel'
+  },
+  {
+    value: '44',
+    label: 'Toledo'
+  },
+  {
+    value: '45',
+    label: 'Valencia'
+  },
+  {
+    value: '46',
+    label: 'Valladolid'
+  },
+  {
+    value: '47',
+    label: 'Vizcaya'
+  },
+  {
+    value: '48',
+    label: 'Zamora'
+  },
+  {
+    value: '49',
+    label: 'Zaragoza'
+  },
+  {
+    value: '50',
+    label: 'Ceuta'
+  },
+  {
+    value: '51',
+    label: 'Melilla'
+  },
+  {
+    value: '52',
+    label: 'Andorra'
   }
 ];
 
@@ -30,15 +226,67 @@ const states = [
   },
   {
     value: '11',
-    label: 'Florida'
+    label: 'Andalucía'
   },
   {
     value: '22',
-    label: 'Michigan'
+    label: 'Aragón'
   },
   {
     value: '33',
-    label: 'Texas'
+    label: 'Canarias'
+  },
+  {
+    value: '44',
+    label: 'Cantabria'
+  },
+  {
+    value: '55',
+    label: 'Castilla-La Mancha'
+  },
+  {
+    value: '66',
+    label: 'Castilla y León'
+  },
+  {
+    value: '77',
+    label: 'Cataluña'
+  },
+  {
+    value: '88',
+    label: 'Extremadura'
+  },
+  {
+    value: '99',
+    label: 'Galicia'
+  },
+  {
+    value: '100',
+    label: 'La Rioja'
+  },
+  {
+    value: '101',
+    label: 'Madrid'
+  },
+  {
+    value: '102',
+    label: 'Murcia'
+  },
+  {
+    value: '103',
+    label: 'Navarra'
+  },
+  {
+    value: '104',
+    label: 'Pais Vasco'
+  },
+  {
+    value: '105',
+    label: 'Ceuta'
+  },
+  {
+    value: '106',
+    label: 'Melilla'
   }
 ];
 
@@ -49,15 +297,11 @@ const countries = [
   },
   {
     value: '111',
-    label: 'United States'
+    label: 'Spain'
   },
   {
     value: '222',
-    label: 'Italy'
-  },
-  {
-    value: '333',
-    label: 'Vietnam'
+    label: 'Andorra'
   }
 ];
 
@@ -89,9 +333,6 @@ export default function AddressForm(props) {
         <Grid item xs={12}>
           <InputField name={address1.name} label={address1.label} fullWidth />
         </Grid>
-        {/* <Grid item xs={12}>
-          <InputField name={address2.name} label={address2.label} fullWidth />
-        </Grid> */}
         <Grid item xs={12} sm={6}>
           <SelectField
             name={city.name}
