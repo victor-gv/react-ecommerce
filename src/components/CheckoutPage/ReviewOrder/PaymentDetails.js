@@ -45,6 +45,16 @@ function PaymentDetails(props) {
             </Typography>
           </Grid>
         </React.Fragment>
+        <React.Fragment>
+          <Grid item xs={6}>
+            <Typography gutterBottom>Discount code</Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography gutterBottom>
+              {props.discountCode}
+            </Typography>
+          </Grid>
+        </React.Fragment>
       </Grid>
     </Grid>
   );

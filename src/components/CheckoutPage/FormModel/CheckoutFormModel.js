@@ -66,7 +66,11 @@ export default {
         label: 'CVV*',
         requiredErrorMsg: 'CVV is required',
         invalidErrorMsg: 'CVV is invalid (e.g. 357)'
-      }
+      },
+      discountCode: {
+        name: 'discountCode',
+        label: 'Discount code'
     }
+  }
   };
   

@@ -5,7 +5,7 @@ import DatePickerField from '../../FormFields/DatePickerField'
 
 export default function PaymentForm(props) {
   const {
-    formField: { nameOnCard, cardNumber, expiryDate, cvv }
+    formField: { nameOnCard, cardNumber, expiryDate, cvv, discountCode },
   } = props;
 
   return (
@@ -41,6 +41,13 @@ export default function PaymentForm(props) {
         </Grid>
         <Grid item xs={12} md={6}>
           <InputField name={cvv.name} label={cvv.label} fullWidth />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <InputField
+            name={discountCode.name}
+            label={discountCode.label}
+            fullWidth
+          />
         </Grid>
       </Grid>
     </React.Fragment>

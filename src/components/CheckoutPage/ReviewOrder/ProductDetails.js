@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Typography,
   List,
@@ -6,12 +6,25 @@ import {
   ListItemText,
 } from "@mui/material";
 import useCart from "../../Hooks/useCart";
+import { useFormikContext } from 'formik';
+import { useEffect } from "react";
 
 
 
 function ProductDetails() {
   /* Destructuring the useCart hook. */
   const { totalPrice, cart } = useCart();
+  const { values: formValues } = useFormikContext();
+
+  const [discountActive, setDiscountActive] = useState(false);
+
+  useEffect(() => {
+    if (formValues.discountCode === "SHOPHUB20") {
+      setDiscountActive(true);
+    } else {
+      setDiscountActive(false);
+    }
+  } , [formValues.discount]);
 
   return (
     <List disablePadding>
@@ -29,7 +42,7 @@ function ProductDetails() {
       <ListItem className="productDetails__total">
         <ListItemText primary="Total" />
         <Typography variant="subtitle1" >
-          {totalPrice}€
+          {discountActive ? totalPrice - 10 : totalPrice}€
         </Typography>
       </ListItem>
     </List>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
+import Swal from 'sweetalert2'
 import useCart from "../Hooks/useCart";
 import Alert from "@mui/material/Alert";
 import Avatar from "@mui/material/Avatar";
@@ -75,6 +76,16 @@ function LoginPage() {
       addNewUser(newUserData);
       localStorage.setItem("user", JSON.stringify(newUser.username));
       reset();
+      Swal.fire({
+        title: 'Welcome to Shophub!',
+        text: 'Add the following code in the payment method form to get a 15€ discount in your first purchase: SHOPHUB20',
+        icon: 'info',
+        customClass: {
+          text: 'font-weight-200',
+          text: 'text-center',
+          text: 'text-align-justify'
+    }
+      })
       login();
   };
 
