@@ -1,13 +1,18 @@
-import React from "react";
-import { useAuthContext } from "../../context/authContext";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import { RiCloseFill } from "react-icons/ri"
 import "./cart.css";
+import useCart from "../Hooks/useCart";
+import CheckoutButton from "./CheckoutButton/CheckoutButton";
 
-const Cart = ({ title, totalPrice, productItem, emptyCartImg }) => {
+const Cart = ({ title, totalPrice, productItem, emptyCartImg, checkoutBtn }) => {
 
-  const { isAuthenticated } = useAuthContext();
+const { cart } = useCart();
 
+let cartLength = cart.length;
+
+useEffect(() => {
+  cartLength = cart.length;
+} , [cart]);
 
 /* Adding an event listener to the mainPage and loginPage. When the user clicks on the mainPage,
 loginPage or favPage while the cart is open, the cart will close. */
@@ -82,7 +87,7 @@ loginPage or favPage while the cart is open, the cart will close. */
           <h3 className="totalPrice">Total: {totalPrice}€</h3>
           <hr></hr>
             <div onClick={removeHidden} className="checkout-container">
-              <Link className="btn btn-primary btn-block btn-lg checkout" to={isAuthenticated ? '/private' : '/login'}>Checkout</Link>
+              {checkoutBtn ? <CheckoutButton /> : null}
             </div>
         </div>
       </div>

@@ -136,6 +136,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
                 title={""}
                 totalPrice={totalPrice}
                 productItem={checkCart()}
+                checkoutBtn={true}
               />
             )}
           </Col>

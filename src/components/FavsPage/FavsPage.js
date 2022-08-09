@@ -144,6 +144,7 @@ useEffect(() => {
           title={""}
           totalPrice={totalPrice}
           productItem={checkCart()}
+          checkoutBtn={true}
         />
       )}
     </>

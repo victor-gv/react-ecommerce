@@ -85,6 +85,7 @@ const ErrorPage = () => {
           title={""}
           totalPrice={totalPrice}
           productItem={checkCart()}
+          checkoutBtn={true}
         />
       )}
     </>

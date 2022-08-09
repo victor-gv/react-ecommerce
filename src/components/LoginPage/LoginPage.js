@@ -421,7 +421,12 @@ function LoginPage() {
             }
           />
         ) : (
-          <Cart title={""} totalPrice={totalPrice} productItem={checkCart()} />
+          <Cart 
+            title={""} 
+            totalPrice={totalPrice} 
+            productItem={checkCart()}
+            checkoutBtn={true}
+            />
         )}
       </div>
     </>

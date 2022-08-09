@@ -166,6 +166,7 @@ const getProduct = async () => {
           title={""}
           totalPrice={totalPrice}
           productItem={checkCart()}
+          checkoutBtn={true}
         />
       )}
     </>
