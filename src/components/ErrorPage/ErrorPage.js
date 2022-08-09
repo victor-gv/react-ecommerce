@@ -59,7 +59,7 @@ const ErrorPage = () => {
                 </div>
                 <div className="contant_box_404">
                   <h2 className="h2">Look like you're lost</h2>
-                  <Link to={isAuthenticated ? '/private/home' : '/'}>
+                  <Link to={isAuthenticated ? '/private' : '/'}>
                     <p className="link_404">Go to Home</p>
                   </Link>
                 </div>

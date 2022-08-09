@@ -137,7 +137,7 @@ const getProduct = async () => {
           <div className="small-container">
             <div className="row row-2">
               <h2>Related Products</h2>
-              <Link className="nav-link" to={isAuthenticated ? '/private/home' : '/'}>
+              <Link className="nav-link" to={isAuthenticated ? '/private' : '/'}>
                 <p>View more</p>
               </Link>
             </div>

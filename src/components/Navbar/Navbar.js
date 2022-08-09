@@ -56,7 +56,7 @@ function Navbar(props) {
         ) : null}
         <div className={`nav ${isAuthenticated ? "nav-logged" : ""}`}>
           <div className="logo">
-            <Link to={isAuthenticated ? '/private/home' : '/'}>
+            <Link to={isAuthenticated ? '/private' : '/'}>
               <img src={logo} alt="Logo of the page" />
             </Link>
           </div>
@@ -66,12 +66,12 @@ function Navbar(props) {
           <nav>
             <ul id="MenuItems" className="menu-items">
               <li>
-                <Link className="nav-link" to={isAuthenticated ? '/private/home' : '/'}>
+                <Link className="nav-link" to={isAuthenticated ? '/private' : '/'}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link className="nav-link" to={isAuthenticated ? '/private/home' : '/'}>
+                <Link className="nav-link" to={isAuthenticated ? '/private' : '/'}>
                   Categories
                 </Link>
               </li>

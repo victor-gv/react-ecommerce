@@ -28,8 +28,8 @@ function App() {
                 <Route path="*" element={<ErrorPage />} />
               </Route>
               <Route path="/private" element={<PrivateRoute /> }>
-                <Route index element={<CheckoutPage />} />
-                <Route path="/private/home" element={<MainPage />} />
+                <Route index element={<MainPage />} />
+                <Route path="/private/checkout" element={<CheckoutPage />} />
                 <Route path="/private/logout" element={<Logout />} />
                 <Route path="/private/favs" element={<FavsPage />} />
                 <Route path="/private/product/:id" element={<ProductPage />} />

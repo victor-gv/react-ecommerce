@@ -102,7 +102,7 @@ useEffect(() => {
             manageShare={manageShare}
             emptyMessage={`Your favorites are empty.`}
             homePage={
-              <Link to={isAuthenticated ? '/private/home' : '/'}>
+              <Link to={isAuthenticated ? '/private' : '/'}>
                 <AiOutlineHome />
               </Link>
             }
