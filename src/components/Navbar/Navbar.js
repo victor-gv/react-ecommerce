@@ -71,8 +71,13 @@ function Navbar(props) {
                 </Link>
               </li>
               <li>
-                <Link className="nav-link" to={isAuthenticated ? '/private' : '/'}>
-                  Categories
+                <Link className="nav-link" to={isAuthenticated ? '/private/sneakers' : '/sneakers'}>
+                  Sneakers
+                </Link>
+              </li>
+              <li>
+                <Link className="nav-link" to={isAuthenticated ? '/private/clothes' : '/clothes'}>
+                  Clothes
                 </Link>
               </li>
               {!isAuthenticated ? (

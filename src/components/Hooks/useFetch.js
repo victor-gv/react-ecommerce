@@ -75,6 +75,10 @@ const useFetch = () => {
       .then(res => res.json())
     }
 
+    function getSneakers() {
+      return products.filter(product => product.category === "Sneakers");
+    }
+
   return {
     products,
     error,
@@ -84,7 +88,8 @@ const useFetch = () => {
     getAllUsers,
     getUser,
     addNewUser,
-    discountActivated
+    discountActivated,
+    getSneakers
   }
 }
 

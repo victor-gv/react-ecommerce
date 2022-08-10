@@ -113,7 +113,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
 
           <Row>
             <Col xs="10" className="products__wrapper">
-              <Products manageClick={addToCart} manageFav={manageFav} manageShare={manageShare} />
+              <Products manageClick={addToCart} manageFav={manageFav} manageShare={manageShare} title={"All products"} />
             </Col>
           </Row>
         </div>
