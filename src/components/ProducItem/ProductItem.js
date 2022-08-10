@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { AiFillDelete } from "react-icons/ai"
 
 function ProductItem({ id, img, title, price, substractQuantity, quantity, addQuantity, removeProduct }) {
@@ -6,7 +7,9 @@ function ProductItem({ id, img, title, price, substractQuantity, quantity, addQu
     <>
     <div className="cart__product">
       <div className="cart__product--row">
-              <div className="cart__img"><img src={img} alt="" /></div>
+              <Link to = {`/product/${id}`}>
+                <div className="cart__img"><img src={img} alt="" /></div>
+              </Link>
                 <div className="cart__name--row">
                   <span className="productItem__title">{title}</span>
                   <span className="productItem__price">{price}€</span>
