@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Navigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar"
 import useCart from "../Hooks/useCart";
 import useFetch from "../Hooks/useFetch";
@@ -46,6 +47,7 @@ function _renderStepContent(step) {
 const CheckoutPage = () => {
 
 
+
     const [activeStep, setActiveStep] = useState(0);
     const currentValidationSchema = ValidationSchema[activeStep];
     const isLastStep = activeStep === steps.length - 1;
@@ -64,12 +66,17 @@ const CheckoutPage = () => {
         } = useCart();
 
 
+
+
         /* Destructuring the useFetch hook. */
         const { getUser, discountActivated } = useFetch();
         const username = JSON.parse(localStorage.getItem("user"));
         const discountActive = useContext(discountContext);
 
 
+        if (activeStep === 0 && cart.length === 0) {
+          return <Navigate to="/private" />;
+        }
 
   
     function _sleep(ms) {
