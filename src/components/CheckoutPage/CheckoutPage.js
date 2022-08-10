@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Navbar from "../Navbar/Navbar"
 import useCart from "../Hooks/useCart";
+import useFetch from "../Hooks/useFetch";
 import ProductItem from "../ProducItem/ProductItem";
 import Cart from "../Cart/Cart";
 import emptyCartImg from "../../images/empty_cart.png";
@@ -22,6 +23,7 @@ import CheckoutSuccess from './CheckoutSuccess/CheckoutSuccess';
 import ValidationSchema from './FormModel/ValidationSchema';
 import CheckoutFormModel from './FormModel/CheckoutFormModel';
 import FormInitialValues from './FormModel/FormInitialValues';
+import { discountContext } from "../../context/discountContext";
 import './CheckoutPage.css'
 
 
@@ -47,7 +49,10 @@ const CheckoutPage = () => {
     const [activeStep, setActiveStep] = useState(0);
     const currentValidationSchema = ValidationSchema[activeStep];
     const isLastStep = activeStep === steps.length - 1;
-    
+
+
+
+
         /* Destructuring the useCart hook. */
         const {
           addQuantity,
@@ -57,6 +62,15 @@ const CheckoutPage = () => {
           cart,
           totalQuantity,
         } = useCart();
+
+
+        /* Destructuring the useFetch hook. */
+        const { getUser, discountActivated } = useFetch();
+        const username = JSON.parse(localStorage.getItem("user"));
+        const discountActive = useContext(discountContext);
+
+
+
   
     function _sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
@@ -68,6 +82,10 @@ const CheckoutPage = () => {
       setActiveStep(activeStep + 1);
       //clear out the cart
       cart.forEach(product => removeProduct(product.id));
+      if (discountActive.discountActive) {
+        const user = getUser(username);
+        discountActivated(user.id);
+      }
     }
   
     function _handleSubmit(values, actions) {
@@ -155,7 +173,7 @@ const CheckoutPage = () => {
                         {isSubmitting && (
                           <CircularProgress
                             size={24}
-                 
+
                           />
                         )}
                       </div>

@@ -49,8 +49,8 @@ const useFetch = () => {
     }
 
 
-    function getUser(email) {
-      return users.find(user => user.email === email);
+    function getUser(username) {
+      return users.find(user => user.username === username);
     }
 
     function addNewUser(user) {
@@ -64,6 +64,17 @@ const useFetch = () => {
       .then(res => res.json())
     }
 
+    function discountActivated(id) {
+      fetch(`http://localhost:5000/users/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({discountActivated: true})
+      })
+      .then(res => res.json())
+    }
+
   return {
     products,
     error,
@@ -72,7 +83,8 @@ const useFetch = () => {
     setUsers,
     getAllUsers,
     getUser,
-    addNewUser
+    addNewUser,
+    discountActivated
   }
 }
 

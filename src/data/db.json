@@ -151,7 +151,16 @@
       "username": "Victor",
       "email": "victorgarciavao@gmail.com",
       "password": "1aA*1111",
+      "discountActivated": true,
       "id": 1
+    },
+    {
+      "name": "Paco",
+      "username": "lolillo",
+      "email": "loloperez@gmail.com",
+      "password": "1aA*1111",
+      "discountActivated": true,
+      "id": 2
     }
   ]
 }

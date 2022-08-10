@@ -1,18 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { RiCloseFill } from "react-icons/ri"
 import "./cart.css";
-import useCart from "../Hooks/useCart";
 import CheckoutButton from "./CheckoutButton/CheckoutButton";
 
 const Cart = ({ title, totalPrice, productItem, emptyCartImg, checkoutBtn }) => {
 
-const { cart } = useCart();
-
-let cartLength = cart.length;
-
-useEffect(() => {
-  cartLength = cart.length;
-} , [cart]);
 
 /* Adding an event listener to the mainPage and loginPage. When the user clicks on the mainPage,
 loginPage or favPage while the cart is open, the cart will close. */
@@ -86,8 +78,8 @@ loginPage or favPage while the cart is open, the cart will close. */
         <div className="totalPrice__container">
           <h3 className="totalPrice">Total: {totalPrice}€</h3>
           <hr></hr>
-            <div onClick={removeHidden} className="checkout-container">
-              {checkoutBtn ? <CheckoutButton /> : null}
+            <div className="checkout-container">
+              {checkoutBtn ? <CheckoutButton onClick={removeHidden} /> : null}
             </div>
         </div>
       </div>

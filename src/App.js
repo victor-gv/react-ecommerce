@@ -12,12 +12,14 @@ import { AuthContextProvider } from "./context/authContext";
 import PublicRoute from "./components/routes/PublicRoute";
 import PrivateRoute from "./components/routes/PrivateRoute";
 import Logout from "./components/Logout/Logout";
+import DiscountContextProvider from "./context/discountContext";
 
 function App() {
   return (
     <>
       <AuthContextProvider>
         <SearchCallProvider>
+          <DiscountContextProvider>
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<PublicRoute />}>
@@ -37,6 +39,7 @@ function App() {
               </Route>
             </Routes>
           </BrowserRouter>
+          </DiscountContextProvider>
         </SearchCallProvider>
       </AuthContextProvider>
       <Footer />

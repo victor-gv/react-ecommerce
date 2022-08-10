@@ -72,13 +72,14 @@ function LoginPage() {
         username: newUser.username,
         email: newUser.emailNewUser,
         password: newUser.passwordNewUser,
+        discountActivated: false,
       };
       addNewUser(newUserData);
       localStorage.setItem("user", JSON.stringify(newUser.username));
       reset();
       Swal.fire({
         title: 'Welcome to Shophub!',
-        text: 'Add the following code in the payment method form to get a 15€ discount in your first purchase: SHOPHUB20',
+        text: `Add the following code in the payment method form to get a 15€ discount in your first purchase: SHOPHUB20-${newUser.username}`,
         icon: 'info'
       })
       login();
