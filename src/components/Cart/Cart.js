@@ -76,7 +76,8 @@ loginPage or favPage while the cart is open, the cart will close. */
                 {productItem}
             </div>
         <div className="totalPrice__container">
-          <h3 className="totalPrice">Total: {totalPrice}€</h3>
+          <h3 className="totalPrice">Total: {Number(totalPrice).toFixed(2)}€
+          </h3>
           <hr></hr>
             <div className="checkout-container">
               {checkoutBtn ? <CheckoutButton onClick={removeHidden} /> : null}

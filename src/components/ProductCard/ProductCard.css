@@ -23,6 +23,7 @@
 .card img {
   width: 100%;
   height: auto;
+  max-height: 20rem;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;

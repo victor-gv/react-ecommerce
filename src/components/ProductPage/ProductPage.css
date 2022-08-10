@@ -102,6 +102,10 @@ input:focus {
 }
 .col-4 img {
   width: 100%;
+  height: auto;
+  max-height: 10rem;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-bottom: 1rem;
 }
 
