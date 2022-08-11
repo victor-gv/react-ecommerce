@@ -26,7 +26,7 @@ import ValidationSchema from './FormModel/ValidationSchema';
 import CheckoutFormModel from './FormModel/CheckoutFormModel';
 import FormInitialValues from './FormModel/FormInitialValues';
 import { discountContext } from "../../context/discountContext";
-import ApiKey from "../../ApiKey/ApiKey";
+import ApiKey from "../../config/ApiKey";
 import './CheckoutPage.css'
 
 
