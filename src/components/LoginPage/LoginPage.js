@@ -79,7 +79,7 @@ function LoginPage() {
       reset();
       Swal.fire({
         title: 'Welcome to Shophub!',
-        text: `Add the following code in the payment method form to get a 15€ discount in your first purchase: SHOPHUB20-${newUser.username}`,
+        text: `Add the following code in the payment method form to get a 10€ discount in your first purchase: SHOPHUB20-${newUser.username}`,
         icon: 'info'
       })
       login();
