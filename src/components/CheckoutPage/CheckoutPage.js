@@ -1,5 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 import { Navigate } from "react-router-dom";
+import emailjs from 'emailjs-com';
 import Navbar from "../Navbar/Navbar"
 import useCart from "../Hooks/useCart";
 import useFetch from "../Hooks/useFetch";
@@ -25,7 +26,9 @@ import ValidationSchema from './FormModel/ValidationSchema';
 import CheckoutFormModel from './FormModel/CheckoutFormModel';
 import FormInitialValues from './FormModel/FormInitialValues';
 import { discountContext } from "../../context/discountContext";
+import ApiKey from "../../ApiKey/ApiKey";
 import './CheckoutPage.css'
+
 
 
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
@@ -78,6 +81,19 @@ const CheckoutPage = () => {
           return <Navigate to="/private" />;
         }
 
+        const form = useRef();
+        const sendEmail = () => {
+      
+          emailjs
+            .sendForm(ApiKey.SERVICE_ID, ApiKey.TEMPLATE_ID, form.current, ApiKey.USER_ID)
+            .then((result) => {
+              console.log(result.text);
+            }, (error) => {
+              console.log(error.text);
+            }
+            );
+        }
+
   
     function _sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
@@ -93,11 +109,13 @@ const CheckoutPage = () => {
         const user = getUser(username);
         discountActivated(user.id);
       }
+      sendEmail();
     }
   
     function _handleSubmit(values, actions) {
       if (isLastStep) {
         _submitForm(values, actions);
+
       } else {
         setActiveStep(activeStep + 1);
         actions.setTouched({});
@@ -159,7 +177,7 @@ const CheckoutPage = () => {
                 onSubmit={_handleSubmit}
               >
                 {({ isSubmitting }) => (
-                  <Form id={formId}>
+                <Form id={formId} ref={form}  >
                     {_renderStepContent(activeStep)}
                     <div className="checkout__buttons__wrapper">
                       {activeStep !== 0 && (
