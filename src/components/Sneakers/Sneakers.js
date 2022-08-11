@@ -86,7 +86,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
       />
       <div>
           <Row>
-            <Col className="products__wrapper" xs="11">
+            <Col id="sneakersPage" className="products__wrapper" xs="11">
               <SneakersItems
                 manageClick={addToCart}
                 manageFav={manageFav}

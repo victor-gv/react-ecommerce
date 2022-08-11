@@ -152,8 +152,8 @@
       "quantity": 1,
       "category": "Clothes",
       "img": "http://peticiones.online/images/products/image01.png"
-      },
-      {
+    },
+    {
       "id": 18,
       "title": "Suéter Ligero con Frente Abierto",
       "description": "Corte estrecho y cómodo que permite el movimiento.",
@@ -161,8 +161,8 @@
       "quantity": 1,
       "category": "Clothes",
       "img": "http://peticiones.online/images/products/image02.png"
-      },
-      {
+    },
+    {
       "id": 19,
       "title": "Polo de Golf de Ajuste Regular",
       "description": "Este producto talla grande, considera elegir una talla inferior a la usual.",
@@ -170,8 +170,8 @@
       "quantity": 1,
       "category": "Clothes",
       "img": "http://peticiones.online/images/products/image03.png"
-      },
-      {
+    },
+    {
       "id": 20,
       "title": "Chaqueta Cortavientos Plegable",
       "description": "Esta chaqueta impermeable es totalmente plegable y cuenta con un bolsillo frontal tipo canguro, encuadernación en el dobladillo y las mangas, y un cordón elástico ajustable en el dobladillo inferior para mantener fuera los elementos.",
@@ -179,8 +179,8 @@
       "quantity": 1,
       "category": "Clothes",
       "img": "http://peticiones.online/images/products/image04.png"
-      },
-      {
+    },
+    {
       "id": 21,
       "title": "Sudadera Hombre de Cremallera Manga Larga",
       "description": "Esta sudadera con grapas de armario cuenta con una cremallera frontal con bolsillo dividido y puños y dobladillo acanalados con sellado cálido.",
@@ -188,8 +188,8 @@
       "quantity": 1,
       "category": "Clothes",
       "img": "http://peticiones.online/images/products/image05.png"
-      },
-      {
+    },
+    {
       "id": 22,
       "title": "Saco de Dormir de Microforro Polar, Pack de 2",
       "description": "Aprovecha los básicos para bebés con estos monos de algodón 100 % suave con un cuello de vuelta y broches en la entrepierna para un fácil vestido y pañales.",
@@ -197,8 +197,8 @@
       "quantity": 1,
       "category": "Clothes",
       "img": "http://peticiones.online/images/products/image06.png"
-      },
-      {
+    },
+    {
       "id": 23,
       "title": "Camisa Túnica de Manga Larga",
       "description": "Una prenda básica en el armario, esta camisa clásica de manga larga proporciona un aspecto fácil perfecto para cualquier ocasión.",
@@ -206,8 +206,8 @@
       "quantity": 1,
       "category": "Clothes",
       "img": "http://peticiones.online/images/products/image07.png"
-      },
-      {
+    },
+    {
       "id": 24,
       "title": "Camisa de franela a cuadros de manga larga",
       "description": "Mismo corte, nuevo nombre: Hemos cambiado el nombre de este estilo de camisa a «Regular Fit» pero las medidas son las mismas.",
@@ -215,8 +215,8 @@
       "quantity": 1,
       "category": "Clothes",
       "img": "http://peticiones.online/images/products/image08.png"
-      },
-      {
+    },
+    {
       "id": 25,
       "title": "Camisetas Henley de Manga Corta",
       "description": "Esta elegante y cómoda camiseta mantendrá el ritmo de las actividades cotidianas y toda la diversión.",
@@ -224,8 +224,8 @@
       "quantity": 1,
       "category": "Clothes",
       "img": "http://peticiones.online/images/products/image09.png"
-      },
-      {
+    },
+    {
       "id": 26,
       "title": "Camisetas de Manga Corta, Pack de 5",
       "description": "Tejido de punto ligero, cómodo y suave.",
@@ -233,7 +233,7 @@
       "quantity": 1,
       "category": "Clothes",
       "img": "http://peticiones.online/images/products/image10.png"
-      }
+    }
   ],
   "users": [
     {
@@ -249,7 +249,7 @@
       "username": "lolillo",
       "email": "loloperez@gmail.com",
       "password": "1aA*1111",
-      "discountActivated": true,
+      "discountActivated": false,
       "id": 2
     }
   ]

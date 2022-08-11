@@ -36,6 +36,22 @@ loginPage or favPage while the cart is open, the cart will close. */
     })
   }
 
+  const sneakersPage = document.getElementById("sneakersPage");
+  if (sneakersPage){
+    sneakersPage.addEventListener("click", ()=>{
+      closeCart();
+    }
+    )
+  }
+
+  const clothesPage = document.getElementById("clothesPage");
+  if (clothesPage){
+    clothesPage.addEventListener("click", ()=>{
+      closeCart();
+    }
+    )
+  }
+
   const removeHidden = () => {
     const footer = document.querySelector(".footer");
     if (footer) footer.classList.remove("hidden");
@@ -48,12 +64,16 @@ loginPage or favPage while the cart is open, the cart will close. */
     const loginPage = document.getElementById("loginPage");
     const favPage = document.getElementById("favPage");
     const productPage = document.getElementById("productPage");
+    const sneakersPage = document.getElementById("sneakersPage");
+    const clothesPage = document.getElementById("clothesPage");
     const footer = document.getElementById("footer");
     cart.classList.remove("cart-open");
     if (mainPage) mainPage.classList.remove("blur");
     if (loginPage) loginPage.classList.remove("blur");
     if (favPage) favPage.classList.remove("blur");
     if (productPage) productPage.classList.remove("blur");
+    if (sneakersPage) sneakersPage.classList.remove("blur");
+    if (clothesPage) clothesPage.classList.remove("blur");
     if (footer) footer.classList.remove("hidden");
   }
 
