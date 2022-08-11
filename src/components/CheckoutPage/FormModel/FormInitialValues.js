@@ -3,6 +3,7 @@ const {
   formField: {
     firstName,
     lastName,
+    email,
     address1,
     city,
     zipcode,
@@ -19,6 +20,7 @@ const {
 export default {
   [firstName.name]: '',
   [lastName.name]: '',
+  [email.name]: '',
   [address1.name]: '',
   [city.name]: '',
   [zipcode.name]: '',

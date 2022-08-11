@@ -326,6 +326,7 @@ export default function AddressForm(props) {
     formField: {
       firstName,
       lastName,
+      email,
       address1,
       city,
       state,
@@ -345,6 +346,9 @@ export default function AddressForm(props) {
         </Grid>
         <Grid item xs={12} sm={6}>
           <InputField name={lastName.name} label={lastName.label} fullWidth />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <InputField name={email.name} label={email.label} fullWidth />
         </Grid>
         <Grid item xs={12}>
           <InputField name={address1.name} label={address1.label} fullWidth />

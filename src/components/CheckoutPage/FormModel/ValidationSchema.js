@@ -5,6 +5,7 @@ const {
   formField: {
     firstName,
     lastName,
+    email,
     address1,
     city,
     zipcode,
@@ -22,6 +23,7 @@ export default [
   Yup.object().shape({
     [firstName.name]: Yup.string().required(`${firstName.requiredErrorMsg}`),
     [lastName.name]: Yup.string().required(`${lastName.requiredErrorMsg}`),
+    [email.name]: Yup.string().required(`${email.requiredErrorMsg}`),
     [address1.name]: Yup.string().required(`${address1.requiredErrorMsg}`),
     [city.name]: Yup.string()
       .nullable()

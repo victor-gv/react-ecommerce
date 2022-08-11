@@ -1,5 +1,6 @@
 import React from "react";
 import MainPage from "./components/MainPage/MainPage";
+import Sneakers from "./components/Sneakers/Sneakers";
 import LoginPage from "./components/LoginPage/LoginPage";
 import FavsPage from "./components/FavsPage/FavsPage";
 import ProductPage from "./components/ProductPage/ProductPage";
@@ -13,6 +14,7 @@ import PublicRoute from "./components/routes/PublicRoute";
 import PrivateRoute from "./components/routes/PrivateRoute";
 import Logout from "./components/Logout/Logout";
 import DiscountContextProvider from "./context/discountContext";
+import Clothes from "./components/Clothes/Clothes";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
             <Routes>
               <Route path="/" element={<PublicRoute />}>
                 <Route index element={<MainPage />} />
+                <Route path="sneakers" element={<Sneakers />} />
+                <Route path="clothes" element={<Clothes />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/favs" element={<FavsPage />} />
                 <Route path="/product/:id" element={<ProductPage />} />
@@ -31,6 +35,8 @@ function App() {
               </Route>
               <Route path="/private" element={<PrivateRoute /> }>
                 <Route index element={<MainPage />} />
+                <Route path="sneakers" element={<Sneakers />} />
+                <Route path="clothes" element={<Clothes />} />
                 <Route path="/private/checkout" element={<CheckoutPage />} />
                 <Route path="/private/logout" element={<Logout />} />
                 <Route path="/private/favs" element={<FavsPage />} />

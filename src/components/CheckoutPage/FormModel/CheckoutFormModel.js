@@ -11,6 +11,11 @@ export default {
         label: 'Last name*',
         requiredErrorMsg: 'Last name is required'
       },
+      email: {
+        name: 'email',
+        label: 'Contact email',
+        requiredErrorMsg: 'Email is required'
+      },
       address1: {
         name: 'address1',
         label: 'Address Line 1*',

@@ -1,23 +1,20 @@
 import React, { useContext } from "react";
-import { useAuthContext } from "../../context/authContext";
-import useFetch from "../Hooks/useFetch";
-import useSearch from "../Hooks/useSearch";
-import noResult from "../../images/no-results.png";
+import useFetch from "../../Hooks/useFetch";
+import useSearch from "../../Hooks/useSearch";
+import noResult from "../../../images/no-results.png";
 import { Link } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
 import { BsHandbagFill, BsShareFill } from "react-icons/bs";
 import { MdFavoriteBorder } from "react-icons/md";
-import errorImg from "../../images/error-404.png";
-import ProductCard from "../ProductCard/ProductCard";
-import { searchContext } from "../../context/searchContext";
-import "./Products.css";
+import errorImg from "../../../images/error-404.png";
+import ProductCard from "../../ProductCard/ProductCard";
+import { searchContext } from "../../../context/searchContext";
 
-function Products(props) {
-  const { products, error, loading } = useFetch();
+
+function ClothesItems(props) {
+  const { error, loading, products } = useFetch();
   const { filter } = useSearch();
-  const { isAuthenticated } = useAuthContext();
   const searchCall = useContext(searchContext);
-
 
   let renderedProducts;
 
@@ -27,13 +24,6 @@ function Products(props) {
         <h2 className="products__title">
           {props.title}
         </h2>
-        {/* <select>
-          <option value="">Default Sorting</option>
-          <option value="">Short by price</option>
-          <option value="">Short by popularity</option>
-          <option value="">Short by rating</option>
-          <option value="">Short by sale</option>
-        </select> */}
       </div>
       <div className="products__container">
         {loading ? (
@@ -46,6 +36,7 @@ function Products(props) {
         ) : null}
         {
           (renderedProducts = products
+            .filter((product) => product.category === "Clothes")
             .filter((product) => {
               const match = product.title
                 .toLowerCase()
@@ -54,12 +45,11 @@ function Products(props) {
               if (filter !== "") searchCall.setSearchCall(true);
               return match;
             })
-
             .map((product) => 
             (
               <ProductCard key={product.id}>
                 <div data-card={product.id} className="card">
-                  <Link to={isAuthenticated ? `/private/product/${product.id}` : `/product/${product.id}`}>
+                  <Link to={`/product/${product.id}`}>
                     <img src={product.img} alt={product.title} />
                     <h4 className="card__title">{product.title}</h4>
                     <span className="card__description">
@@ -103,4 +93,4 @@ function Products(props) {
   );
 }
 
-export default Products;
+export default ClothesItems;

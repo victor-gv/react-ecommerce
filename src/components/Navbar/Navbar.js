@@ -31,12 +31,16 @@ function Navbar(props) {
     const loginPage = document.getElementById("loginPage");
     const favPage = document.getElementById("favPage");
     const productPage = document.getElementById("productPage");
+    const sneakersPage = document.getElementById("sneakersPage");
+    const clothesPage = document.getElementById("clothesPage");
     const footer = document.getElementById("footer");
 
     if (mainPage) mainPage.classList.add("blur");
     if (loginPage) loginPage.classList.add("blur");
     if (favPage) favPage.classList.add("blur");
     if (productPage) productPage.classList.add("blur");
+    if (sneakersPage) sneakersPage.classList.add("blur");
+    if (clothesPage) clothesPage.classList.add("blur");
     if (cart) cart.classList.add("cart-open");
     if (footer) footer.classList.add("hidden");
   };
@@ -71,8 +75,13 @@ function Navbar(props) {
                 </Link>
               </li>
               <li>
-                <Link className="nav-link" to={isAuthenticated ? '/private' : '/'}>
-                  Categories
+                <Link className="nav-link" to={isAuthenticated ? '/private/sneakers' : '/sneakers'}>
+                  Sneakers
+                </Link>
+              </li>
+              <li>
+                <Link className="nav-link" to={isAuthenticated ? '/private/clothes' : '/clothes'}>
+                  Clothes
                 </Link>
               </li>
               {!isAuthenticated ? (

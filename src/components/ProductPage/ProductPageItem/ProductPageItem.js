@@ -9,7 +9,7 @@ const ProductPageItem = ({ manageFav, manageClick, manageShare }) => {
   const navigate = useNavigate();
   const [product, setProduct] = useState({});
 
-  
+
 useEffect(() => {
   getProduct();
 }
