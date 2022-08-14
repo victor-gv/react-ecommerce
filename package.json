@@ -76,7 +76,7 @@
   "bugs": {
     "url": "https://github.com/victor-gv/react-ecommerce/issues"
   },
-  "homepage": "https://github.com/victor-gv/react-ecommerce#readme",
+  "homepage": ".",
   "devDependencies": {
     "gulp": "^4.0.2"
   }
