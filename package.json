@@ -44,7 +44,7 @@
     "eject": "react-scripts eject",
     "preshrinkwrap": "git checkout -- npm-shrinkwrap.json",
     "postshrinkwrap": "git checkout -- npm-shrinkwrap.json",
-    "server": "json-server --watch ./src/data/db.json --port 5000"
+    "server": "json-server --watch db.json --port 5000"
   },
   "eslintConfig": {
     "extends": [
