@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 
 const useFetch = () => {
 
-    const urlProducts = "http://localhost:5000/products";
+    const urlProducts = "https://shophub20-server.herokuapp.com/products";
 
-    const urlUsers = "http://localhost:5000/users";
+    const urlUsers = "https://shophub20-server.herokuapp.com/users";
 
     const [products, setProducts] = useState([]);
     const [users, setUsers] = useState([]);
@@ -54,7 +54,7 @@ const useFetch = () => {
     }
 
     function addNewUser(user) {
-      fetch("http://localhost:5000/users", {
+      fetch(urlUsers, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -65,7 +65,7 @@ const useFetch = () => {
     }
 
     function discountActivated(id) {
-      fetch(`http://localhost:5000/users/${id}`, {
+      fetch(urlUsers + "/" + id, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"
