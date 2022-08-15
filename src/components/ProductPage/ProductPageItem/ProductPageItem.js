@@ -24,9 +24,6 @@ const getProduct = async () => {
       let product = await response.json();
       product = product[0];
       setProduct(product);
-      if (product.id === undefined) {
-        navigate("/error");
-      }
     } else {
       navigate("/error");
     }
