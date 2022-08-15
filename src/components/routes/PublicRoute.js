@@ -13,7 +13,7 @@ export default function PublicRoute() {
 
     if (isAuthenticated) {
         if (!url.includes('/private') && url.includes('product/')){
-            if (!products.find(product => product.title === params.title)){
+            if (!products.find(product => product.slug === params.title)){
                 return <Navigate to="/error" />;
             } else {
                 return <Navigate to={`/private/product/${params.title}`} />;

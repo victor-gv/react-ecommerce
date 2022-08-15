@@ -15,7 +15,7 @@ export default function PrivateRoute() {
     if (!isAuthenticated) {
         if (url.includes('product/')){
             //if params.title don't match any product, redirect to error page
-            if (!products.find(product => product.title === params.title)){
+            if (!products.find(product => product.slug === params.title)){
                 return <Navigate to="/error" />;
             } else {
                  return <Navigate to={`/product/${params.title}`} />;
