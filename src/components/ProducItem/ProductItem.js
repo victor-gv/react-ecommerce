@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AiFillDelete } from "react-icons/ai"
 
-function ProductItem({ id, img, title, price, substractQuantity, quantity, addQuantity, removeProduct }) {
+function ProductItem({ id, img, title, slug, price, substractQuantity, quantity, addQuantity, removeProduct }) {
   return (
     <>
     <div className="cart__product">
