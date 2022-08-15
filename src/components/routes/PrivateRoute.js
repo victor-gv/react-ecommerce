@@ -11,7 +11,7 @@ export default function PrivateRoute() {
 
     if (!isAuthenticated) {
         if (url.includes('product/')){
-            return <Navigate to={`/product/${params.id}`} />;
+            return <Navigate to={`/product/${params.title}`} />;
         } else {
             return <Navigate to="/login" />;
         }
