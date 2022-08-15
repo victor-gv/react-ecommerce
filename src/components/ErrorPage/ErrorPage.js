@@ -58,7 +58,8 @@ const ErrorPage = () => {
                   <h1 className="text-center ">404</h1>
                 </div>
                 <div className="contant_box_404">
-                  <h2 className="h2">Look like you're lost</h2>
+                  <h2 className="h2">Looks like you're lost</h2>
+                  <h5>The url you are looking for does not exist</h5>
                   <Link to={isAuthenticated ? '/private' : '/'}>
                     <p className="link_404">Go to Home</p>
                   </Link>

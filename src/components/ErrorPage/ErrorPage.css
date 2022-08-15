@@ -9,9 +9,9 @@ body {
 }
 
 .page_404 {
+  font-family: "Avenir LT Pro 65 Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important;
   padding: 40px 0;
   background: #fff;
-  font-family: "Arvo", serif;
 }
 
 .page_404 img {

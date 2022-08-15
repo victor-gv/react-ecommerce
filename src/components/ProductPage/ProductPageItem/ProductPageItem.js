@@ -11,6 +11,7 @@ const ProductPageItem = ({ manageFav, manageClick, manageShare }) => {
   const [product, setProduct] = useState({});
 
 
+
 useEffect(() => {
   getProduct();
 }
@@ -22,8 +23,12 @@ const getProduct = async () => {
     const response = await fetch(`https://shophub20-server.herokuapp.com/products/?slug=${params.title}`);
     if (response.ok) {
       let product = await response.json();
-      product = product[0];
-      setProduct(product);
+      if (product.length === 0) {
+        navigate("/error");
+      } else {
+        product = product[0];
+        setProduct(product);
+      }
     } else {
       navigate("/error");
     }
