@@ -39,7 +39,7 @@ let renderedProducts;
         .map((fav) => (
           <ProductCard key={fav.id}>
             <div data-fav={fav.id} className="card">
-            <Link to={isAuthenticated ? `/private/product/${fav.title}` : `/product/${fav.title}`}>
+            <Link to={isAuthenticated ? `/private/product/${fav.slug}` : `/product/${fav.slug}`}>
               <img src={fav.img} alt={`${fav.title} sneaker`} />
               <h4 className="card__title">{fav.title}</h4>
               <span className="card__description">{fav.category}</span>

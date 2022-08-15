@@ -20,7 +20,7 @@ const ProductRelated = () => {
 
   const getProduct = async () => {
     try {
-      const response = await fetch(`https://shophub20-server.herokuapp.com/products/?title=${ isAuthenticated ? params.title : params.id}`);
+      const response = await fetch(`https://shophub20-server.herokuapp.com/products/?title=${params.slug}`);
       if (response.ok) {
         let product = await response.json();
         product = product[0];
@@ -53,7 +53,7 @@ const ProductRelated = () => {
         relatedProducts
           .map((product) => (
               <div key={product.id} className="col-4">
-              <Link to={isAuthenticated ? `/private/product/${product.title}` : `/product/${product.title}`}>
+              <Link to={isAuthenticated ? `/private/product/${product.slug}` : `/product/${product.slug}`}>
                 <img src={product.img} alt={product.title} />
                 <h4>{product.title}</h4>
                 <p>{product.category}</p>

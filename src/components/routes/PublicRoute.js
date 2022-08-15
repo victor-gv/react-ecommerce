@@ -10,7 +10,7 @@ export default function PublicRoute() {
 
     if (isAuthenticated) {
         if (!url.includes('/private') && url.includes('product/')){
-            return <Navigate to={`/private/product/${params.id}`} />;
+            return <Navigate to={`/private/product/${params.title}`} />;
         } else {
             return <Navigate to="/private" />;
         }

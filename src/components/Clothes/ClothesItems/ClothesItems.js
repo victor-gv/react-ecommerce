@@ -49,7 +49,7 @@ function ClothesItems(props) {
             (
               <ProductCard key={product.id}>
                 <div data-card={product.id} className="card">
-                  <Link to={`/product/${product.title}`}>
+                  <Link to={`/product/${product.slug}`}>
                     <img src={product.img} alt={product.title} />
                     <h4 className="card__title">{product.title}</h4>
                     <span className="card__description">

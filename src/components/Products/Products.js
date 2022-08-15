@@ -59,7 +59,7 @@ function Products(props) {
             (
               <ProductCard key={product.id}>
                 <div data-card={product.id} className="card">
-                  <Link to={isAuthenticated ? `/private/product/${product.title}` : `/product/${product.title}`}>
+                  <Link to={isAuthenticated ? `/private/product/${product.slug}` : `/product/${product.slug}`}>
                     <img src={product.img} alt={product.title} />
                     <h4 className="card__title">{product.title}</h4>
                     <span className="card__description">
