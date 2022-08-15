@@ -9,8 +9,8 @@ const useShare = () => {
 
   const manageShare = (product) => {
     const url = isAuthenticated
-      ? `https://shophub20.netlify.app/private/product/${product.id}`
-      : `https://shophub20.netlify.app/product/${product.id}`;
+      ? `https://shophub20.netlify.app/private/product/${product.title}`
+      : `https://shophub20.netlify.app/product/${product.title}`;
     navigator.clipboard.writeText(url);
 
     MySwal.fire({
