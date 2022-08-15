@@ -20,7 +20,7 @@ const ProductRelated = () => {
 
   const getProduct = async () => {
     try {
-      const response = await fetch(`https://shophub20-server.herokuapp.com/products/?title=${params.slug}`);
+      const response = await fetch(`https://shophub20-server.herokuapp.com/products/?title=${params.title}`);
       if (response.ok) {
         let product = await response.json();
         product = product[0];
