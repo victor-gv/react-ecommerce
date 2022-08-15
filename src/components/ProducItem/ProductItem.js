@@ -7,7 +7,7 @@ function ProductItem({ id, img, title, price, substractQuantity, quantity, addQu
     <>
     <div className="cart__product">
       <div className="cart__product--row">
-              <Link to={`/product/${id}`}>
+              <Link to={`/product/${title}`}>
                 <div className="cart__img"><img src={img} alt="" /></div>
               </Link>
                 <div className="cart__name--row">

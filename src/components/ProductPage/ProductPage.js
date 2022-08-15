@@ -21,7 +21,6 @@ function ProductPage() {
   const { isAuthenticated } = useAuthContext();
 
 
-
   /* Destructuring the useCart() hook. */
   const {
     addToCart,
@@ -42,19 +41,20 @@ function ProductPage() {
   , [params]);
 
 
-const getProduct = async () => {
-  try {
-    const response = await fetch(`https://shophub20-server.herokuapp.com/products/${params.id}`);
-    if (response.ok) {
-      const product = await response.json();
-      setProduct(product);
-    } else {
-      navigate("/error");
+  const getProduct = async () => {
+    try {
+      const response = await fetch(`https://shophub20-server.herokuapp.com/products/?title=${params.id}`);
+      if (response.ok) {
+        let product = await response.json();
+        product = product[0];
+        setProduct(product);
+      } else {
+        navigate("/error");
+      }
+    } catch (error) {
+      console.log(error);
     }
-  } catch (error) {
-    console.log(error);
   }
-}
 
 
 

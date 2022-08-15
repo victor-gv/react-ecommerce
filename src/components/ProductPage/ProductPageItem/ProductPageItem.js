@@ -18,9 +18,10 @@ useEffect(() => {
 
 const getProduct = async () => {
   try {
-    const response = await fetch(`https://shophub20-server.herokuapp.com/products/${params.id}`);
+    const response = await fetch(`https://shophub20-server.herokuapp.com/products/?title=${params.id}`);
     if (response.ok) {
-      const product = await response.json();
+      let product = await response.json();
+      product = product[0];
       setProduct(product);
     } else {
       navigate("/error");

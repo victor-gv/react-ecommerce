@@ -40,7 +40,7 @@ function App() {
                 <Route path="/private/checkout" element={<CheckoutPage />} />
                 <Route path="/private/logout" element={<Logout />} />
                 <Route path="/private/favs" element={<FavsPage />} />
-                <Route path="/private/product/:id" element={<ProductPage />} />
+                <Route path="/private/product/:title" element={<ProductPage />} />
                 <Route path="*" element={<ErrorPage />} />
               </Route>
             </Routes>
