@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import { BsHandbagFill, BsShareFill } from "react-icons/bs";
 import { MdFavoriteBorder } from "react-icons/md";
 import { useNavigate, useParams } from "react-router-dom";
+import { useAuthContext } from "../../../context/authContext";
+
 
 const ProductPageItem = ({ manageFav, manageClick, manageShare }) => {
 
   const params = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState({});
+  const { isAuthenticated } = useAuthContext();
 
 
 useEffect(() => {
@@ -18,7 +21,7 @@ useEffect(() => {
 
 const getProduct = async () => {
   try {
-    const response = await fetch(`https://shophub20-server.herokuapp.com/products/?title=${params.id}`);
+    const response = await fetch(`https://shophub20-server.herokuapp.com/products/?title=${ isAuthenticated ? params.title : params.id}`);
     if (response.ok) {
       let product = await response.json();
       product = product[0];

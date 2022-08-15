@@ -43,7 +43,7 @@ function ProductPage() {
 
   const getProduct = async () => {
     try {
-      const response = await fetch(`https://shophub20-server.herokuapp.com/products/?title=${params.id}`);
+      const response = await fetch(`https://shophub20-server.herokuapp.com/products/?title=${ isAuthenticated ? params.title : params.id}`);
       if (response.ok) {
         let product = await response.json();
         product = product[0];
