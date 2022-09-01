@@ -104,6 +104,7 @@ function ProductPage() {
         title={product.title}
         price={product.price}
         img={product.img}
+        slug={product.slug}
         addQuantity={addQuantity}
         substractQuantity={substractQuantity}
         quantity={product.quantity}
