@@ -5,7 +5,6 @@ import LoginPage from "./components/LoginPage/LoginPage";
 import FavsPage from "./components/FavsPage/FavsPage";
 import ProductPage from "./components/ProductPage/ProductPage";
 import CheckoutPage from "./components/CheckoutPage/CheckoutPage";
-import Footer from "./components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import SearchCallProvider from "./context/searchContext";
@@ -48,7 +47,6 @@ function App() {
           </DiscountContextProvider>
         </SearchCallProvider>
       </AuthContextProvider>
-      <Footer />
     </>
   );
 }

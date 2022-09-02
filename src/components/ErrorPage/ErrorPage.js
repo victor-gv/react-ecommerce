@@ -7,6 +7,7 @@ import { useAuthContext } from "../../context/authContext";
 import ProductItem from "../ProducItem/ProductItem";
 import emptyCartImg from "../../images/empty_cart.png";
 import "./ErrorPage.css";
+import Footer from "../Footer/Footer";
 
 const ErrorPage = () => {
   const {
@@ -90,6 +91,7 @@ const ErrorPage = () => {
           checkoutBtn={true}
         />
       )}
+      <Footer />
     </>
   );
 };

@@ -15,6 +15,7 @@ import FavsProducts from "../FavsProducts/FavsProducts";
 import noResult from "../../images/no-results.png";
 import "../Navbar/Navbar.css";
 import "./FavsPage.css";
+import Footer from "../Footer/Footer";
 
 function FavsPage() {
 
@@ -148,6 +149,7 @@ useEffect(() => {
           checkoutBtn={true}
         />
       )}
+      <Footer />
     </>
   );
 }

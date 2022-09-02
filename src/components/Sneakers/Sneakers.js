@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import ProductItem from "../ProducItem/ProductItem";
 import useFetch from "../Hooks/useFetch";
@@ -13,8 +13,19 @@ import "../ProductCard/ProductCard.css"
 import "../MainPage/MainPage.css";
 import "../Products/Products.css";
 import SneakersItems from "./SneakersItems/SneakersItems";
+import Footer from "../Footer/Footer";
 
 const Sneakers = () => {
+
+  const [isDisplayed, setIsDisplayed] = useState(false);
+
+  useEffect(() => {
+    setInterval(() => {
+      setIsDisplayed(true);
+    }, 500);
+  }, []);
+
+
   const { products } = useFetch();
 
   /* Destructuring the useCart() and useSearch() hooks. */
@@ -117,6 +128,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
           checkoutBtn={true}
         />
       )}
+      {isDisplayed && <Footer />}
     </>
   );
 };

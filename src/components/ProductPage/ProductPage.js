@@ -13,6 +13,7 @@ import useShare from "../Hooks/useShare";
 import "../Navbar/Navbar.css";
 import "../FavsPage/FavsPage.css";
 import "./ProductPage.css";
+import Footer from "../Footer/Footer";
 
 function ProductPage() {
   const params = useParams();
@@ -174,6 +175,7 @@ function ProductPage() {
           checkoutBtn={true}
         />
       )}
+      <Footer />
     </>
   );
 }

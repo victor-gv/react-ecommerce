@@ -15,6 +15,7 @@ import useFetch from "../Hooks/useFetch";
 import useShare from "../Hooks/useShare";
 import { searchContext } from "../../context/searchContext";
 import "./MainPage.css";
+import Footer from "../Footer/Footer";
 
 function MainPage() {
   
@@ -143,6 +144,7 @@ totalPrice of the cart, and the productItem is the result of the checkCart() fun
           </Col>
         </Row>
       </div>
+      <Footer />
     </Container>
   );
 }

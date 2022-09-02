@@ -22,6 +22,7 @@ import emptyCartImg from "../../images/empty_cart.png";
 import "./LoginPage.css";
 import { useAuthContext } from "../../context/authContext";
 import useFetch from "../Hooks/useFetch";
+import Footer from "../Footer/Footer";
 
 function LoginPage() {
   const { login } = useAuthContext();
@@ -437,6 +438,7 @@ function LoginPage() {
             />
         )}
       </div>
+      <Footer />
     </>
   );
 }
