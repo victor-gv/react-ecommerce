@@ -90,7 +90,7 @@ loginPage or favPage while the cart is open, the cart will close. */
           <p>Log in to enjoy your discount on all products in the next step.</p>
         </div>
             <div className="table-content">
-            <span className="products__banner">Sneakers</span>
+            <span className="products__banner">Your purchase</span>
               <p>{title}</p>
                 {emptyCartImg}
                 {productItem}
