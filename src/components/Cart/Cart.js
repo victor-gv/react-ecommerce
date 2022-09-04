@@ -96,7 +96,10 @@ loginPage or favPage while the cart is open, the cart will close. */
                 {productItem}
             </div>
         <div className="totalPrice__container">
-          <h3 className="totalPrice">Total: {Number(totalPrice).toFixed(2)}€
+          <h3 className="totalPrice">Total: {
+            totalPrice % 1 === 0 ? totalPrice :
+            Number(totalPrice).toFixed(2)
+            }€
           </h3>
           <hr></hr>
             <div className="checkout-container">

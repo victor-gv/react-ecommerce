@@ -62,7 +62,8 @@ export default function ReviewOrder() {
       </Typography>
       <ProductDetails
         totalPrice={
-          discountActive.discountActive ? Number(totalPrice).toFixed(2) - 10 + '€': Number(totalPrice).toFixed(2) + '€'
+          discountActive.discountActive ? Number(totalPrice).toFixed(2) - 10 + '€': 
+          (totalPrice % 1 === 0 ? totalPrice : Number(totalPrice).toFixed(2)) + '€'
         }
       />
       <Grid container spacing={2}>
