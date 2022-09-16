@@ -47,7 +47,7 @@ const ProductRelated = () => {
       .filter((item) => item.category === product.category)
       .filter((item) => item.id !== product.id)
       .sort(() => Math.random() - Math.random())
-      .slice(0, 4)
+      .slice(0, 4) 
   }
     , [products, product]);
 
