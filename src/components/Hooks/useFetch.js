@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 
 const useFetch = () => {
 
-    const urlProducts = "https://shophub20-server.herokuapp.com/products";
+    const urlProducts = "https://react-ecommerce-server-production.up.railway.app/products";
 
-    const urlUsers = "https://shophub20-server.herokuapp.com/users";
+    const urlUsers = "https://react-ecommerce-server-production.up.railway.app/users";
 
     const [products, setProducts] = useState([]);
     const [users, setUsers] = useState([]);

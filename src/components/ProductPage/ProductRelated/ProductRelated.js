@@ -4,7 +4,6 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import useFetch from "../../Hooks/useFetch";
 
 const ProductRelated = () => {
-
   const { products } = useFetch();
   const params = useParams();
   const navigate = useNavigate();
@@ -13,14 +12,13 @@ const ProductRelated = () => {
 
   useEffect(() => {
     getProduct();
-  }
-  , [params]);
-
-
+  }, [params]);
 
   const getProduct = async () => {
     try {
-      const response = await fetch(`https://shophub20-server.herokuapp.com/products/?slug=${params.title}`);
+      const response = await fetch(
+        `https://react-ecommerce-server-production.up.railway.app/products/?slug=${params.title}`
+      );
       if (response.ok) {
         let product = await response.json();
         if (product.length === 0) {
@@ -35,36 +33,37 @@ const ProductRelated = () => {
     } catch (error) {
       console.log(error);
     }
-  }
-
-
-
-
+  };
 
   const relatedProducts = useMemo(() => {
-    return products
-    //filter by category
-      .filter((item) => item.category === product.category)
-      .filter((item) => item.id !== product.id)
-      .sort(() => Math.random() - Math.random())
-      .slice(0, 4) 
-  }
-    , [products, product]);
+    return (
+      products
+        //filter by category
+        .filter((item) => item.category === product.category)
+        .filter((item) => item.id !== product.id)
+        .sort(() => Math.random() - Math.random())
+        .slice(0, 4)
+    );
+  }, [products, product]);
 
   return (
     <>
-      {
-        relatedProducts
-          .map((product) => (
-              <div key={product.id} className="col-4">
-              <Link to={isAuthenticated ? `/private/product/${product.slug}` : `/product/${product.slug}`}>
-                <img src={product.img} alt={product.title} />
-                <h4>{product.title}</h4>
-                <p>{product.category}</p>
-                <h5>{product.price}€</h5>
-              </Link>
-            </div>
-          ))}
+      {relatedProducts.map((product) => (
+        <div key={product.id} className="col-4">
+          <Link
+            to={
+              isAuthenticated
+                ? `/private/product/${product.slug}`
+                : `/product/${product.slug}`
+            }
+          >
+            <img src={product.img} alt={product.title} />
+            <h4>{product.title}</h4>
+            <p>{product.category}</p>
+            <h5>{product.price}€</h5>
+          </Link>
+        </div>
+      ))}
     </>
   );
 };

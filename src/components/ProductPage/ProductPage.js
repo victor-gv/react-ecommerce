@@ -44,7 +44,7 @@ function ProductPage() {
 
   const getProduct = async () => {
     try {
-      const response = await fetch(`https://shophub20-server.herokuapp.com/products/?slug=${params.title}`);
+      const response = await fetch(`https://react-ecommerce-server-production.up.railway.app/products/?slug=${params.title}`);
       if (response.ok) {
         let product = await response.json();
         if (product.length === 0) {
